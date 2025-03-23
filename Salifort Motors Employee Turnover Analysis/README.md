@@ -1,5 +1,13 @@
 # Salifort Motors Employee Turnover Prediction Project
 
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit_learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-348EBB?style=flat-square&logo=matplotlib&logoColor=white)](https://matplotlib.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-4CB5AA?style=flat-square&logo=seaborn&logoColor=white)](https://seaborn.pydata.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-82C092?style=flat-square&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/en/stable/)
+
 This repository contains the analysis and predictive modeling for employee turnover at Salifort Motors, a fictional consulting firm. This project aims to provide data-driven insights to the Human Resources (HR) department to improve employee retention.
 
 ## Project Overview
@@ -55,16 +63,6 @@ The dataset (`HR_capstone_dataset.csv`) contains 15,000 rows and 10 columns:
 * Conduct real-world A/B testing to evaluate the effectiveness of HR interventions.
 * Enhance data collection and monitoring systems.
 * Prioritize ethical considerations and transparency in model usage.
-
-## Tools and Technologies
-
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
-* Seaborn
-* XGBoost
 
 ## Getting Started
 
