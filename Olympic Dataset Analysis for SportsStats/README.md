@@ -105,9 +105,9 @@ This project analyzes the Olympic Games dataset, spanning 120 years of data, to 
 * Displayed the cleaned data using pandas dataframes.
 
 ### 4. Proposed ERD
-Athlete (ID, Name, Age, Sex, Height, Weight)
-Event (Event, Sport, Year, Season, City, NOC, Medal)
-Team (Team, NOC, Region)
+* Athlete (ID, Name, Age, Sex, Height, Weight)
+* Event (Event, Sport, Year, Season, City, NOC, Medal)
+* Team (Team, NOC, Region)
 
 ## Data Visualization and Analysis
 
@@ -115,7 +115,8 @@ Team (Team, NOC, Region)
 
 This visualization showcases the top sports where each country has won the most gold medals, excluding team event multiplicity.
 
-![Top Gold Medal Sports by Country](your_image_path/top_gold_medals_by_country.png)  *(Replace `your_image_path/top_gold_medals_by_country.png` with the actual path or URL to your image)*
+![Top Gold Medal Sports by Country](![image](https://github.com/user-attachments/assets/517d8845-c942-464f-98bb-5f0cff95d148)
+)  *(Replace `your_image_path/top_gold_medals_by_country.png` with the actual path or URL to your image)*
 
 ### 3D Visualization of Athlete Attributes
 
