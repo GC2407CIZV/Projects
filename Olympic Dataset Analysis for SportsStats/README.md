@@ -1,5 +1,11 @@
 # Olympic Dataset Analysis for SportsStats
 
+[![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
+[![Pandas Version](https://img.shields.io/badge/pandas-latest-brightgreen.svg)](https://pandas.pydata.org/)
+[![Matplotlib Version](https://img.shields.io/badge/matplotlib-latest-blueviolet.svg)](https://matplotlib.org/)
+[![Seaborn Version](https://img.shields.io/badge/seaborn-latest-ff69b4.svg)](https://seaborn.pydata.org/)
+[![Scikit-learn Version](https://img.shields.io/badge/scikit--learn-latest-orange.svg)](https://scikit-learn.org/stable/)
+
 ## Project Overview
 
 This project undertakes a comprehensive analysis of the Olympic Games dataset, spanning 120 years of athletic history, to extract meaningful insights for SportsStats. Our primary goals are to:
