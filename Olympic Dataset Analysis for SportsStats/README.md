@@ -121,7 +121,8 @@ By exploring questions related to gender representation, athlete profiles, and t
 
 This visualization showcases the top sports where each country has won the most gold medals, excluding team event multiplicity.
 
-![Top Gold Medal Sports by Country](https://github.com/GC2407CIZV/Projects/blob/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/3d_athlete_attributes.png)
+![Top Gold Medal Sports by Country](https://githubusercontent.com/GC2407CIZV/Projects/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/top_gold_medals_by_country.png)
+
 
 ### 3D Visualization of Athlete Attributes
 
