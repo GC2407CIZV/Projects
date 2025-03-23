@@ -120,19 +120,21 @@ By exploring questions related to gender representation, athlete profiles, and t
 ### Top Gold Medal Sports by Country
 
 This visualization showcases the top sports where each country has won the most gold medals, excluding team event multiplicity.
+*(Note: This image displays bar charts showing the top sports for each country. If the dark background makes it difficult to see, please open the image in a new tab.)*
 
-![Top Gold Medal Sports by Country](https://githubusercontent.com/GC2407CIZV/Projects/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/top_gold_medals_by_country.png)
-
+![Top Gold Medal Sports by Country](https://raw.githubusercontent.com/GC2407CIZV/Projects/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/top_gold_medals_by_country.png)
 
 ### 3D Visualization of Athlete Attributes
 
 This 3D plot visualizes the average age, height, and weight of athletes, colored by sex, across various sports.
+*(Note: This 3D scatter plot displays the relationship between age, height, and weight. If the dark background makes the points difficult to differentiate, please open the image in a new tab.)*
 
 ![3D Visualization of Athlete Attributes](https://raw.githubusercontent.com/GC2407CIZV/Projects/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/3d_athlete_attributes.png)
 
 ### Predicted Medal Count Correlations
 
 This heatmap displays the correlation between predicted medal counts (Gold, Silver, Bronze), providing insights into how the model distributes medals.
+*(Note: This heatmap shows the correlation matrix between medal counts. If the color gradients are difficult to see, please open the image in a new tab.)*
 
 ![Predicted Medal Count Correlations](https://raw.githubusercontent.com/GC2407CIZV/Projects/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/medal_count_correlations.png)
 
