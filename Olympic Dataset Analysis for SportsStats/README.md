@@ -2,21 +2,26 @@
 
 ## Project Overview
 
-This project analyzes the Olympic Games dataset, spanning 120 years of data, to provide actionable insights for SportsStats. It explores athlete demographics, medal distribution, and gender representation, uncovering meaningful patterns and trends.
+This project undertakes a comprehensive analysis of the Olympic Games dataset, spanning 120 years of athletic history, to extract meaningful insights for SportsStats. Our primary goals are to:
+
+1.  **Uncover historical trends** in athlete demographics and medal distribution.
+2.  **Identify factors influencing Olympic success** through statistical analysis and predictive modeling.
+3.  **Provide actionable recommendations** to SportsStats regarding athlete training, recruitment, and performance optimization.
+
+By exploring questions related to gender representation, athlete profiles, and the impact of country-level factors, this project aims to deliver data-driven insights that can enhance athletic performance and inform strategic decision-making in the sports industry. Ultimately, this analysis will contribute to a deeper understanding of the Olympic Games and the factors driving success at the highest level of athletic competition.
 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Project Proposal](#project-proposal)
-  - [Questions to Answer](#questions-to-answer)
-  - [Initial Hypotheses](#initial-hypotheses)
-  - [Analysis Approach](#analysis-approach)
+    - [Questions to Answer](#questions-to-answer)
+    - [Initial Hypotheses](#initial-hypotheses)
+    - [Analysis Approach](#analysis-approach)
 - [Project Setup](#project-setup)
-  - [Dataset Selection](#1-dataset-selection)
-  - [Data Import and Cleaning](#2-data-import-and-cleaning)
-  - [Initial Exploration](#3-initial-exploration)
-  - [Proposed ERD](#4-proposed-erd)
-- [Data Import and Cleaning Code](#data-import-and-cleaning-code)
+    - [Dataset Selection](#1-dataset-selection)
+    - [Data Import and Cleaning](#2-data-import-and-cleaning)
+    - [Initial Exploration](#3-initial-exploration)
+    - [Proposed ERD](#4-proposed-erd)
 - [Data Visualization and Analysis](#data-visualization-and-analysis)
     - [Top Gold Medal Sports by Country](#top-gold-medal-sports-by-country)
     - [3D Visualization of Athlete Attributes](#3d-visualization-of-athlete-attributes)
@@ -105,6 +110,7 @@ This project analyzes the Olympic Games dataset, spanning 120 years of data, to 
 * Displayed the cleaned data using pandas dataframes.
 
 ### 4. Proposed ERD
+
 * Athlete (ID, Name, Age, Sex, Height, Weight)
 * Event (Event, Sport, Year, Season, City, NOC, Medal)
 * Team (Team, NOC, Region)
@@ -117,13 +123,11 @@ This visualization showcases the top sports where each country has won the most 
 
 ![Top Gold Medal Sports by Country](https://raw.githubusercontent.com/GC2407CIZV/Projects/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/top_gold_medals_by_country.png)
 
-
 ### 3D Visualization of Athlete Attributes
 
 This 3D plot visualizes the average age, height, and weight of athletes, colored by sex, across various sports.
 
 ![3D Visualization of Athlete Attributes](https://raw.githubusercontent.com/GC2407CIZV/Projects/main/Olympic%20Dataset%20Analysis%20for%20SportsStats/images/3d_athlete_attributes.png)
-
 
 ### Predicted Medal Count Correlations
 
@@ -164,4 +168,4 @@ The analysis explores the relationship between age, height, and weight across ma
 
 ## Conclusion
 
-This project provides a comprehensive analysis of the Olympic dataset, revealing valuable insights into athlete demographics, medal distribution, and gender representation. The visualizations and analyses offer actionable information for SportsStats, including optimal athlete profiles and trends in medal counts.
+This project provides a comprehensive analysis of the Olympic dataset, revealing valuable insights into athlete demographics, medal distribution, and gender representation. The visualizations and analyses offer actionable information for SportsStats,
