@@ -3,6 +3,7 @@
 # install.packages("lubridate")
 # install.packages("ggplot2")
 
+# Load libraries
 library(readr)
 library(tidyverse)
 library(lubridate)
@@ -12,6 +13,7 @@ library(dplyr)
 # Define data directory (adjust as needed)
 data_dir <- "dataset/" # Replace with the actual path to your data files
 
+# Read data files
 daily_activity <- read_csv(paste0(data_dir, "dailyActivity_merged.csv"))
 daily_calories <- read_csv(paste0(data_dir, "dailyCalories_merged.csv"))
 daily_intensities <- read_csv(paste0(data_dir, "dailyIntensities_merged.csv"))
@@ -62,6 +64,7 @@ daily_steps$ActivityDay <- as.Date(daily_steps$ActivityDay, format = "%m/%d/%Y")
 sleep_day$SleepDay <- as.Date(sleep_day$SleepDay, format = "%m/%d/%Y")
 weight_log$Date <- as.Date(weight_log$Date, format = "%m/%d/%Y") 
 
+# Convert time columns using lubridate's mdy_hms for consistent parsing
 heartrate_seconds$Time <- mdy_hms(heartrate_seconds$Time)
 hourly_calories$ActivityHour <- mdy_hms(hourly_calories$ActivityHour)
 hourly_intensities$ActivityHour <- mdy_hms(hourly_intensities$ActivityHour)
@@ -71,9 +74,7 @@ minute_intensities_narrow$ActivityMinute <- mdy_hms(minute_intensities_narrow$Ac
 minute_sleep$date <- mdy_hms(minute_sleep$date)
 minute_steps_narrow$ActivityMinute <- mdy_hms(minute_steps_narrow$ActivityMinute)
 
-# Load the data (as you've already done)
-
-# 1. Inspect the column names of EACH dataframe *before* any joins
+# Inspect the column names of EACH dataframe *before* any joins
 print(names(daily_activity))
 print(names(daily_calories))
 print(names(daily_intensities))
@@ -89,7 +90,7 @@ print(names(minute_intensities_narrow))
 print(names(minute_sleep))
 print(names(minute_steps_narrow))
 
-# 1. Rename columns in `daily_intensities` to avoid conflicts
+# Rename columns in `daily_intensities` to avoid conflicts
 daily_intensities <- daily_intensities %>%
   rename(
     VeryActiveDistance_intensities = VeryActiveDistance,
@@ -102,7 +103,7 @@ daily_intensities <- daily_intensities %>%
     SedentaryMinutes_intensities = SedentaryMinutes
   )
 
-# 2. Select the *exact* columns you need *before* merging. This is much more efficient.
+# Efficiently merge dataframes, selecting needed columns *before* joining
 daily_data <- daily_activity %>%
   left_join(daily_calories, by = c("Id", "ActivityDate" = "ActivityDay")) %>%
   left_join(daily_intensities, by = c("Id", "ActivityDate" = "ActivityDay")) %>%
@@ -117,7 +118,7 @@ merged_data <- sleep_day %>%
 
 print(names(merged_data))  
 
-# 1. Check if "ActivityDate" is present.  If not, look for similar names.
+# Check if "ActivityDate" is present.  If not, look for similar names.
 if ("ActivityDate" %in% names(merged_data)) {
   # ActivityDate is there, proceed with debugging.
   print("ActivityDate found. Proceeding with debugging.")
@@ -160,6 +161,8 @@ overall_averages <- merged_data %>%
   )
 
 print(overall_averages)
+
+# --- Visualizations ---
 
 # 1. Distribution of Daily Steps (Histogram & Boxplot)
 ggplot(merged_data, aes(x = TotalSteps)) +
