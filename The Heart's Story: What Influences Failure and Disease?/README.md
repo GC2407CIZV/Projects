@@ -15,7 +15,7 @@ This project utilizes Tableau to explore and visualize the key risk factors asso
 
 ## Tableau Public Link
 
-\https://public.tableau.com/app/profile/greg.charles/viz/ExploringFactorsInfluencingHeartFailureandHeartDisease/Story1
+https://public.tableau.com/app/profile/greg.charles/viz/ExploringFactorsInfluencingHeartFailureandHeartDisease/Story1
 
 ## Design Choices
 
@@ -64,4 +64,4 @@ The data used in this project is a synthetic dataset created to ensure the inclu
 
 ## Author
 
-\Gregory Charles
+Gregory Charles
