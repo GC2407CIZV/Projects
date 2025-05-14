@@ -6,8 +6,9 @@ This project focuses on predicting the daily demand for bicycle rentals using a 
 
 ## Project Structure
 ├── README.md           &lt;- This file, providing an overview of the project.<br>
-├── day.csv             &lt;- The dataset containing bicycle rental information.
-└── [Your Jupyter Notebook File].ipynb &lt;- The Jupyter Notebook containing the project code and analysis.
+├── day.csv             &lt;- The dataset containing bicycle rental information by day.<br>
+├── hour.csv            &lt;- The dataset containing bicycle rental informationby hour.<br>
+└── Bikes.ipynb         &lt;- The Jupyter Notebook containing the project code and analysis.
 
 ## Getting Started
 
