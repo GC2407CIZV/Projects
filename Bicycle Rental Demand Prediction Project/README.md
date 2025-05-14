@@ -5,7 +5,7 @@
 This project focuses on predicting the daily demand for bicycle rentals using a dataset containing historical rental information and various features such as weather conditions, day of the week, and seasonal factors. The project follows a standard data science workflow, including data loading, exploratory data analysis (EDA), feature engineering, model building (linear regression), and model evaluation. The primary goal is to develop a model that can accurately forecast the number of bicycle rentals on a given day.
 
 ## Project Structure
-├── README.md           &lt;- This file, providing an overview of the project.
+├── README.md           &lt;- This file, providing an overview of the project.<br>
 ├── day.csv             &lt;- The dataset containing bicycle rental information.
 └── [Your Jupyter Notebook File].ipynb &lt;- The Jupyter Notebook containing the project code and analysis.
 
