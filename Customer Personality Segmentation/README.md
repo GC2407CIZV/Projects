@@ -95,12 +95,6 @@ To run this project locally:
 *   Incorporate external data sources for richer segmentation.
 *   Implement an automated system for customer segmentation and targeted campaign deployment.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details. (Optional: If you plan to add a license file)
-
 ## Contact
 
-Your Name - [https://www.linkedin.com/in/gregory-charles-7a460550/] - [gregory.charles01@gmail.com]
-
-Project Link: [Your GitHub Repository URL]
+Gregory Charles - https://www.linkedin.com/in/gregory-charles-7a460550/ - gregory.charles01@gmail.com
