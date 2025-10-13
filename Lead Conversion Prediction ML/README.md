@@ -1,4 +1,4 @@
-# ExtraaLearn-Lead-Conversion-Prediction-ML
+# ExtraaLearn Lead Conversion Prediction ML
 
 ## 🚀 Project Summary
 
