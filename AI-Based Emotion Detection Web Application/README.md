@@ -8,9 +8,18 @@ The system identifies the dominant emotion (joy, sadness, anger, fear, or disgus
 
 ---
 
+## 🛠️ Technologies Used
+
+* **Python 3.x**
+* **Flask** (Web Micro-Framework)
+* **Watson NLP** (AI Emotion Detection Library)
+* **unittest** (Testing Framework)
+
+---
+
 ## 🚀 Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
@@ -23,9 +32,10 @@ You will need the following installed:
 ### Installation
 
 1.  **Clone the repository:**
+    *(Adjust the URL and path if your project is nested within a larger 'Projects' repository.)*
     ```bash
-    git clone [https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application]
-    cd final_project
+    git clone [https://github.com/GC2407CIZV/Projects.git](https://github.com/GC2407CIZV/Projects.git)
+    cd Projects/AI-Based-Emotion-Detection-Web-Application # Adjust this path as needed
     ```
 
 2.  **Create and activate a virtual environment** (recommended):
@@ -38,7 +48,7 @@ You will need the following installed:
     ```
 
 3.  **Install the necessary dependencies:**
-    *(Note: You will need to create a `requirements.txt` file containing `flask`, `ibm-watson-machine-learning`, etc.)*
+    *(Ensure you have created a `requirements.txt` file listing all required packages, such as `flask`, `requests`, etc.)*
     ```bash
     pip install -r requirements.txt
     ```
@@ -46,10 +56,13 @@ You will need the following installed:
 ---
 
 ## 📂 Project Structure
+
+The project structure reflects all required files and directories for the assessment, including the modular **`EmotionDetection`** package and assets.
+
 ```
 final_project/
 ├── EmotionDetection/ # Python package containing the core AI logic (Task 4)
-│     ├── init.py # Package initialization
+│     ├── __init__.py # Package initialization
 │     └── emotion_detection.py # The emotion_detector function (Task 2 & 3)
 ├── Screenshots/ # Directory to store all required PNG images for the peer review.
 ├── static/ # Assets served directly to the client (CSS, JS)
@@ -68,12 +81,16 @@ final_project/
 
 ### 1. Running Unit Tests (Task 5)
 
-Before deploying, ensure the core logic is sound:
+Before deploying, ensure the core logic is sound by running the dedicated test file:
 
 ```bash
-python -m unittest tests/test_emotion_detector.py
+python test_emotion_detection.py
 ```
 ---
+
+### 2. Launching the Web Server (Task 6)
+Start the Flask application, which typically runs on ```http://0.0.0.0:5000/```:
+
 
 ## ✅ Project Tasks and Objectives
 
