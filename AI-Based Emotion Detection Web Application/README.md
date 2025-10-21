@@ -65,6 +65,7 @@ final_project/
 │     ├── __init__.py # Package initialization
 │     └── emotion_detection.py # The emotion_detector function (Task 2 & 3)
 ├── Screenshots/ # Directory to store all required PNG images for the peer review.
+├── TaskFiles/ # Contains task-specific files and modified versions (e.g., intermediate emotion_detection.py versions).
 ├── static/ # Assets served directly to the client (CSS, JS)
 │     └── mywebscript.js # JavaScript for front-end interactivity
 ├── templates/ # HTML templates rendered by Flask
