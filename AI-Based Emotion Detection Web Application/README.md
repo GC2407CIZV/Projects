@@ -47,17 +47,7 @@ You will need the following installed:
 
 ## 📂 Project Structure
 ```
-final_project/ 
-├── EmotionDetection/ # Python package containing the core AI logic (Task 4) 
-│   ├── init.py # Package initialization 
-│   └── emotion_detection.py # The emotion_detector function (Task 2 & 3) 
-├── static/ # Client-side assets (CSS, JS) 
-│   └── mywebscript.js # JavaScript for front-end interactivity 
-├── templates/ # HTML templates rendered by Flask 
-│   └── index.html # The main user interface 
-├── server.py # Main Flask application, defines routes and handles requests (Task 6 & 7) 
-├── test_emotion_detection.py # Unit tests for the core detection function (Task 5) ├── .gitignore # Files/folders to be ignored by Git 
-└── README.md # This documentation file
+final_project/ ├── EmotionDetection/ # Python package containing the core AI logic (Task 4) │ ├── init.py # Package initialization │ └── emotion_detection.py # The emotion_detector function (Task 2 & 3) ├── Screenshots/ # Directory to store all required PNG images for the peer review. ├── static/ # Assets served directly to the client (CSS, JS) │ └── mywebscript.js # JavaScript for front-end interactivity ├── templates/ # HTML templates rendered by Flask │ └── index.html # The main user interface ├── PROJECT_GUIDE.md # Detailed, step-by-step instructions for completing the project. ├── server.py # Main Flask application, defines routes and handles requests (Task 6 & 7) ├── test_emotion_detection.py # Unit tests for the core detection function (Task 5) ├── .gitignore # Files/folders to be ignored by Git └── README.md # This documentation file (main entry point)
 ```
 ---
 
