@@ -1,10 +1,10 @@
-# 🤖 AI-Based Emotion Detection Web Application
+# 🎓 Capstone Project: AI-Based Emotion Detection Web Application
 
 ## Project Overview
 
-This project implements an **AI-based web application** designed to perform analytics on customer feedback for an e-commerce company. The core functionality is an **Emotion Detection System** that processes raw text input from customers and determines the most likely emotion (e.g., joy, sadness, anger, fear, disgust) being conveyed.
+This project serves as the **Final Capstone for the Developing AI Applications with Python and Flask course**. It implements a full-stack AI-based web application designed to demonstrate the entire development and deployment pipeline. The core service is an **Emotion Detection System** built on the **Flask framework** that integrates **Watson Natural Language Processing (NLP)** to analyze customer feedback text.
 
-This application extends beyond simple sentiment analysis to provide richer emotional insights, making it valuable for AI recommendation systems, automated chatbots, and deep customer service analytics. The system utilizes the **Watson Natural Language Processing (NLP) library** for its core emotion detection capabilities.
+The system identifies the dominant emotion (joy, sadness, anger, fear, or disgust), providing valuable emotional insights required for modern AI applications.
 
 ---
 
