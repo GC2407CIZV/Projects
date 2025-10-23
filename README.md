@@ -22,7 +22,7 @@ Use this table to quickly navigate to the project most relevant to your interest
 | **Business Analytics** | [**Bellabeat Smart Device Usage Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Bellabeat%20Smart%20Strategy%3A%20Leveraging%20Smart%20Device%20Data%20for%20Growth) | **R, Business Analytics, Data Storytelling** | Delivered data-driven marketing recommendations based on fitness data trends. | 
 | **EDA & Visualization** | [**Olympic Dataset Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Olympic%20Dataset%20Analysis%20for%20SportsStats) | **Advanced EDA, Sports Analytics, Visualization** | Uncovered historical trends and identified **Optimal Athlete Profiles** for success. | 
 | **EDA & Visualization** | [**Heart Disease Risk Visualization**](https://github.com/GC2407CIZV/Projects/tree/main/The%20Heart's%20Story%3A%20What%20Influences%20Failure%20and%20Disease%3F)| **Tableau, Data Storytelling, Public Health** | Data story with Interactive Risk Calculator for public health communication. | 
-| **Full-Stack Development** | [**Quacktastic Conundrum (Flask Game)**](https://github.com/gcharles/quacktastic-conundrum) | **Full-Stack Development, Flask/SQLite, Security** | Full-stack web game development with robust security and database integration. | 
+| **Full-Stack Development** | [**Quacktastic Conundrum (Flask Game)**](https://github.com/GC2407CIZV/Projects/tree/main/Quactastic%20Conundrum) | **Full-Stack Development, Flask/SQLite, Security** | Full-stack web game development with robust security and database integration. | 
 
 ## 💻 Technical Skills Overview
 
