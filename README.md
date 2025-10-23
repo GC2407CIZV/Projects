@@ -1,12 +1,23 @@
 # 💼 Gregory Charles - Data Science, Machine Learning, & Software Portfolio
 
 | Location | Status | Resume | 
- | :---: | :---: | :---: | 
-| 📍 Japan | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) | 
+ | ----- | ----- | ----- | 
+| 📍 Japan  | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) | 
 
 Welcome to my project portfolio repository!
 
 This collection showcases my proficiency in full-stack AI development, deep learning, statistical analysis, and predictive modeling, utilizing Python, R, and foundational web frameworks like Flask. The projects emphasize turning complex data challenges into actionable business insights and deployable applications.
+
+## ✨ Core Skills at a Glance
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-1E90FF?style=for-the-badge&logo=xgboost&logoColor=white)
+![SVD / RecSys](https://img.shields.io/badge/SVD%20/%20RecSys-FF4500?style=for-the-badge&logo=apachespark&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![NLP](https://img.shields.io/badge/NLP-7F00FF?style=for-the-badge&logo=ibm&logoColor=white)
+![MLOps](https://img.shields.io/badge/MLOps-4B0082?style=for-the-badge&logo=kubernetes&logoColor=white)
+
+---
 
 ## 🔎 Quick Project Index
 
@@ -14,7 +25,7 @@ This index is designed to help you quickly identify projects relevant to specifi
 **DS Tier 1** projects are my most complex, high-value, and production-ready examples of Machine Learning and AI.
 
 | DS Tier | Sector | Project Name | Core Technology | **App/Demo Link** | Key Achievement | 
- | :---: | :---: | ----- | ----- | :---: | ----- | 
+ | ----- | ----- | ----- | ----- | ----- | ----- | 
 | **Tier 1** | **Retail/eCommerce** | [**Amazon Product Recommendation Engine**](https://github.com/GC2407CIZV/Projects/tree/main/Amazon%20Product%20Recommendation%20Engine) | **Recommendation Systems (SVD), Collaborative Filtering** | [Jupyter Notebook](#) | Achieved **RMSE of 0.8808** via optimized SVD on 7.8M ratings data. | 
 | **Tier 1** | **NLP/Web Dev** | [**AI-Based Emotion Detection App**](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application) | **NLP (Watson), Full-Stack AI, Flask** | [Flask Web App](#) | Full-stack AI application deployment with modular packaging and unit testing. | 
 | **Tier 1** | **Sales/Marketing** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML) | **XGBoost, Lead Scoring, Feature Engineering** | [Flask Web App](#) | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. | 
@@ -216,7 +227,7 @@ An **unsupervised machine learning** project to segment a retail company's custo
 
 * **Problem:** Moving beyond generic marketing by identifying distinct customer personality segments based on demographics and spending habits.
 
-* **Solution:** Utilized a data science pipeline involving extensive data cleaning, **feature engineering**, and **K-Means clustering** (K=3) to define distinct customer profiles, supported by **PCA** (Principal Component Analysis).
+* **Solution:** Utilized a data science pipeline involving extensive data cleaning, **feature engineering**, and **K-Means clustering** (K=3) to define distinct customer profiles, supported by **PCA** (Principal and Component Analysis).
 
 * **Key Technologies:** `Python`, **Scikit-learn** (**K-Means**, **PCA**, StandardScaler), **Pandas**, \*\*Seaborn\`.
 
@@ -314,5 +325,4 @@ A hilarious and thrilling mystery game, a blend of adventure and digital sleuthi
 
 **Name:** Gregory Charles
 **Email:** gregory.charles01@gmail.com
-
 **LinkedIn:** <https://www.linkedin.com/in/gregory-charles-7a460550/>
