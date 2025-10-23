@@ -10,19 +10,19 @@ Use this table to quickly navigate to the project most relevant to your interest
 
 | Category | Project Name | Core Technology | Key Achievement | 
  | ----- | ----- | ----- | ----- | 
-| **Predictive Modeling** | **Falcon 9 Landing Success Prediction** | **Predictive ML, Web Scraping, MLOps Principles** | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. | 
-| **Predictive Modeling** | **ExtraaLearn Lead Conversion Prediction** | **XGBoost, Lead Scoring, Feature Engineering** | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. | 
-| **Predictive Modeling** | **NYC Housing Price Prediction** | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. | 
-| **Predictive Modeling** | **Salifort Motors Turnover Prediction** | **HR/Business ML, A/B Testing, XGBoost** | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. | 
-| **Predictive Modeling** | **Bicycle Rental Demand Prediction** | **Time Series ML, Forecasting, Feature Engineering** | Improved prediction accuracy by incorporating temporal features (e.g., last week's average). | 
-| **Specialized AI/RecSys** | **Amazon Product Recommendation Engine** | **Recommendation Systems (SVD), Collaborative Filtering** | Achieved **RMSE of 0.8808** via optimized SVD on 7.8M ratings data. | 
-| **Specialized AI/RecSys** | **VisionScribe** | **Deep Learning / Computer Vision (BLIP), Gradio** | Integrated web application for image captioning, batch processing, and web scraping. | 
-| **Specialized AI/RecSys** | **AI-Based Emotion Detection App** | **NLP (Watson), Full-Stack AI, Flask** | Full-stack AI application deployment with modular packaging and unit testing. | 
-| **Business Analytics** | **Customer Personality Segmentation** | **Unsupervised ML (K-Means), PCA, Segmentation** | Identified 3 distinct customer segments for personalized marketing strategies. | 
-| **Business Analytics** | **Bellabeat Smart Device Usage Analysis** | **R, Business Analytics, Data Storytelling** | Delivered data-driven marketing recommendations based on fitness data trends. | 
-| **EDA & Visualization** | **Olympic Dataset Analysis** | **Advanced EDA, Sports Analytics, Visualization** | Uncovered historical trends and identified **Optimal Athlete Profiles** for success. | 
-| **EDA & Visualization** | **Heart Disease Risk Visualization** | **Tableau, Data Storytelling, Public Health** | Data story with Interactive Risk Calculator for public health communication. | 
-| **Full-Stack Development** | **Quacktastic Conundrum (Flask Game)** | **Full-Stack Development, Flask/SQLite, Security** | Full-stack web game development with robust security and database integration. | 
+| **Predictive Modeling** | [**Falcon 9 Landing Success Prediction**](https://github.com/gcharles/falcon-9-prediction) | **Predictive ML, Web Scraping, MLOps Principles** | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. | 
+| **Predictive Modeling** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/gcharles/extraalearn-lead-conversion) | **XGBoost, Lead Scoring, Feature Engineering** | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. | 
+| **Predictive Modeling** | [**NYC Housing Price Prediction**](https://github.com/gcharles/nyc-housing-prediction) | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. | 
+| **Predictive Modeling** | [**Salifort Motors Turnover Prediction**](https://github.com/gcharles/salifort-turnover-prediction) | **HR/Business ML, A/B Testing, XGBoost** | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. | 
+| **Predictive Modeling** | [**Bicycle Rental Demand Prediction**](https://github.com/gcharles/bicycle-demand-prediction) | **Time Series ML, Forecasting, Feature Engineering** | Improved prediction accuracy by incorporating temporal features (e.g., last week's average). | 
+| **Specialized AI/RecSys** | [**Amazon Product Recommendation Engine**](https://github.com/gcharles/amazon-recommendation-engine) | **Recommendation Systems (SVD), Collaborative Filtering** | Achieved **RMSE of 0.8808** via optimized SVD on 7.8M ratings data. | 
+| **Specialized AI/RecSys** | [**VisionScribe**](https://github.com/gcharles/visionscribe-captioning-toolkit) | **Deep Learning / Computer Vision (BLIP), Gradio** | Integrated web application for image captioning, batch processing, and web scraping. | 
+| **Specialized AI/RecSys** | [**AI-Based Emotion Detection App**](https://github.com/gcharles/emotion-detection-app) | **NLP (Watson), Full-Stack AI, Flask** | Full-stack AI application deployment with modular packaging and unit testing. | 
+| **Business Analytics** | [**Customer Personality Segmentation**](https://github.com/gcharles/customer-personality-segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | Identified 3 distinct customer segments for personalized marketing strategies. | 
+| **Business Analytics** | [**Bellabeat Smart Device Usage Analysis**](https://github.com/gcharles/bellabeat-analysis) | **R, Business Analytics, Data Storytelling** | Delivered data-driven marketing recommendations based on fitness data trends. | 
+| **EDA & Visualization** | [**Olympic Dataset Analysis**](https://github.com/gcharles/olympic-dataset-analysis) | **Advanced EDA, Sports Analytics, Visualization** | Uncovered historical trends and identified **Optimal Athlete Profiles** for success. | 
+| **EDA & Visualization** | [**Heart Disease Risk Visualization**](https://github.com/gcharles/heart-disease-visualization) | **Tableau, Data Storytelling, Public Health** | Data story with Interactive Risk Calculator for public health communication. | 
+| **Full-Stack Development** | [**Quacktastic Conundrum (Flask Game)**](https://github.com/gcharles/quacktastic-conundrum) | **Full-Stack Development, Flask/SQLite, Security** | Full-stack web game development with robust security and database integration. | 
 
 ## 💻 Technical Skills Overview
 
@@ -48,6 +48,7 @@ A project exploring **machine learning** techniques to forecast the successful l
 * **Solution:** Combined launch data from the **SpaceX API** and **Wikipedia (using BeautifulSoup)**. After performing **EDA** and **One-Hot Encoding**, trained and tuned four classification models (**KNN, SVM, Decision Tree, Logistic Regression**) using **Grid Search**, demonstrating **MLOps principles** in data acquisition.
 
 * **Key Technologies:** `Python`, **KNN**, **Grid Search**, **Web Scraping**, **Folium** (Interactive Maps), **Plotly** (Dashboards).
+* **Repository:** [View Project Code](https://github.com/gcharles/falcon-9-prediction)
 
 * **Achievement:** The **K-Nearest Neighbors (KNN)** model proved most effective, achieving an **83.3% accuracy** in predicting landing success.
 
@@ -60,6 +61,7 @@ An end-to-end **Machine Learning** solution designed to build a robust **Lead Sc
 * **Solution:** Built and tuned advanced Ensemble ML models (**XGBoost**, **AdaBoost**) to predict the probability of lead conversion. This involved extensive **feature engineering**, handling skewness (`np.log1p`), and specialized evaluation metrics (**ROC AUC**, F1-Score) to ensure high business value.
 
 * **Key Technologies:** `Python`, **XGBoost**, **AdaBoost**, `Scikit-learn`, `Pandas` (Feature Engineering, Log Transformation).
+* **Repository:** [View Project Code](https://github.com/gcharles/extraalearn-lead-conversion)
 
 * **Achievement:** Achieved a peak **ROC AUC of 0.931** (Tuned XGBoost), providing the business with **actionable insights** that led to a projected **5-10% increase** in the overall conversion rate.
 
@@ -72,6 +74,7 @@ A project to predict housing prices in New York City, demonstrating expertise in
 * **Solution:** Employed rigorous data preparation and trained multiple regression models. Non-linear **Ensemble ML** methods (**Random Forest** and **Gradient Boosting**) were essential for capturing price drivers, complemented by **Geo-Spatial Analysis**.
 
 * **Key Technologies:** `Python`, **Random Forest Regressor**, **Geopandas**, `Scikit-learn`.
+* **Repository:** [View Project Code](https://github.com/gcharles/nyc-housing-prediction)
 
 * **Achievement:** The Random Forest Regressor achieved the best performance with an RMSE of approximately **\$1.2 million**, confirming location (**Manhattan**) and property square footage are the most critical price drivers.
 
@@ -84,6 +87,7 @@ Analysis and **predictive modeling** for employee turnover at Salifort Motors to
 * **Solution:** Used the **PACE methodology** to perform EDA, build high-performing **Ensemble ML models** (**XGBoost**, **Random Forest**), and conduct **simulated A/B testing** on HR interventions.
 
 * **Key Technologies:** `Python`, **XGBoost**, **Random Forest**, **PACE Methodology**, **A/B Testing**.
+* **Repository:** [View Project Code](https://github.com/gcharles/salifort-turnover-prediction)
 
 * **Achievement:** Developed a highly performant **XGBoost model** for proactive risk identification and delivered actionable recommendations focusing on improving employee satisfaction and managing workload/compensation disparity.
 
@@ -95,7 +99,8 @@ A project focused on building a **predictive model** to forecast daily demand fo
 
 * **Solution:** Developed and evaluated multiple **Linear Regression models**, focusing heavily on **feature engineering** to capture temporal patterns. This demonstrates core **Time Series ML** principles.
 
-* **Key Technologies:** `Python`, **Scikit-learn** (Linear Regression), **Pandas**, **Matplotlib`.
+* **Key Technologies:** `Python`, **Scikit-learn** (Linear Regression), **Pandas**, \*\*Matplotlib\`.
+* **Repository:** [View Project Code](https://github.com/gcharles/bicycle-demand-prediction)
 
 * **Achievement:** Demonstrated the critical importance of feature engineering by incorporating the **'last week's average rental count'** feature, which significantly reduced the model's Root Mean Squared Error (RMSE).
 
@@ -112,6 +117,7 @@ Development and optimization of a scalable **Recommendation System** using a mas
 * **Solution:** Processed **7.8 million ratings** and implemented three models (Rank-Based, **Collaborative Filtering**, and **SVD** - Matrix Factorization), using **hyperparameter tuning** to maximize performance.
 
 * **Key Technologies:** `Python`, **SVD** (Matrix Factorization), **Collaborative Filtering**, `Surprise`.
+* **Repository:** [View Project Code](https://github.com/gcharles/amazon-recommendation-engine)
 
 * **Achievement:** The **Optimized SVD model** achieved superior accuracy with the lowest **RMSE of 0.8808**, making it the recommended choice for production deployment.
 
@@ -124,6 +130,7 @@ A Python toolkit designed for generating descriptive captions for images using s
 * **Solution:** Built a suite of scripts, including a **Gradio web application**, that utilizes the **BLIP/BLIP-2 Computer Vision models** to upload single images, batch process directories, or scrape images for instant captioning.
 
 * **Key Technologies:** `Python`, `Hugging Face Transformers` (**Deep Learning / Computer Vision**), **Gradio**, `BeautifulSoup` (for web scraping).
+* **Repository:** [View Project Code](https://github.com/gcharles/visionscribe-captioning-toolkit)
 
 * **Achievement:** Created a **unified, deployable interface** demonstrating competence in bridging **ML models** with user-friendly web interfaces.
 
@@ -136,6 +143,7 @@ A full-stack web application demonstrating the entire development pipeline for a
 * **Solution:** Developed a web server using **Flask** to handle user text input and integrate with the **Watson NLP** (Natural Language Processing) service to detect emotions (joy, sadness, anger, fear, disgust).
 
 * **Key Technologies:** `Python`, **Flask**, **Watson NLP**, `unittest` (for testing core logic), Modular Architecture.
+* **Repository:** [View Project Code](https://github.com/gcharles/emotion-detection-app)
 
 * **Achievement:** Successfully completed the entire **development and deployment pipeline**, including modular code packaging and comprehensive unit testing, proving capability in **Full-Stack AI** development.
 
@@ -151,7 +159,8 @@ An **unsupervised machine learning** project to segment a retail company's custo
 
 * **Solution:** Utilized a data science pipeline involving extensive data cleaning, **feature engineering**, and **K-Means clustering** (K=3) to define distinct customer profiles, supported by **PCA** (Principal Component Analysis).
 
-* **Key Technologies:** `Python`, **Scikit-learn** (**K-Means**, **PCA**, StandardScaler), **Pandas**, **Seaborn`.
+* **Key Technologies:** `Python`, **Scikit-learn** (**K-Means**, **PCA**, StandardScaler), **Pandas**, \*\*Seaborn\`.
+* **Repository:** [View Project Code](https://github.com/gcharles/customer-personality-segmentation)
 
 * **Achievement:** Identified **three actionable segments** and provided tailored business recommendations for retention and sales optimization.
 
@@ -164,6 +173,7 @@ A data-driven case study using public fitness tracker data to inform the marketi
 * **Solution:** Performed comprehensive **Exploratory Data Analysis (EDA)** on Fitbit data (activity, sleep, calories) using the **R Tidyverse** ecosystem, focusing on fitness and sleep trends.
 
 * **Key Technologies:** **R**, **Tidyverse** (`dplyr`, `ggplot2`), `R Markdown`.
+* **Repository:** [View Project Code](https://github.com/gcharles/bellabeat-analysis)
 
 * **Achievement:** Delivered strategic marketing recommendations (e.g., targeting sedentary behavior, weekend promotions) based on quantifiable user trends, showcasing strong **business acumen and data communication** skills.
 
@@ -180,6 +190,7 @@ A comprehensive analysis of 120 years of Olympic Games data to extract meaningfu
 * **Solution:** Conducted extensive **Exploratory Data Analysis (EDA)** on athlete demographics and medal distribution. Used **Predictive Modeling** (Linear Regression, Random Forest) to test hypotheses on medal success factors.
 
 * **Key Technologies:** `Python`, `Pandas` (Cleaning/Imputation), `Matplotlib/Seaborn` (**Visualization**), `Scikit-learn` (Predictive Modeling).
+* **Repository:** [View Project Code](https://github.com/gcharles/olympic-dataset-analysis)
 
 * **Achievement:** Uncovered specific **"Optimal Athlete Profiles"** across various sports, providing data-driven insights to guide strategic sports decision-making.
 
@@ -192,6 +203,7 @@ An accessible and informative **Tableau data story** designed for a general audi
 * **Solution:** Created a multi-frame narrative data story in **Tableau**, exploring key risk factors (age, BMI, cholesterol, etc.). Designed an **Interactive Risk Calculator** within the dashboard for personalized risk assessment.
 
 * **Key Technologies:** **Tableau Public**, **Data Storytelling**.
+* **Repository:** [View Project Code](https://github.com/gcharles/heart-disease-visualization)
 
 * **Achievement:** Developed an effective **data communication** artifact, demonstrating expertise in visualization for public health and business insight delivery.
 
@@ -208,6 +220,7 @@ A hilarious and thrilling mystery game, a blend of adventure and digital sleuthi
 * **Solution:** Developed a web game focused on mystery and adventure. Integrated user registration, secure sessions, and an **SQLite Database**. Used security libraries like **Bleach** for input sanitization, demonstrating competence in **web security**.
 
 * **Key Technologies:** **Full-Stack Development**, **Flask**, **SQLite**, **Werkzeug**, **Bleach**.
+* **Repository:** [View Project Code](https://github.com/gcharles/quacktastic-conundrum)
 
 * **Achievement:** Successfully deployed a **full-stack web application** demonstrating competence in web security, database integration, and complex application flow.
 
