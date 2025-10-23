@@ -2,7 +2,7 @@
 
 | Location | Status | Resume | 
  | :---: | :---: | :---: | 
-| 📍 Japan / Greater Toronto Area | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) | 
+| 📍 Japan | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) | 
 
 Welcome to my project portfolio repository!
 
