@@ -24,7 +24,8 @@ Follow these steps to get the project running locally.
 
 ### 1. Clone the Repository
 ```
-git clone [VisionScribe](https://github.com/GC2407CIZV/Projects/VisionScribe).git cd VisionScribe
+git clone https://github.com/GC2407CIZV/Projects/VisionScribe.git
+cd VisionScribe
 ```
 
 ### 2. Install Dependencies
