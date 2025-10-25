@@ -80,12 +80,15 @@ python3 career_coach_app.py
 ```
 After execution, Gradio will provide a local URL (e.g., `http://127.0.0.1:7860`) which you can open in your web browser.
 
+---
+
 ## 🔑 LLM Access Notes
 This project leverages the **IBM watsonx.ai** platform.
 
 - The code is configured to use a placeholder project_id="skills-network" which grants access within the specified learning environment.
 
 - To run this code outside of the dedicated learning environment, you would need to replace the placeholder credentials with your own API Key and Project ID from a registered IBM Cloud account.
+
 ---
 
 ## 💡 Prompt Engineering Highlight
@@ -98,3 +101,18 @@ A core success factor of this project is the use of specialized **Prompt Enginee
 - **Career Advisor Prompt Focus:** Gap analysis and strategic advice generation.
 
 - **Interview Prep Prompt Focus:** Conversational simulation, scoring based on criteria, and structured coaching advice.
+---
+
+## 🚀 Future Enhancements
+The following features are planned for future versions of the AI Career Coach:
+
+- **Customizable LLM Selection:** Allow users to choose different LLMs (e.g., Llama 3, other Granite models) to compare output quality and speed.
+
+- **Job Posting Scraper:** Integrate a web scraper (e.g., using BeautifulSoup or Selenium) to automatically fetch job descriptions from popular sites, eliminating manual copy-pasting.
+
+- **Persistent Profile Storage:** Implement a lightweight database (like SQLite) to securely store user Master Profile data, allowing the application to "remember" the user across sessions.
+
+- **Document Output Formats:** Expand document generation to include more formats (e.g., LaTeX for cover letters, advanced PDF formatting).
+
+- **Interactive Skill Tree Visualization:** Use a library like Plotly or D3.js to visually map the user's current skills against target JD requirements, making gap analysis more intuitive.
+
