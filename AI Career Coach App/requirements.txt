@@ -1,0 +1,6 @@
+gradio
+ibm-watsonx-ai
+pypdf
+pandas
+fpdf2
+python-docx
