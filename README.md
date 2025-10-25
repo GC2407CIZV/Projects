@@ -1,20 +1,22 @@
 # 💼 Gregory Charles - Data Science, Machine Learning, & Software Portfolio
 
 | Location | Status | Resume | 
- | ----- | ----- | ----- | 
-| 📍 Japan  | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) | 
+| ----- | ----- | ----- | 
+| 📍 Japan | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) | 
 
 Welcome to my project portfolio repository!
 
-This collection showcases my proficiency in full-stack AI development, deep learning, statistical analysis, and predictive modeling, utilizing Python, R, and foundational web frameworks like Flask. The projects emphasize turning complex data challenges into actionable business insights and deployable applications.
+This collection showcases my proficiency in full-stack AI development, deep learning, statistical analysis, and predictive modeling, utilizing Python, R, and foundational web frameworks like Flask and Gradio. The projects emphasize turning complex data challenges into actionable business insights and deployable applications.
+
+---
 
 ## ✨ Core Skills at a Glance
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-1E90FF?style=for-the-badge&logo=xgboost&logoColor=white)
-![SVD / RecSys](https://img.shields.io/badge/SVD%20/%20RecSys-FF4500?style=for-the-badge&logo=apachespark&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![NLP](https://img.shields.io/badge/NLP-7F00FF?style=for-the-badge&logo=ibm&logoColor=white)
+![LLM/watsonx.ai](https://img.shields.io/badge/LLM/watsonx.ai-0000FF?style=for-the-badge&logo=ibm&logoColor=white)
+![Flask/Gradio](https://img.shields.io/badge/Flask/Gradio-000000?style=for-for-the-badge&logo=flask&logoColor=white)
+![RecSys/SVD](https://img.shields.io/badge/RecSys/SVD-FF4500?style=for-the-badge&logo=apachespark&logoColor=white)
 ![MLOps](https://img.shields.io/badge/MLOps-4B0082?style=for-the-badge&logo=kubernetes&logoColor=white)
 
 ---
@@ -25,137 +27,60 @@ This index is designed to help you quickly identify projects relevant to specifi
 **DS Tier 1** projects are my most complex, high-value, and production-ready examples of Machine Learning and AI.
 
 | DS Tier | Sector | Project Name | Core Technology | **App/Demo Link** | Key Achievement | 
- | ----- | ----- | ----- | ----- | ----- | ----- | 
-| **Tier 1** | **Retail/eCommerce** | [**Amazon Product Recommendation Engine**](https://github.com/GC2407CIZV/Projects/tree/main/Amazon%20Product%20Recommendation%20Engine) | **Recommendation Systems (SVD), Collaborative Filtering** | [Jupyter Notebook](#) | Achieved **RMSE of 0.8808** via optimized SVD on 7.8M ratings data. | 
-| **Tier 1** | **NLP/Web Dev** | [**AI-Based Emotion Detection App**](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application) | **NLP (Watson), Full-Stack AI, Flask** | [Flask Web App](#) | Full-stack AI application deployment with modular packaging and unit testing. | 
-| **Tier 1** | **Sales/Marketing** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML) | **XGBoost, Lead Scoring, Feature Engineering** | [Flask Web App](#) | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. | 
-| **Tier 1** | **Space/MLOps** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | **Predictive ML, Web Scraping, MLOps Principles** | [Plotly Dashboard](#) | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. | 
-| **Tier 2** | **HR/Workforce** | [**Salifort Motors Turnover Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis) | **HR/Business ML, A/B Testing, XGBoost** | [Jupyter Notebook](#) | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. | 
-| **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Tableau Dashboard](#) | Identified 3 distinct customer segments for personalized marketing strategies. | 
-| **Tier 2** | **Real Estate/Geo** | [**NYC Housing Price Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges) | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | [Interactive Map](#) | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. | 
-| **Tier 2** | **Computer Vision** | [**VisionScribe**](https://github.com/GC2407CIZV/Projects/tree/main/VisionScribe) | **Deep Learning / Computer Vision (BLIP), Gradio** | [Gradio App](#) | Integrated web application for image captioning, batch processing, and web scraping. | 
-| **Tier 3** | **Public Health** | [**Heart Disease Risk Visualization**](https://github.com/GC2407CIZV/Projects/tree/main/The%20Heart's%20Story%3A%20What%20Influences%20Failure%20and%20Disease%3F) | **Tableau, Data Storytelling, Public Health** | [Tableau Public Link](#) | Data story with Interactive Risk Calculator for public health communication. | 
-| **Tier 3** | **Transportation** | [**Bicycle Rental Demand Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Bicycle%20Rental%20Demand%20Prediction%20Project) | **Time Series ML, Forecasting, Feature Engineering** | [Jupyter Notebook](#) | Improved prediction accuracy by incorporating temporal features (e.g., last week's average). | 
-| **Tier 3** | **Fitness/Wellness** | [**Bellabeat Smart Device Usage Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Bellabeat%20Smart%20Strategy%3A%20Leveraging%20Smart%20Device%20Data%20for%20Growth) | **R, Business Analytics, Data Storytelling** | [R Markdown Report](#) | Delivered data-driven marketing recommendations based on fitness data trends. | 
-| **Tier 3** | **Sports Analytics** | [**Olympic Dataset Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Olympic%20Dataset%20Analysis%20for%20SportsStats) | **Advanced EDA, Sports Analytics, Visualization** | [Jupyter Notebook](#) | Uncovered historical trends and identified **Optimal Athlete Profiles** for success. | 
+| ----- | ----- | ----- | ----- | ----- | ----- | 
+| **Tier 1** | **Career Tech/LLM** | [**AI Career Coach Pro**](https://github.com/GC2407CIZV/AI_Career_Coach_Pro) | **LLMs (watsonx.ai), Gradio, Prompt Engineering** | [Gradio App](#) | End-to-end AI application for resume, cover letter, and interview coaching. |
+| **Tier 1** | **Retail/eCommerce** | [**Amazon Product Recommendation Engine**](https://github.com/GC2407CIZV/Projects/tree/main/Amazon%20Product%20Recommendation%20Engine) | **Recommendation Systems (SVD), Collaborative Filtering** | [Jupyter Notebook](#) | Achieved **RMSE of 0.8808** via optimized SVD on 7.8M ratings data. |
+| **Tier 1** | **NLP/Web Dev** | [**AI-Based Emotion Detection App**](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application) | **NLP (Watson), Full-Stack AI, Flask** | [Flask Web App](#) | Full-stack AI application deployment with modular packaging and unit testing. |
+| **Tier 1** | **Sales/Marketing** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML) | **XGBoost, Lead Scoring, Feature Engineering** | [Flask Web App](#) | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. |
+| **Tier 1** | **Space/MLOps** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | **Predictive ML, Web Scraping, MLOps Principles** | [Plotly Dashboard](#) | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. |
+| **Tier 2** | **HR/Workforce** | [**Salifort Motors Turnover Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis) | **HR/Business ML, A/B Testing, XGBoost** | [Jupyter Notebook](#) | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. |
+| **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Tableau Dashboard](#) | Identified 3 distinct customer segments for personalized marketing strategies. |
+| **Tier 2** | **Real Estate/Geo** | [**NYC Housing Price Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges) | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | [Interactive Map](#) | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. |
+| **Tier 2** | **Computer Vision** | [**VisionScribe**](https://github.com/GC2407CIZV/Projects/tree/main/VisionScribe) | **Deep Learning / Computer Vision (BLIP), Gradio** | [Gradio App](#) | Integrated web application for image captioning, batch processing, and web scraping. |
+| **Tier 3** | **Public Health** | [**Heart Disease Risk Visualization**](https://github.com/GC2407CIZV/Projects/tree/main/The%20Heart's%20Story%3A%20What%20Influences%20Failure%20and%20Disease%3F) | **Tableau, Data Storytelling, Public Health** | [Tableau Public Link](#) | Data story with Interactive Risk Calculator for public health communication. |
+| **Tier 3** | **Transportation** | [**Bicycle Rental Demand Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Bicycle%20Rental%20Demand%20Prediction%20Project) | **Time Series ML, Forecasting, Feature Engineering** | [Jupyter Notebook](#) | Improved prediction accuracy by incorporating temporal features (e.g., last week's average). |
+| **Tier 3** | **Fitness/Wellness** | [**Bellabeat Smart Device Usage Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Bellabeat%20Smart%20Strategy%3A%20Leveraging%20Smart%20Device%20Data%20for%20Growth) | **R, Business Analytics, Data Storytelling** | [R Markdown Report](#) | Delivered data-driven marketing recommendations based on fitness data trends. |
+| **Tier 3** | **Sports Analytics** | [**Olympic Dataset Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Olympic%20Dataset%20Analysis%20for%20SportsStats) | **Advanced EDA, Sports Analytics, Visualization** | [Jupyter Notebook](#) | Uncovered historical trends and identified **Optimal Athlete Profiles** for success. |
 | **N/A** | **Full-Stack** | [**Quacktastic Conundrum (Flask Game)**](https://github.com/GC2407CIZV/Projects/tree/main/Quactastic%20Conundrum) | **Full-Stack Development, Flask/SQLite, Security** | [YouTube Demo](https://www.youtube.com/watch?v=dQw4w9WgXcQ) | Full-stack web game development with robust security and database integration. | 
+
+---
 
 ## 💻 Technical Skills Overview
 
 | Area | Technologies & Tools | 
- | ----- | ----- | 
+| ----- | ----- | 
 | **Programming Languages** | Python (Pandas, NumPy, Scikit-learn, Transformers), R (Tidyverse, ggplot2) | 
-| **Machine Learning** | **XGBoost, Deep Learning (BLIP), NLP (Watson)**, SVD, KNN, Ensemble Methods, K-Means | 
-| **Web & Deployment** | Flask, Gradio, Requests, BeautifulSoup, Unit Testing, Geopandas, Folium, Plotly | 
+| **Machine Learning** | **LLMs (watsonx.ai), XGBoost, Deep Learning (BLIP), NLP (Watson)**, SVD, KNN, Ensemble Methods, K-Means | 
+| **Web & Deployment** | Flask, **Gradio**, Requests, BeautifulSoup, Unit Testing, Geopandas, Folium, Plotly | 
 | **Version Control** | Git | 
+
+---
 
 ## 💡 Project Details
 
-### Predictive Modeling & Time Series
-
-### 1. Falcon 9 First-Stage Landing Success Prediction (Predictive ML)
-
-*(DS Tier: Tier 1 | Sector: Space/MLOps)*
-
-* **Core Metrics:** Accuracy, F1-Score, ROC AUC
-
-A project exploring **machine learning** techniques to forecast the successful landing of the reusable Falcon 9 rocket's first stage, a process critical to SpaceX's cost-efficiency.
-
-* **Problem:** Accurately predicting the outcome of Falcon 9 landings is essential for optimizing launches and improving the rocket's reusability.
-
-* **Solution:** Combined launch data from the **SpaceX API** and **Wikipedia (using BeautifulSoup)**. After performing **EDA** and **One-Hot Encoding**, trained and tuned four classification models (**KNN, SVM, Decision Tree, Logistic Regression**) using **Grid Search**, demonstrating **MLOps principles** in data acquisition.
-
-* **Key Technologies:** `Python`, **KNN**, **Grid Search**, **Web Scraping**, **Folium** (Interactive Maps), **Plotly** (Dashboards).
-
-* **App/Demo Link:** [Plotly Dashboard](#)
-
-* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science)
-
-* **Achievement:** The **K-Nearest Neighbors (KNN)** model proved most effective, achieving an **83.3% accuracy** in predicting landing success.
-
-### 2. ExtraaLearn Lead Conversion Prediction ML (Predictive Modeling)
-
-*(DS Tier: Tier 1 | Sector: Sales/Marketing)*
-
-* **Core Metrics:** ROC AUC, F1-Score, Conversion Rate
-
-An end-to-end **Machine Learning** solution designed to build a robust **Lead Scoring System** for the EdTech institution, ExtraaLearn.
-
-* **Problem:** ExtraaLearn needed to prioritize leads effectively due to limited resources in a growing EdTech market, shifting from a high-volume to a **targeted, data-driven approach**.
-
-* **Solution:** Built and tuned advanced Ensemble ML models (**XGBoost**, **AdaBoost**) to predict the probability of lead conversion. This involved extensive **feature engineering**, handling skewness (`np.log1p`), and specialized evaluation metrics (**ROC AUC**, F1-Score) to ensure high business value.
-
-* **Key Technologies:** `Python`, **XGBoost**, **AdaBoost**, `Scikit-learn`, `Pandas` (Feature Engineering, Log Transformation).
-
-* **App/Demo Link:** [Flask Web App](#)
-
-* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML)
-
-* **Achievement:** Achieved a peak **ROC AUC of 0.931** (Tuned XGBoost), providing the business with **actionable insights** that led to a projected **5-10% increase** in the overall conversion rate.
-
-### 3. NYC Housing Price Prediction Project (Real Estate ML)
-
-*(DS Tier: Tier 2 | Sector: Real Estate/Geo)*
-
-* **Core Metrics:** RMSE, R-squared
-
-A project to predict housing prices in New York City, demonstrating expertise in regression modeling and handling complex urban data.
-
-* **Problem:** Accurately predict NYC housing prices, which involves complex, non-linear relationships and significant geographical variability across boroughs.
-
-* **Solution:** Employed rigorous data preparation and trained multiple regression models. Non-linear **Ensemble ML** methods (**Random Forest** and **Gradient Boosting**) were essential for capturing price drivers, complemented by **Geo-Spatial Analysis**.
-
-* **Key Technologies:** `Python`, **Random Forest Regressor**, **Geopandas**, `Scikit-learn`.
-
-* **App/Demo Link:** [Interactive Map](#)
-
-* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges)
-
-* **Achievement:** The Random Forest Regressor achieved the best performance with an RMSE of approximately **\$1.2 million**, confirming location (**Manhattan**) and property square footage are the most critical price drivers.
-
-### 4. Salifort Motors Employee Turnover Prediction Project (HR Analytics)
-
-*(DS Tier: Tier 2 | Sector: HR/Workforce)*
-
-* **Core Metrics:** F1-Score, Precision/Recall
-
-Analysis and **predictive modeling** for employee turnover at Salifort Motors to improve retention strategies.
-
-* **Problem:** The HR department was concerned about high employee turnover and needed to understand the key factors contributing to employees leaving the company.
-
-* **Solution:** Used the **PACE methodology** to perform EDA, build high-performing **Ensemble ML models** (**XGBoost**, **Random Forest**), and conduct **simulated A/B testing** on HR interventions.
-
-* **Key Technologies:** `Python`, **XGBoost**, **Random Forest**, **PACE Methodology**, **A/B Testing**.
-
-* **App/Demo Link:** [Jupyter Notebook](#)
-
-* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis)
-
-* **Achievement:** Developed a highly performant **XGBoost model** for proactive risk identification and delivered actionable recommendations focusing on improving employee satisfaction and managing workload/compensation disparity.
-
-### 5. Bicycle Rental Demand Prediction Project (Time Series/ML)
-
-*(DS Tier: Tier 3 | Sector: Transportation)*
-
-* **Core Metrics:** RMSE, MAE
-
-A project focused on building a **predictive model** to forecast daily demand for bicycle rentals based on time and weather factors.
-
-* **Problem:** Forecasting rental demand accurately to optimize inventory and staffing, leveraging historical data and environmental features.
-
-* **Solution:** Developed and evaluated multiple **Linear Regression models**, focusing heavily on **feature engineering** to capture temporal patterns. This demonstrates core **Time Series ML** principles.
-
-* **Key Technologies:** `Python`, **Scikit-learn** (Linear Regression), **Pandas**, \*\*Matplotlib\`.
-
-* **App/Demo Link:** [Jupyter Notebook](#)
-
-* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Bicycle%20Rental%20Demand%20Prediction%20Project)
-
-* **Achievement:** Demonstrated the critical importance of feature engineering by incorporating the **'last week's average rental count'** feature, which significantly reduced the model's Root Mean Squared Error (RMSE).
-
 ### Specialized AI & Recommendation Systems
 
-### 6. Amazon Product Recommendation Engine: SVD & Collaborative Filtering (Recommendation Systems)
+### 1. AI Career Coach Pro (LLM Application)
+
+*(DS Tier: Tier 1 | Sector: Career Tech/LLM)*
+
+* **Core Metrics:** Prompt Engineering Efficacy, UX Score
+
+An end-to-end, multi-tool application built with **Gradio** and **IBM watsonx.ai** to provide personalized career coaching, including resume analysis, cover letter generation, and mock interview practice.
+
+* **Problem:** Streamlining the complex job application process by creating a single, intelligent tool capable of generating customized documents and delivering targeted feedback based on LLM analysis.
+
+* **Solution:** Developed a modular application with four specialized tabs (Resume Polisher, Cover Letter Generator, Career Advisor, Interview Prep). Success hinges on **Prompt Engineering** to instruct the LLM for specific analytical and generative tasks.
+
+* **Key Technologies:** `Python`, **Gradio**, **LLMs (ibm/granite-3-8b-instruct)**, **Prompt Engineering**, `pypdf`, `python-docx`.
+
+* **App/Demo Link:** [Gradio App](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/AI_Career_Coach_Pro)
+
+* **Achievement:** Created a **full-stack AI application** that demonstrates advanced LLM integration and the ability to design complex, multi-stage data processing workflows for high-value business output.
+
+### 2. Amazon Product Recommendation Engine: SVD & Collaborative Filtering (Recommendation Systems)
 
 *(DS Tier: Tier 1 | Sector: Retail/eCommerce)*
 
@@ -175,7 +100,7 @@ Development and optimization of a scalable **Recommendation System** using a mas
 
 * **Achievement:** The **Optimized SVD model** achieved superior accuracy with the lowest **RMSE of 0.8808**, making it the recommended choice for production deployment.
 
-### 7. VisionScribe (Computer Vision & Automation)
+### 3. VisionScribe (Computer Vision & Automation)
 
 *(DS Tier: Tier 2 | Sector: Computer Vision)*
 
@@ -195,25 +120,111 @@ A Python toolkit designed for generating descriptive captions for images using s
 
 * **Achievement:** Created a **unified, deployable interface** demonstrating competence in bridging **ML models** with user-friendly web interfaces.
 
-### 8. Capstone Project: AI-Based Emotion Detection Web Application (Applied AI/Web)
+---
 
-*(DS Tier: Tier 1 | Sector: NLP/Web Dev)*
+### Predictive Modeling & Time Series
 
-* **Core Metrics:** (N/A - Application)
+### 4. Falcon 9 First-Stage Landing Success Prediction (Predictive ML)
 
-A full-stack web application demonstrating the entire development pipeline for a deployed **AI service**.
+*(DS Tier: Tier 1 | Sector: Space/MLOps)*
 
-* **Problem:** Creating a deployable, end-to-end AI application that demonstrates proficiency in Flask, unit testing, and external API integration.
+* **Core Metrics:** Accuracy, F1-Score, ROC AUC
 
-* **Solution:** Developed a web server using **Flask** to handle user text input and integrate with the **Watson NLP** (Natural Language Processing) service to detect emotions (joy, sadness, anger, fear, disgust).
+A project exploring **machine learning** techniques to forecast the successful landing of the reusable Falcon 9 rocket's first stage, a process critical to SpaceX's cost-efficiency.
 
-* **Key Technologies:** `Python`, **Flask**, **Watson NLP**, `unittest` (for testing core logic), Modular Architecture.
+* **Problem:** Accurately predicting the outcome of Falcon 9 landings is essential for optimizing launches and improving the rocket's reusability.
+
+* **Solution:** Combined launch data from the **SpaceX API** and **Wikipedia (using BeautifulSoup)**. After performing **EDA** and **One-Hot Encoding**, trained and tuned four classification models (**KNN, SVM, Decision Tree, Logistic Regression**) using **Grid Search**, demonstrating **MLOps principles** in data acquisition.
+
+* **Key Technologies:** `Python`, **KNN**, **Grid Search**, **Web Scraping**, **Folium** (Interactive Maps), **Plotly** (Dashboards).
+
+* **App/Demo Link:** [Plotly Dashboard](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science)
+
+* **Achievement:** The **K-Nearest Neighbors (KNN)** model proved most effective, achieving an **83.3% accuracy** in predicting landing success.
+
+### 5. ExtraaLearn Lead Conversion Prediction ML (Predictive Modeling)
+
+*(DS Tier: Tier 1 | Sector: Sales/Marketing)*
+
+* **Core Metrics:** ROC AUC, F1-Score, Conversion Rate
+
+An end-to-end **Machine Learning** solution designed to build a robust **Lead Scoring System** for the EdTech institution, ExtraaLearn.
+
+* **Problem:** ExtraaLearn needed to prioritize leads effectively due to limited resources in a growing EdTech market, shifting from a high-volume to a **targeted, data-driven approach**.
+
+* **Solution:** Built and tuned advanced Ensemble ML models (**XGBoost**, **AdaBoost**) to predict the probability of lead conversion. This involved extensive **feature engineering**, handling skewness (`np.log1p`), and specialized evaluation metrics (**ROC AUC**, F1-Score) to ensure high business value.
+
+* **Key Technologies:** `Python`, **XGBoost**, **AdaBoost**, `Scikit-learn`, `Pandas` (Feature Engineering, Log Transformation).
 
 * **App/Demo Link:** [Flask Web App](#)
 
-* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application)
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML)
 
-* **Achievement:** Successfully completed the entire **development and deployment pipeline**, including modular code packaging and comprehensive unit testing, proving capability in **Full-Stack AI** development.
+* **Achievement:** Achieved a peak **ROC AUC of 0.931** (Tuned XGBoost), providing the business with **actionable insights** that led to a projected **5-10% increase** in the overall conversion rate.
+
+### 6. NYC Housing Price Prediction Project (Real Estate ML)
+
+*(DS Tier: Tier 2 | Sector: Real Estate/Geo)*
+
+* **Core Metrics:** RMSE, R-squared
+
+A project to predict housing prices in New York City, demonstrating expertise in regression modeling and handling complex urban data.
+
+* **Problem:** Accurately predict NYC housing prices, which involves complex, non-linear relationships and significant geographical variability across boroughs.
+
+* **Solution:** Employed rigorous data preparation and trained multiple regression models. Non-linear **Ensemble ML** methods (**Random Forest** and **Gradient Boosting**) were essential for capturing price drivers, complemented by **Geo-Spatial Analysis**.
+
+* **Key Technologies:** `Python`, **Random Forest Regressor**, **Geopandas**, `Scikit-learn`.
+
+* **App/Demo Link:** [Interactive Map](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges)
+
+* **Achievement:** The Random Forest Regressor achieved the best performance with an RMSE of approximately **\$1.2 million**, confirming location (**Manhattan**) and property square footage are the most critical price drivers.
+
+### 7. Salifort Motors Employee Turnover Prediction Project (HR Analytics)
+
+*(DS Tier: Tier 2 | Sector: HR/Workforce)*
+
+* **Core Metrics:** F1-Score, Precision/Recall
+
+Analysis and **predictive modeling** for employee turnover at Salifort Motors to improve retention strategies.
+
+* **Problem:** The HR department was concerned about high employee turnover and needed to understand the key factors contributing to employees leaving the company.
+
+* **Solution:** Used the **PACE methodology** to perform EDA, build high-performing **Ensemble ML models** (**XGBoost**, **Random Forest**), and conduct **simulated A/B testing** on HR interventions.
+
+* **Key Technologies:** `Python`, **XGBoost**, **Random Forest**, **PACE Methodology**, **A/B Testing**.
+
+* **App/Demo Link:** [Jupyter Notebook](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis)
+
+* **Achievement:** Developed a highly performant **XGBoost model** for proactive risk identification and delivered actionable recommendations focusing on improving employee satisfaction and managing workload/compensation disparity.
+
+### 8. Bicycle Rental Demand Prediction Project (Time Series/ML)
+
+*(DS Tier: Tier 3 | Sector: Transportation)*
+
+* **Core Metrics:** RMSE, MAE
+
+A project focused on building a **predictive model** to forecast daily demand for bicycle rentals based on time and weather factors.
+
+* **Problem:** Forecasting rental demand accurately to optimize inventory and staffing, leveraging historical data and environmental features.
+
+* **Solution:** Developed and evaluated multiple **Linear Regression models**, focusing heavily on **feature engineering** to capture temporal patterns. This demonstrates core **Time Series ML** principles.
+
+* **Key Technologies:** `Python`, **Scikit-learn** (Linear Regression), **Pandas`, \*\*Matplotlib\`.
+
+* **App/Demo Link:** [Jupyter Notebook](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Bicycle%20Rental%20Demand%20Prediction%20Project)
+
+* **Achievement:** Demonstrated the critical importance of feature engineering by incorporating the **'last week's average rental count'** feature, which significantly reduced the model's Root Mean Squared Error (RMSE).
+
+---
 
 ### Business & Customer Analytics
 
@@ -257,6 +268,8 @@ A data-driven case study using public fitness tracker data to inform the marketi
 
 * **Achievement:** Delivered strategic marketing recommendations (e.g., targeting sedentary behavior, weekend promotions) based on quantifiable user trends, showcasing strong **business acumen and data communication** skills.
 
+---
+
 ### Exploratory Data Analysis & Visualization
 
 ### 11. Olympic Dataset Analysis for SportsStats (Data Analysis & Predictive Modeling)
@@ -299,9 +312,31 @@ An accessible and informative **Tableau data story** designed for a general audi
 
 * **Achievement:** Developed an effective **data communication** artifact, demonstrating expertise in visualization for public health and business insight delivery.
 
+---
+
 ### Full-Stack Application Development
 
-### 13. Quacktastic Conundrum (Flask Web Game) (Applied AI/Web)
+### 13. Capstone Project: AI-Based Emotion Detection Web Application (Applied AI/Web)
+
+*(DS Tier: Tier 1 | Sector: NLP/Web Dev)*
+
+* **Core Metrics:** (N/A - Application)
+
+A full-stack web application demonstrating the entire development pipeline for a deployed **AI service**.
+
+* **Problem:** Creating a deployable, end-to-end AI application that demonstrates proficiency in Flask, unit testing, and external API integration.
+
+* **Solution:** Developed a web server using **Flask** to handle user text input and integrate with the **Watson NLP** (Natural Language Processing) service to detect emotions (joy, sadness, anger, fear, disgust).
+
+* **Key Technologies:** `Python`, **Flask**, **Watson NLP**, `unittest` (for testing core logic), Modular Architecture.
+
+* **App/Demo Link:** [Flask Web App](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application)
+
+* **Achievement:** Successfully completed the entire **development and deployment pipeline**, including modular code packaging and comprehensive unit testing, proving capability in **Full-Stack AI** development.
+
+### 14. Quacktastic Conundrum (Flask Web Game) (Applied AI/Web)
 
 *(DS Tier: N/A | Sector: Full-Stack)*
 
@@ -320,6 +355,8 @@ A hilarious and thrilling mystery game, a blend of adventure and digital sleuthi
 * **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Quactastic%20Conundrum)
 
 * **Achievement:** Successfully deployed a **full-stack web application** demonstrating competence in web security, database integration, and complex application flow.
+
+---
 
 ## 📧 Contact
 
