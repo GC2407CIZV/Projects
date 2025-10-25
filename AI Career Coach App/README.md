@@ -81,7 +81,7 @@ python3 career_coach_app.py
 After execution, Gradio will provide a local URL (e.g., `http://127.0.0.1:7860`) which you can open in your web browser.
 
 ## 🔑 LLM Access Notes
-This project leverages the IBM watsonx.ai platform.
+This project leverages the **IBM watsonx.ai** platform.
 
 - The code is configured to use a placeholder project_id="skills-network" which grants access within the specified learning environment.
 
