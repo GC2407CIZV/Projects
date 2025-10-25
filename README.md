@@ -76,7 +76,7 @@ An end-to-end, multi-tool application built with **Gradio** and **IBM watsonx.ai
 
 * **App/Demo Link:** [Gradio App](#)
 
-* **Repository:** [View Repository](https://github.com/GC2407CIZV/AI_Career_Coach_Pro)
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/AI%20Career%20Coach%20App)
 
 * **Achievement:** Created a **full-stack AI application** that demonstrates advanced LLM integration and the ability to design complex, multi-stage data processing workflows for high-value business output.
 
