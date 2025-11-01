@@ -30,26 +30,50 @@ The bot operates through a six-step RAG pipeline to generate answers:
 
 ***
 
-## 🛠️ Project Setup
+## 🛠️ Environment Setup and Installation
 
 ### 1. Prerequisites
 
-You must have an IBM watsonx.ai account and obtain the necessary credentials (API Key and Project ID) to run this application.
+You must have an **IBM watsonx.ai account** and obtain the necessary credentials (API Key and Project ID) to configure the connection strings in your Python file.
 
-### 2. Install Dependencies
+### 2. Environment Setup
 
-Clone this repository and install all required libraries:
+It is highly recommended to use a virtual environment to manage dependencies:
 
 ```bash
-pip install -r requirements.txt
-# Ensure you have the core libraries:
-# pip install ibm-watsonx-ai langchain langchain-ibm langchain-community pypdf chromadb gradio
+# 1. Install virtualenv (if you don't have it)
+pip install virtualenv
+
+# 2. Create a virtual environment named 'my_env'
+virtualenv my_env
+
+# 3. Activate the environment
+source my_env/bin/activate
 ```
-### 3. Run the Application
-Save the code as qabot.py. You will need to replace the project_id in the code with your actual IBM Project ID, or configure it via environment variables.
+
+### 3. Install Dependencies
+
+Install the exact version-locked packages used for this project:
+
+```Bash
+# Using python3.11 or your preferred interpreter:
+python3.11 -m pip install \
+gradio==4.44.0 \
+ibm-watsonx-ai==1.1.2 \
+langchain==0.2.11 \
+langchain-community==0.2.10 \
+langchain-ibm==0.1.11 \
+chromadb==0.4.24 \
+pypdf==4.3.1 \
+pydantic==2.9.1
+```
+
+### 4. Run the Application
+
+Save the main code as `qabot.py`. Run the file to launch the Gradio interface:
 
 Run the file to launch the Gradio interface:
 ```Bash
 python qabot.py
 ```
-The application will launch locally (e.g., at `http://0.0.0.0:7863`), allowing you to upload a PDF and start asking questions.
+The application will launch and be accessible in your browser (e.g., at `http://0.0.0.0:7863`).
