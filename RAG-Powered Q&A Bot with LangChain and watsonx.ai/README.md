@@ -4,6 +4,9 @@ This project implements a complete **Retrieval-Augmented Generation (RAG)** pipe
 
 The application allows users to upload a PDF file and ask specific questions, with the LLM leveraging the content of the document for accurate, context-aware answers.
 
+**Final Application Interface:**
+![QA Bot Screenshot](QA_bot.png)
+
 ***
 
 ## ⚙️ Key Technologies
