@@ -1,8 +1,8 @@
 # 💼 Gregory Charles - Data Science, Machine Learning, & Software Portfolio
 
-| Location | Status | Resume | 
-| ----- | ----- | ----- | 
-| 📍 Japan | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) | 
+| Location | Status | Resume |
+| ----- | ----- | ----- |
+| 📍 Japan | 🟢 Available for Full-Time Roles | [Download CV (PDF)](./Gregory_Charles_CV.pdf) |
 
 Welcome to my project portfolio repository!
 
@@ -26,8 +26,9 @@ This collection showcases my proficiency in full-stack AI development, deep lear
 This index is designed to help you quickly identify projects relevant to specific industries.
 **DS Tier 1** projects are my most complex, high-value, and production-ready examples of Machine Learning and AI.
 
-| DS Tier | Sector | Project Name | Core Technology | **App/Demo Link** | Key Achievement | 
-| ----- | ----- | ----- | ----- | ----- | ----- | 
+| DS Tier | Sector | Project Name | Core Technology | **App/Demo Link** | Key Achievement |
+| ----- | ----- | ----- | ----- | ----- | ----- |
+| **Tier 1** | **GenAI/RAG** | [**RAG-Powered Q&A Bot**](https://github.com/GC2407CIZV/Projects/tree/main/RAG-Powered%20Q%26A%20Bot%20with%20LangChain%20and%20watsonx.ai) | **LangChain, watsonx.ai, Chroma, Gradio** | [Gradio App](#) | End-to-end RAG pipeline for document Q&A; uses watsonx.ai LLM/Embeddings. |
 | **Tier 1** | **Career Tech/LLM** | [**AI Career Coach Pro**](https://github.com/GC2407CIZV/Projects/tree/main/AI%20Career%20Coach%20App) | **LLMs (watsonx.ai), Gradio, Prompt Engineering** | [Gradio App](#) | End-to-end AI application for resume, cover letter, and interview coaching. |
 | **Tier 1** | **Retail/eCommerce** | [**Amazon Product Recommendation Engine**](https://github.com/GC2407CIZV/Projects/tree/main/Amazon%20Product%20Recommendation%20Engine) | **Recommendation Systems (SVD), Collaborative Filtering** | [Jupyter Notebook](#) | Achieved **RMSE of 0.8808** via optimized SVD on 7.8M ratings data. |
 | **Tier 1** | **NLP/Web Dev** | [**AI-Based Emotion Detection App**](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application) | **NLP (Watson), Full-Stack AI, Flask** | [Flask Web App](#) | Full-stack AI application deployment with modular packaging and unit testing. |
@@ -41,18 +42,18 @@ This index is designed to help you quickly identify projects relevant to specifi
 | **Tier 3** | **Transportation** | [**Bicycle Rental Demand Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Bicycle%20Rental%20Demand%20Prediction%20Project) | **Time Series ML, Forecasting, Feature Engineering** | [Jupyter Notebook](#) | Improved prediction accuracy by incorporating temporal features (e.g., last week's average). |
 | **Tier 3** | **Fitness/Wellness** | [**Bellabeat Smart Device Usage Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Bellabeat%20Smart%20Strategy%3A%20Leveraging%20Smart%20Device%20Data%20for%20Growth) | **R, Business Analytics, Data Storytelling** | [R Markdown Report](#) | Delivered data-driven marketing recommendations based on fitness data trends. |
 | **Tier 3** | **Sports Analytics** | [**Olympic Dataset Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Olympic%20Dataset%20Analysis%20for%20SportsStats) | **Advanced EDA, Sports Analytics, Visualization** | [Jupyter Notebook](#) | Uncovered historical trends and identified **Optimal Athlete Profiles** for success. |
-| **N/A** | **Full-Stack** | [**Quacktastic Conundrum (Flask Game)**](https://github.com/GC2407CIZV/Projects/tree/main/Quactastic%20Conundrum) | **Full-Stack Development, Flask/SQLite, Security** | [YouTube Demo](https://www.youtube.com/watch?v=dQw4w9WgXcQ) | Full-stack web game development with robust security and database integration. | 
+| **N/A** | **Full-Stack** | [**Quacktastic Conundrum (Flask Game)**](https://github.com/GC2407CIZV/Projects/tree/main/Quactastic%20Conundrum) | **Full-Stack Development, Flask/SQLite, Security** | [YouTube Demo](https://www.youtube.com/watch?v=dQw4w9WgXcQ) | Full-stack web game development with robust security and database integration. |
 
 ---
 
 ## 💻 Technical Skills Overview
 
-| Area | Technologies & Tools | 
-| ----- | ----- | 
-| **Programming Languages** | Python (Pandas, NumPy, Scikit-learn, Transformers), R (Tidyverse, ggplot2) | 
-| **Machine Learning** | **LLMs (watsonx.ai), XGBoost, Deep Learning (BLIP), NLP (Watson)**, SVD, KNN, Ensemble Methods, K-Means | 
-| **Web & Deployment** | Flask, **Gradio**, Requests, BeautifulSoup, Unit Testing, Geopandas, Folium, Plotly | 
-| **Version Control** | Git | 
+| Area | Technologies & Tools |
+| ----- | ----- |
+| **Programming Languages** | Python (Pandas, NumPy, Scikit-learn, Transformers), R (Tidyverse, ggplot2) |
+| **Machine Learning** | **LLMs (watsonx.ai), XGBoost, Deep Learning (BLIP), NLP (Watson)**, SVD, KNN, Ensemble Methods, K-Means |
+| **Web & Deployment** | Flask, **Gradio**, Requests, BeautifulSoup, Unit Testing, Geopandas, Folium, Plotly |
+| **Version Control** | Git |
 
 ---
 
@@ -60,7 +61,27 @@ This index is designed to help you quickly identify projects relevant to specifi
 
 ### Specialized AI & Recommendation Systems
 
-### 1. AI Career Coach Pro (LLM Application)
+### 1. RAG-Powered Q&A Bot with LangChain and watsonx.ai (Generative AI)
+
+*(DS Tier: Tier 1 | Sector: GenAI/RAG)*
+
+* **Core Metrics:** RAG Efficacy, Contextual Accuracy
+
+A complete, end-to-end **Retrieval-Augmented Generation (RAG)** pipeline built with **LangChain** and deployed via **Gradio**. This application allows users to upload custom PDF documents and ask questions, with the LLM generating answers strictly grounded in the document content.
+
+* **Problem:** Develop a full-stack, deployable solution that demonstrates proficiency in the entire RAG pipeline, from document ingestion to final answer generation, using commercial-grade cloud LLM services.
+
+* **Solution:** The pipeline uses `PyPDFLoader`, `RecursiveCharacterTextSplitter`, and **`WatsonxEmbeddings`** (Slate model) to build a vector store (`ChromaDB`). The **`RetrievalQA`** chain then uses the retrieved context and a powerful LLM (Mistral Medium) to answer user queries, ensuring answers are accurate and verifiable.
+
+* **Key Technologies:** `Python`, **LangChain**, **IBM watsonx.ai** (LLMs/Embeddings), **ChromaDB**, **Gradio**.
+
+* **App/Demo Link:** [Gradio App](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/RAG-Powered%20Q%26A%20Bot%20with%20LangChain%20and%20watsonx.ai)
+
+* **Achievement:** Created a **production-ready RAG architecture** showcasing mastery of document-based question-answering, LLM grounding, and deployment into a user-facing application.
+
+### 2. AI Career Coach Pro (LLM Application)
 
 *(DS Tier: Tier 1 | Sector: Career Tech/LLM)*
 
@@ -80,7 +101,7 @@ An end-to-end, multi-tool application built with **Gradio** and **IBM watsonx.ai
 
 * **Achievement:** Created a **full-stack AI application** that demonstrates advanced LLM integration and the ability to design complex, multi-stage data processing workflows for high-value business output.
 
-### 2. Amazon Product Recommendation Engine: SVD & Collaborative Filtering (Recommendation Systems)
+### 3. Amazon Product Recommendation Engine: SVD & Collaborative Filtering (Recommendation Systems)
 
 *(DS Tier: Tier 1 | Sector: Retail/eCommerce)*
 
@@ -100,7 +121,7 @@ Development and optimization of a scalable **Recommendation System** using a mas
 
 * **Achievement:** The **Optimized SVD model** achieved superior accuracy with the lowest **RMSE of 0.8808**, making it the recommended choice for production deployment.
 
-### 3. VisionScribe (Computer Vision & Automation)
+### 4. VisionScribe (Computer Vision & Automation)
 
 *(DS Tier: Tier 2 | Sector: Computer Vision)*
 
@@ -124,7 +145,7 @@ A Python toolkit designed for generating descriptive captions for images using s
 
 ### Predictive Modeling & Time Series
 
-### 4. Falcon 9 First-Stage Landing Success Prediction (Predictive ML)
+### 5. Falcon 9 First-Stage Landing Success Prediction (Predictive ML)
 
 *(DS Tier: Tier 1 | Sector: Space/MLOps)*
 
@@ -144,7 +165,7 @@ A project exploring **machine learning** techniques to forecast the successful l
 
 * **Achievement:** The **K-Nearest Neighbors (KNN)** model proved most effective, achieving an **83.3% accuracy** in predicting landing success.
 
-### 5. ExtraaLearn Lead Conversion Prediction ML (Predictive Modeling)
+### 6. ExtraaLearn Lead Conversion Prediction ML (Predictive Modeling)
 
 *(DS Tier: Tier 1 | Sector: Sales/Marketing)*
 
@@ -164,7 +185,7 @@ An end-to-end **Machine Learning** solution designed to build a robust **Lead Sc
 
 * **Achievement:** Achieved a peak **ROC AUC of 0.931** (Tuned XGBoost), providing the business with **actionable insights** that led to a projected **5-10% increase** in the overall conversion rate.
 
-### 6. NYC Housing Price Prediction Project (Real Estate ML)
+### 7. NYC Housing Price Prediction Project (Real Estate ML)
 
 *(DS Tier: Tier 2 | Sector: Real Estate/Geo)*
 
@@ -184,7 +205,7 @@ A project to predict housing prices in New York City, demonstrating expertise in
 
 * **Achievement:** The Random Forest Regressor achieved the best performance with an RMSE of approximately **\$1.2 million**, confirming location (**Manhattan**) and property square footage are the most critical price drivers.
 
-### 7. Salifort Motors Employee Turnover Prediction Project (HR Analytics)
+### 8. Salifort Motors Employee Turnover Prediction Project (HR Analytics)
 
 *(DS Tier: Tier 2 | Sector: HR/Workforce)*
 
@@ -204,7 +225,7 @@ Analysis and **predictive modeling** for employee turnover at Salifort Motors to
 
 * **Achievement:** Developed a highly performant **XGBoost model** for proactive risk identification and delivered actionable recommendations focusing on improving employee satisfaction and managing workload/compensation disparity.
 
-### 8. Bicycle Rental Demand Prediction Project (Time Series/ML)
+### 9. Bicycle Rental Demand Prediction Project (Time Series/ML)
 
 *(DS Tier: Tier 3 | Sector: Transportation)*
 
@@ -228,7 +249,7 @@ A project focused on building a **predictive model** to forecast daily demand fo
 
 ### Business & Customer Analytics
 
-### 9. Customer Personality Segmentation (Customer Analytics)
+### 10. Customer Personality Segmentation (Customer Analytics)
 
 *(DS Tier: Tier 2 | Sector: Marketing)*
 
@@ -248,7 +269,7 @@ An **unsupervised machine learning** project to segment a retail company's custo
 
 * **Achievement:** Identified **three actionable segments** and provided tailored business recommendations for retention and sales optimization.
 
-### 10. Bellabeat Smart Device Usage Analysis (Business Analytics)
+### 11. Bellabeat Smart Device Usage Analysis (Business Analytics)
 
 *(DS Tier: Tier 3 | Sector: Fitness/Wellness)*
 
@@ -272,7 +293,7 @@ A data-driven case study using public fitness tracker data to inform the marketi
 
 ### Exploratory Data Analysis & Visualization
 
-### 11. Olympic Dataset Analysis for SportsStats (Data Analysis & Predictive Modeling)
+### 12. Olympic Dataset Analysis for SportsStats (Data Analysis & Predictive Modeling)
 
 *(DS Tier: Tier 3 | Sector: Sports Analytics)*
 
@@ -292,7 +313,7 @@ A comprehensive analysis of 120 years of Olympic Games data to extract meaningfu
 
 * **Achievement:** Uncovered specific **"Optimal Athlete Profiles"** across various sports, providing data-driven insights to guide strategic sports decision-making.
 
-### 12. Visualizing Heart Disease and Heart Failure Risk Factors (Tableau Data Story) (Data Analysis)
+### 13. Visualizing Heart Disease and Heart Failure Risk Factors (Tableau Data Story) (Data Analysis)
 
 *(DS Tier: Tier 3 | Sector: Public Health)*
 
@@ -316,7 +337,7 @@ An accessible and informative **Tableau data story** designed for a general audi
 
 ### Full-Stack Application Development
 
-### 13. Capstone Project: AI-Based Emotion Detection Web Application (Applied AI/Web)
+### 14. Capstone Project: AI-Based Emotion Detection Web Application (Applied AI/Web)
 
 *(DS Tier: Tier 1 | Sector: NLP/Web Dev)*
 
@@ -336,7 +357,7 @@ A full-stack web application demonstrating the entire development pipeline for a
 
 * **Achievement:** Successfully completed the entire **development and deployment pipeline**, including modular code packaging and comprehensive unit testing, proving capability in **Full-Stack AI** development.
 
-### 14. Quacktastic Conundrum (Flask Web Game) (Applied AI/Web)
+### 15. Quacktastic Conundrum (Flask Web Game) (Applied AI/Web)
 
 *(DS Tier: N/A | Sector: Full-Stack)*
 
