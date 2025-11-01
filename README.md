@@ -32,8 +32,8 @@ This index is designed to help you quickly identify projects relevant to specifi
 | **Tier 1** | **Career Tech/LLM** | [**AI Career Coach Pro**](https://github.com/GC2407CIZV/Projects/tree/main/AI%20Career%20Coach%20App) | **LLMs (watsonx.ai), Gradio, Prompt Engineering** | [Gradio App](#) | End-to-end AI application for resume, cover letter, and interview coaching. |
 | **Tier 1** | **Retail/eCommerce** | [**Amazon Product Recommendation Engine**](https://github.com/GC2407CIZV/Projects/tree/main/Amazon%20Product%20Recommendation%20Engine) | **Recommendation Systems (SVD), Collaborative Filtering** | [Jupyter Notebook](#) | Achieved **RMSE of 0.8808** via optimized SVD on 7.8M ratings data. |
 | **Tier 1** | **NLP/Web Dev** | [**AI-Based Emotion Detection App**](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application) | **NLP (Watson), Full-Stack AI, Flask** | [Flask Web App](#) | Full-stack AI application deployment with modular packaging and unit testing. |
-| **Tier 1** | **Sales/Marketing** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML) | **XGBoost, Lead Scoring, Feature Engineering** | [Flask Web App](#) | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. |
-| **Tier 1** | **Space/MLOps** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | **Predictive ML, Web Scraping, MLOps Principles** | [Plotly Dashboard](#) | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. |
+| **Tier 1** | **Sales/Marketing** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML) | **XGBoost, Lead Scoring, Feature Engineering** | [Jupyter Notebook](#) | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. |
+| **Tier 1** | **Space/MLOps** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | **Predictive ML, Web Scraping, MLOps Principles** | [Dash Web App](#) | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. |
 | **Tier 2** | **HR/Workforce** | [**Salifort Motors Turnover Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis) | **HR/Business ML, A/B Testing, XGBoost** | [Jupyter Notebook](#) | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. |
 | **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Tableau Dashboard](#) | Identified 3 distinct customer segments for personalized marketing strategies. |
 | **Tier 2** | **Real Estate/Geo** | [**NYC Housing Price Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges) | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | [Interactive Map](#) | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. |
@@ -159,7 +159,7 @@ A project exploring **machine learning** techniques to forecast the successful l
 
 * **Key Technologies:** `Python`, **KNN**, **Grid Search**, **Web Scraping**, **Folium** (Interactive Maps), **Plotly** (Dashboards).
 
-* **App/Demo Link:** [Plotly Dashboard](#)
+* **App/Demo Link:** [Dash Web App](#)
 
 * **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science)
 
