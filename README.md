@@ -36,10 +36,10 @@ This index is designed to help you quickly identify projects relevant to specifi
 | **Tier 1** | **Space/MLOps** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | **Predictive ML, Web Scraping, MLOps Principles** | [Dash Web App](#) | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. |
 | **Tier 1** | **Transportation** | [**Shinkansen Passenger Experience Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Shinkansen%20Bullet%20Train%20Passenger%20Experience%20Analysis) | **CatBoost, Optuna, Feature Engineering** | [Jupyter Notebook](#) | **Tier 1 Model**: Achieved **0.9597 Accuracy / 0.9943 ROC AUC** via advanced feature engineering & Optuna tuning. |
 | **Tier 2** | **HR/Workforce** | [**Salifort Motors Turnover Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis) | **HR/Business ML, A/B Testing, XGBoost** | [Jupyter Notebook](#) | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. |
-| **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Tableau Dashboard](https://public.tableau.com/app/profile/greg.charles/viz/ExploringFactorsInfluencingHeartFailureandHeartDisease/Story1) | Identified 3 distinct customer segments for personalized marketing strategies. |
+| **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Jupyter Notebook](#) | Identified 3 distinct customer segments for personalized marketing strategies. |
 | **Tier 2** | **Real Estate/Geo** | [**NYC Housing Price Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges) | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | [Interactive Map](#) | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. |
 | **Tier 2** | **Computer Vision** | [**VisionScribe**](https://github.com/GC2407CIZV/Projects/tree/main/VisionScribe) | **Deep Learning / Computer Vision (BLIP), Gradio** | [Gradio App](#) | Integrated web application for image captioning, batch processing, and web scraping. |
-| **Tier 3** | **Public Health** | [**Heart Disease Risk Visualization**](https://github.com/GC2407CIZV/Projects/tree/main/The%20Heart's%20Story%3A%20What%20Influences%20Failure%20and%20Disease%3F) | **Tableau, Data Storytelling, Public Health** | [Tableau Public Link](#) | Data story with Interactive Risk Calculator for public health communication. |
+| **Tier 3** | **Public Health** | [**Heart Disease Risk Visualization**](https://github.com/GC2407CIZV/Projects/tree/main/The%20Heart's%20Story%3A%20What%20Influences%20Failure%20and%20Disease%3F) | **Tableau, Data Storytelling, Public Health** | [Tableau Public Link](https://public.tableau.com/app/profile/greg.charles/viz/ExploringFactorsInfluencingHeartFailureandHeartDisease/Story1) | Data story with Interactive Risk Calculator for public health communication. |
 | **Tier 3** | **Transportation** | [**Bicycle Rental Demand Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Bicycle%20Rental%20Demand%20Prediction%20Project) | **Time Series ML, Forecasting, Feature Engineering** | [Jupyter Notebook](#) | Improved prediction accuracy by incorporating temporal features (e.g., last week's average). |
 | **Tier 3** | **Fitness/Wellness** | [**Bellabeat Smart Device Usage Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Bellabeat%20Smart%20Strategy%3A%20Leveraging%20Smart%20Device%20Data%20for%20Growth) | **R, Business Analytics, Data Storytelling** | [R Markdown Report](#) | Delivered data-driven marketing recommendations based on fitness data trends. |
 | **Tier 3** | **Sports Analytics** | [**Olympic Dataset Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Olympic%20Dataset%20Analysis%20for%20SportsStats) | **Advanced EDA, Sports Analytics, Visualization** | [Jupyter Notebook](#) | Uncovered historical trends and identified **Optimal Athlete Profiles** for success. |
@@ -166,6 +166,45 @@ An **enhanced machine learning analysis** predicting and interpreting Shinkansen
 
 * **Achievement:** The **CatBoost (Tuned)** model achieved **0.9597 Accuracy** and a **0.9943 ROC AUC** on the test set, with Feature Importance identifying **Seat Comfort** and **Onboard Entertainment** as the primary satisfaction drivers.
 
+## Detailed Analysis and Methodology
+
+This project presents an **enhanced machine learning analysis** aimed at predicting and understanding passenger satisfaction with the Shinkansen Bullet Train. Building upon an initial hackathon submission (which achieved 7th place out of 36 participants), this version focuses on robust data preprocessing, extensive feature engineering, and rigorous hyperparameter tuning to develop a highly accurate and interpretable predictive model.
+
+**Goal**: To identify key factors influencing passenger satisfaction and build a robust predictive model, providing actionable insights to improve the Shinkansen travel experience.
+
+### Key Features & Methodology
+
+This project demonstrates proficiency in several advanced data science techniques:
+
+* **Comprehensive Data Preprocessing**: Ensured consistent application of preprocessing steps (feature engineering, outlier capping) across both training and test datasets.
+* **Intelligent Missing Value Handling**: Leveraged the native ability of advanced boosting models (XGBoost, CatBoost) to handle `NaN` values, avoiding premature imputation that could bias results.
+* **Outlier Management**: Employed a robust capping strategy at the 95th percentile for critical numerical features (`Departure_Delay_in_Mins`, `Arrival_Delay_in_Mins`, `Travel_Distance`).
+* **Extensive Feature Engineering**: Created impactful new features such as `Total_Delay`, `Age_Group`, `Travel_Distance_Group`, `Departure_Delay_Group`, and `Arrival_Delay_Group`. Advanced interaction terms (e.g., `Customer_Type_x_Type_Travel`) and polynomial features (`Age_Squared`) were also engineered.
+* **Advanced Encoding**: Applied One-Hot Encoding to categorical features, meticulously managing the resulting high-dimensional space.
+* **Scalable Model Training**: Implemented and evaluated a suite of classification algorithms, focusing on high-performance tree-based and boosting methods (Decision Tree, Random Forest, XGBoost, LightGBM, CatBoost).
+* **Rigorous Hyperparameter Tuning**: Conducted extensive hyperparameter optimization on top-performing models using a variety of sophisticated methods: **GridSearchCV**, **RandomizedSearchCV**, **Hyperopt** (Bayesian Optimization), and **Optuna** (Automated Hyperparameter Optimization Framework).
+* **Performance Evaluation**: Utilized a comprehensive set of metrics including Accuracy, F1-score, Recall, Precision, and ROC AUC, with a strong focus on test set performance to ensure generalization.
+* **Interpretability**: Performed Feature Importance analysis on the best model to extract actionable insights into passenger satisfaction drivers.
+
+### Model Performance
+
+The **CatBoost (Tuned - Manual Sequential)** model emerged as the best performer:
+
+| Model | Accuracy (Test) | F1-score (Test) | Recall (Test) | Precision (Test) | ROC AUC (Test) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **CatBoost (Tuned - Manual Sequential)** | **0.9597** | **0.9634** | **0.9593** | **0.9676** | **0.9943** |
+
+### Feature Importance
+
+The feature importance analysis revealed that the most influential factors were:
+1. **Seat Comfort**: Various ratings (Excellent, Extremely Poor, Good, Poor, Needs Improvement, Acceptable).
+2. **Onboard Entertainment**: Ratings like 'Excellent', 'Good'.
+3. **Type of Travel**: 'Personal Travel' and 'Business Travel'.
+4. **Age**
+5. **Customer Type**: 'Disloyal Customer' and 'Loyal Customer'.
+
+These findings underscore the critical role of in-flight comfort and entertainment, along with customer demographics and travel purpose, in shaping the overall passenger experience.
+
 ### 6. Falcon 9 First-Stage Landing Success Prediction (Predictive ML)
 
 *(DS Tier: Tier 1 | Sector: Space/MLOps)*
@@ -284,7 +323,7 @@ An **unsupervised machine learning** project to segment a retail company's custo
 
 * **Key Technologies:** `Python`, **Scikit-learn** (**K-Means**, **PCA**, StandardScaler), **Pandas**, \*\*Seaborn\`.
 
-* **App/Demo Link:** [Tableau Dashboard](#)
+* **App/Demo Link:** [Jupyter Notebook](#)
 
 * **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation)
 
