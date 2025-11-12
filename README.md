@@ -36,7 +36,7 @@ This index is designed to help you quickly identify projects relevant to specifi
 | **Tier 1** | **Space/MLOps** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | **Predictive ML, Web Scraping, MLOps Principles** | [Dash Web App](#) | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. |
 | **Tier 1** | **Transportation** | [**Shinkansen Passenger Experience Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Shinkansen%20Bullet%20Train%20Passenger%20Experience%20Analysis) | **CatBoost, Optuna, Feature Engineering** | [Jupyter Notebook](#) | **Tier 1 Model**: Achieved **0.9597 Accuracy / 0.9943 ROC AUC** via advanced feature engineering & Optuna tuning. |
 | **Tier 2** | **HR/Workforce** | [**Salifort Motors Turnover Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis) | **HR/Business ML, A/B Testing, XGBoost** | [Jupyter Notebook](#) | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. |
-| **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Tableau Dashboard](#) | Identified 3 distinct customer segments for personalized marketing strategies. |
+| **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Tableau Dashboard](https://public.tableau.com/app/profile/greg.charles/viz/ExploringFactorsInfluencingHeartFailureandHeartDisease/Story1) | Identified 3 distinct customer segments for personalized marketing strategies. |
 | **Tier 2** | **Real Estate/Geo** | [**NYC Housing Price Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges) | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | [Interactive Map](#) | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. |
 | **Tier 2** | **Computer Vision** | [**VisionScribe**](https://github.com/GC2407CIZV/Projects/tree/main/VisionScribe) | **Deep Learning / Computer Vision (BLIP), Gradio** | [Gradio App](#) | Integrated web application for image captioning, batch processing, and web scraping. |
 | **Tier 3** | **Public Health** | [**Heart Disease Risk Visualization**](https://github.com/GC2407CIZV/Projects/tree/main/The%20Heart's%20Story%3A%20What%20Influences%20Failure%20and%20Disease%3F) | **Tableau, Data Storytelling, Public Health** | [Tableau Public Link](#) | Data story with Interactive Risk Calculator for public health communication. |
@@ -348,7 +348,7 @@ An accessible and informative **Tableau data story** designed for a general audi
 
 * **Key Technologies:** **Tableau Public**, **Data Storytelling**.
 
-* **App/Demo Link:** [Tableau Public Link](#)
+* **App/Demo Link:** [Tableau Public Link](https://public.tableau.com/app/profile/greg.charles/viz/ExploringFactorsInfluencingHeartFailureandHeartDisease/Story1)
 
 * **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/The%20Heart's%20Story%3A%20What%20Influences%20Failure%20and%20Disease%3F)
 
