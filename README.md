@@ -14,6 +14,8 @@ This collection showcases my proficiency in full-stack AI development, deep lear
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-1E90FF?style=for-the-badge&logo=xgboost&logoColor=white)
+![CatBoost](https://img.shields.io/badge/CatBoost-6A5ACD?style=for-the-badge&logo=catboost&logoColor=white)
+![Optuna/Hyperopt](https://img.shields.io/badge/Optuna/Hyperopt-FFA07A?style=for-the-badge&logo=dataiku&logoColor=white)
 ![LLM/watsonx.ai](https://img.shields.io/badge/LLM/watsonx.ai-0000FF?style=for-the-badge&logo=ibm&logoColor=white)
 ![Flask/Gradio](https://img.shields.io/badge/Flask/Gradio-000000?style=for-for-the-badge&logo=flask&logoColor=white)
 ![RecSys/SVD](https://img.shields.io/badge/RecSys/SVD-FF4500?style=for-the-badge&logo=apachespark&logoColor=white)
