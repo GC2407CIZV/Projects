@@ -34,6 +34,7 @@ This index is designed to help you quickly identify projects relevant to specifi
 | **Tier 1** | **NLP/Web Dev** | [**AI-Based Emotion Detection App**](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application) | **NLP (Watson), Full-Stack AI, Flask** | [Flask Web App](#) | Full-stack AI application deployment with modular packaging and unit testing. |
 | **Tier 1** | **Sales/Marketing** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML) | **XGBoost, Lead Scoring, Feature Engineering** | [Jupyter Notebook](#) | Built a Lead Scoring System, achieving **ROC AUC 0.931** to optimize sales. |
 | **Tier 1** | **Space/MLOps** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | **Predictive ML, Web Scraping, MLOps Principles** | [Dash Web App](#) | Achieved **83.3% accuracy** with KNN model for predicting rocket landing outcomes. |
+| **Tier 1** | **Transportation** | [**Shinkansen Passenger Experience Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Shinkansen%20Bullet%20Train%20Passenger%20Experience%20Analysis) | **CatBoost, Optuna, Feature Engineering** | [Jupyter Notebook](#) | **Tier 1 Model**: Achieved **0.9597 Accuracy / 0.9943 ROC AUC** via advanced feature engineering & Optuna tuning. |
 | **Tier 2** | **HR/Workforce** | [**Salifort Motors Turnover Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis) | **HR/Business ML, A/B Testing, XGBoost** | [Jupyter Notebook](#) | Identified key turnover factors (satisfaction, workload) and proposed HR interventions. |
 | **Tier 2** | **Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | **Unsupervised ML (K-Means), PCA, Segmentation** | [Tableau Dashboard](#) | Identified 3 distinct customer segments for personalized marketing strategies. |
 | **Tier 2** | **Real Estate/Geo** | [**NYC Housing Price Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Predicting%20New%20York%20City%20Housing%20Prices%3A%20Addressing%20Real-World%20Challenges) | **Ensemble ML (RF/GB), Geo-Spatial Analysis** | [Interactive Map](#) | Non-linear models outperformed linear ones, capturing complex **NYC price drivers**. |
@@ -51,7 +52,7 @@ This index is designed to help you quickly identify projects relevant to specifi
 | Area | Technologies & Tools |
 | ----- | ----- |
 | **Programming Languages** | Python (Pandas, NumPy, Scikit-learn, Transformers), R (Tidyverse, ggplot2) |
-| **Machine Learning** | **LLMs (watsonx.ai), XGBoost, Deep Learning (BLIP), NLP (Watson)**, SVD, KNN, Ensemble Methods, K-Means |
+| **Machine Learning** | **CatBoost, Optuna, Hyperopt, LLMs (watsonx.ai), XGBoost, Deep Learning (BLIP), NLP (Watson)**, SVD, KNN, Ensemble Methods, K-Means |
 | **Web & Deployment** | Flask, **Gradio**, Requests, BeautifulSoup, Unit Testing, Geopandas, Folium, Plotly |
 | **Version Control** | Git |
 
@@ -145,7 +146,27 @@ A Python toolkit designed for generating descriptive captions for images using s
 
 ### Predictive Modeling & Time Series
 
-### 5. Falcon 9 First-Stage Landing Success Prediction (Predictive ML)
+### 5. Shinkansen Bullet Train Passenger Experience Analysis (Predictive ML)
+
+*(DS Tier: Tier 1 | Sector: Transportation)*
+
+* **Core Metrics:** Accuracy, ROC AUC, F1-score (Test Set)
+
+An **enhanced machine learning analysis** predicting and interpreting Shinkansen passenger satisfaction, with a strong focus on advanced feature engineering and rigorous hyperparameter tuning.
+
+* **Problem:** Build a highly accurate and interpretable model to predict passenger satisfaction and provide actionable insights for service improvement, resolving complex data challenges like missing values and outliers.
+
+* **Solution:** Performed extensive **Feature Engineering** (interaction terms, polynomial features, delay groups) and employed a robust outlier capping strategy. Utilized advanced boosting models (**CatBoost**, XGBoost, LightGBM) and conducted **rigorous hyperparameter tuning** using **Optuna** and **Hyperopt** for maximum performance.
+
+* **Key Technologies:** `Python`, **CatBoost**, **Optuna** (Bayesian Optimization), **Hyperopt**, Advanced Feature Engineering.
+
+* **App/Demo Link:** [Jupyter Notebook](#)
+
+* **Repository:** [View Repository](https://github.com/GC2407CIZV/Projects/tree/main/Shinkansen%20Bullet%20Train%20Passenger%20Experience%20Analysis)
+
+* **Achievement:** The **CatBoost (Tuned)** model achieved **0.9597 Accuracy** and a **0.9943 ROC AUC** on the test set, with Feature Importance identifying **Seat Comfort** and **Onboard Entertainment** as the primary satisfaction drivers.
+
+### 6. Falcon 9 First-Stage Landing Success Prediction (Predictive ML)
 
 *(DS Tier: Tier 1 | Sector: Space/MLOps)*
 
@@ -165,7 +186,7 @@ A project exploring **machine learning** techniques to forecast the successful l
 
 * **Achievement:** The **K-Nearest Neighbors (KNN)** model proved most effective, achieving an **83.3% accuracy** in predicting landing success.
 
-### 6. ExtraaLearn Lead Conversion Prediction ML (Predictive Modeling)
+### 7. ExtraaLearn Lead Conversion Prediction ML (Predictive Modeling)
 
 *(DS Tier: Tier 1 | Sector: Sales/Marketing)*
 
@@ -185,7 +206,7 @@ An end-to-end **Machine Learning** solution designed to build a robust **Lead Sc
 
 * **Achievement:** Achieved a peak **ROC AUC of 0.931** (Tuned XGBoost), providing the business with **actionable insights** that led to a projected **5-10% increase** in the overall conversion rate.
 
-### 7. NYC Housing Price Prediction Project (Real Estate ML)
+### 8. NYC Housing Price Prediction Project (Real Estate ML)
 
 *(DS Tier: Tier 2 | Sector: Real Estate/Geo)*
 
@@ -205,7 +226,7 @@ A project to predict housing prices in New York City, demonstrating expertise in
 
 * **Achievement:** The Random Forest Regressor achieved the best performance with an RMSE of approximately **\$1.2 million**, confirming location (**Manhattan**) and property square footage are the most critical price drivers.
 
-### 8. Salifort Motors Employee Turnover Prediction Project (HR Analytics)
+### 9. Salifort Motors Employee Turnover Prediction Project (HR Analytics)
 
 *(DS Tier: Tier 2 | Sector: HR/Workforce)*
 
@@ -225,7 +246,7 @@ Analysis and **predictive modeling** for employee turnover at Salifort Motors to
 
 * **Achievement:** Developed a highly performant **XGBoost model** for proactive risk identification and delivered actionable recommendations focusing on improving employee satisfaction and managing workload/compensation disparity.
 
-### 9. Bicycle Rental Demand Prediction Project (Time Series/ML)
+### 10. Bicycle Rental Demand Prediction Project (Time Series/ML)
 
 *(DS Tier: Tier 3 | Sector: Transportation)*
 
@@ -249,7 +270,7 @@ A project focused on building a **predictive model** to forecast daily demand fo
 
 ### Business & Customer Analytics
 
-### 10. Customer Personality Segmentation (Customer Analytics)
+### 11. Customer Personality Segmentation (Customer Analytics)
 
 *(DS Tier: Tier 2 | Sector: Marketing)*
 
@@ -269,7 +290,7 @@ An **unsupervised machine learning** project to segment a retail company's custo
 
 * **Achievement:** Identified **three actionable segments** and provided tailored business recommendations for retention and sales optimization.
 
-### 11. Bellabeat Smart Device Usage Analysis (Business Analytics)
+### 12. Bellabeat Smart Device Usage Analysis (Business Analytics)
 
 *(DS Tier: Tier 3 | Sector: Fitness/Wellness)*
 
@@ -293,7 +314,7 @@ A data-driven case study using public fitness tracker data to inform the marketi
 
 ### Exploratory Data Analysis & Visualization
 
-### 12. Olympic Dataset Analysis for SportsStats (Data Analysis & Predictive Modeling)
+### 13. Olympic Dataset Analysis for SportsStats (Data Analysis & Predictive Modeling)
 
 *(DS Tier: Tier 3 | Sector: Sports Analytics)*
 
@@ -313,7 +334,7 @@ A comprehensive analysis of 120 years of Olympic Games data to extract meaningfu
 
 * **Achievement:** Uncovered specific **"Optimal Athlete Profiles"** across various sports, providing data-driven insights to guide strategic sports decision-making.
 
-### 13. Visualizing Heart Disease and Heart Failure Risk Factors (Tableau Data Story) (Data Analysis)
+### 14. Visualizing Heart Disease and Heart Failure Risk Factors (Tableau Data Story) (Data Analysis)
 
 *(DS Tier: Tier 3 | Sector: Public Health)*
 
@@ -337,7 +358,7 @@ An accessible and informative **Tableau data story** designed for a general audi
 
 ### Full-Stack Application Development
 
-### 14. Capstone Project: AI-Based Emotion Detection Web Application (Applied AI/Web)
+### 15. Capstone Project: AI-Based Emotion Detection Web Application (Applied AI/Web)
 
 *(DS Tier: Tier 1 | Sector: NLP/Web Dev)*
 
@@ -357,7 +378,7 @@ A full-stack web application demonstrating the entire development pipeline for a
 
 * **Achievement:** Successfully completed the entire **development and deployment pipeline**, including modular code packaging and comprehensive unit testing, proving capability in **Full-Stack AI** development.
 
-### 15. Quacktastic Conundrum (Flask Web Game) (Applied AI/Web)
+### 16. Quacktastic Conundrum (Flask Web Game) (Applied AI/Web)
 
 *(DS Tier: N/A | Sector: Full-Stack)*
 
