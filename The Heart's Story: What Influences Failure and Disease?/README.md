@@ -2,7 +2,7 @@
 
 **Tableau · Data Visualization · Dashboard Design · Data Storytelling · Audience-Centered Analytics**
 
-> **Project Context:** UC Davis Extension — *Creating Dashboards and Storytelling with Tableau*
+> **Project Context:** UC Davis — *Data Visualization with Tableau Specialization* Capstone
 
 An interactive **Tableau data story exploring factors associated with heart disease and heart failure**, designed to translate a large, multidimensional cardiovascular dataset into visual information that a non-technical audience can explore and understand.
 
@@ -481,7 +481,7 @@ This reduces the cognitive burden of presenting many variables at once.
 
 ## 🧠 Data Storytelling Principles Applied
 
-The UC Davis coursework emphasized that a strong data story requires more than technically correct charts.
+Throughout the UC Davis **Data Visualization with Tableau Specialization**, the coursework emphasized that a strong data story requires more than technically correct charts.
 
 I applied several of those principles directly.
 
@@ -649,7 +649,7 @@ Finally, I learned that interactive visualization creates additional responsibil
 | Question | Quick Answer |
 | --- | --- |
 | **What was the project?** | An interactive Tableau data story exploring factors associated with heart disease and heart failure |
-| **Project context?** | UC Davis Extension — Creating Dashboards and Storytelling with Tableau |
+| **Project context?** | UC Davis — Data Visualization with Tableau Specialization capstone |
 | **Dataset size?** | Approximately 250,000 synthetic patient records with 26 variables |
 | **Main goal?** | Translate complex cardiovascular data into an accessible interactive story for a non-technical audience |
 | **Primary audience?** | A general-public persona with limited medical knowledge |
@@ -701,7 +701,9 @@ If the repository currently uses different filenames, the structure above can be
 
 ## 🎓 Project Context
 
-This project was completed as part of **UC Davis Extension's _Creating Dashboards and Storytelling with Tableau_ coursework**.
+This project was completed as the **capstone project for the UC Davis _Data Visualization with Tableau Specialization_**.
+
+The capstone brought together skills developed across the specialization, including data preparation, visual analysis, dashboard development, interactivity, audience-centered design, and data storytelling.
 
 The work demonstrates the integration of:
 
