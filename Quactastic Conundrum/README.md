@@ -1,316 +1,532 @@
+# Quacktastic Conundrum
 
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-2.x-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-# 🦆 Quacktastic Conundrum
+**Quacktastic Conundrum** is a full-stack, browser-based mystery game developed as my **Harvard CS50 final project**. Inspired by the investigative structure of CS50's *Fiftyville* and the fragmented-memory premise of *The Hangover*, the game challenges players to reconstruct a chaotic weekend and recover Harvard's missing rubber duck mascot by following clues across interconnected fictional websites and locations.
 
-![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)
-![Flask Version](https://img.shields.io/badge/flask-2.x-green.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+Rather than presenting the mystery as a linear sequence of pages, the application uses **persistent player state, prerequisite-based clue progression, gated locations, simulated social-media accounts, contextual hints, gameplay timing, and a completion-time leaderboard** to create a state-driven investigation experience.
 
-**Quacktastic Conundrum** is a hilarious and thrilling mystery game inspired by a combination of **CS50’s Fiftyville** and the classic movie **The Hangover**. After a wild night out, you and your college friends wake up with fragmented memories—and one very important item missing: Harvard’s precious rubber duck mascot. Your task is to piece together clues and retrace your steps through social media platforms, bars, and various locations to recover the missing duck.
-#### Video Demo:  <[URL HERE](https://www.youtube.com/watch?v=M8YOX5bFVbg)>
-
-🌟 **Quacktastic Conundrum** was designed for puzzle lovers who enjoy cracking mysteries with a mix of logic, creativity, and humor. Good luck finding that duck! 🦆
-
-## 📚 Table of Contents
-
-- [Game Overview](#-game-overview)
-- [Screenshots](#-screenshots)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [Installation and Setup](#-installation-and-setup)
-- [Usage Instructions](#-usage-instructions)
-- [Game Flow Example](#-game-flow-example)
-- [API and Routes](#-api-and-routes)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
-- [Improvements for Quacktastic Conundrum Project](#-improvements-for-quacktastic-conundrum-project)
-- [File Arrangement](#-file-arrangement)
-
-
-## 🦸‍♂️ Game Overview
-
-Quacktastic Conundrum challenges players to use their investigative skills by uncovering clues hidden in a variety of digital environments. Players must navigate fictional social media platforms, solve puzzles, and connect the dots to figure out what happened to the missing mascot.
-
-This game is a blend of adventure, mystery, and digital sleuthing, perfect for anyone who enjoys a challenge.
+**Video Demo:** [Watch Quacktastic Conundrum](https://www.youtube.com/watch?v=M8YOX5bFVbg)
 
 ---
 
-## 📸 Screenshots
+## Technical Highlights
 
-<!-- Add your screenshot links here -->
-
-| Dashboard Interface    | Fakebook Platform |
-|-------------------|-------------------|
-| ![Screenshot 1](static/images/screenshot1.png) | ![Screenshot 2](static/images/screenshot2.png) |
-| Hint code with added time    | Endgame |
-|-------------------|-------------------|
-| ![Screenshot 3](static/images/screenshot3.png) | ![Screenshot 4](static/images/screenshot4.png) |
-
----
-
-## 🚀 Key Features
-🔑**User Registration & Authentication**:
-  - Users can register with a unique username, password, and an optional fingerprint for enhanced security.
-  - Login attempts are monitored with a failed attempts counter to prevent brute-force attacks.
-
-🔒**Secure Sessions**:
-  - Utilizes secure session cookies with various settings to mitigate security risks, including HTTPS enforcement and HTTP-only cookies.
-
-🗄️**Database Integration**:
-  - The application is powered by a SQLite database, utilizing the CS50 Library for streamlined database interactions.
-  - User data, including username, hashed password, fingerprint, and registration details, are securely stored.
-
-🛡️**Input Sanitization**:
-  - All user inputs are sanitized to prevent XSS attacks using the `bleach` library, allowing only specified tags and attributes.
-
-🕒**Time Tracking**:
-  - The game tracks total time spent by players, allowing users to accumulate and save their gameplay duration.
-  - Displays time in a user-friendly format (DD:HH:MM:SS or HH:MM:SS) on the main page.
-
-🗝️ **Clue Management**:
-  - Players can access a series of clues through various platforms, with mechanisms to retrieve hints based on their progress.
-  - Clue tracking allows users to see which clues have been found and how many remain.
-
-**Responsive User Interface**:
-  - The application provides a clean and interactive front-end experience using Flask's templating engine.
-  - User profiles allow for the updating of usernames and passwords.
-
-**Hint System**:
-  - Players can request hints for their next clue, enhancing engagement and reducing frustration.
-  - Hints are context-sensitive, based on the player's current progress.
-
+- Full-stack **Flask** application with **SQLite** persistence
+- User authentication, password hashing, and server-side session management
+- Database-driven clue dependencies and progression
+- Conditional route and content access based on player state
+- Persistent gameplay timing across sessions
+- Context-sensitive hint system with time penalties
+- Simulated social platforms with secondary in-game authentication
+- Custom JavaScript for multimedia, chat, lightboxes, and dynamic content
+- Completion-time leaderboard and player ranking
+- Server-side rendering with **Jinja2**
 
 ---
 
-## 💻 Tech Stack
+## Game Overview
 
-| Technology              | Purpose                                      |
-|-------------------------|----------------------------------------------|
-| **Flask**                | For web framework and routing.                                |
-| **SQLite**               | For database management.                    |
-| **CS50 Library**     | For simplified database operations.                 |
-| **dotenv**               | For managing environment variables (API keys, secret keys).               |
-| **Bleach**               | Input sanitization to prevent XSS            |
-| **Werkzeug**             | For password hashing and security features.                        |
-| **Flask-Session**  | For managing user sessions securely.                        |
+Players wake up after a chaotic weekend with fragmented memories and one major problem: Harvard's rubber duck mascot is missing.
+
+To reconstruct what happened, the player investigates a collection of fictional digital and physical environments, including:
+
+- **Fakebook** — a social-network-style interface
+- **Quacker** — a microblogging platform
+- **Instaquam** — an image-focused social platform
+- a smartphone-style **Gallery**
+- a **Newspaper**
+- a **Hotel**
+- **Daffy Ducky's Pub**
+- a **Beach**
+- the **Dark Wing Tattoo** parlor
+- the final **Beach Party**
+
+Clues discovered in one environment can unlock access to another. Some in-game platforms require the player to reconstruct a friend's identity and credentials from previously discovered evidence.
+
+The objective is therefore not simply to locate hidden text. Players must connect information across different interfaces, determine the correct sequence of events, and progressively reconstruct the story.
 
 ---
 
-## 🛠️ Installation and Setup
+## Why I Built This
+
+For my CS50 final project, I wanted to combine the programming concepts covered throughout the course with a larger creative challenge. Instead of building a conventional CRUD application, I designed a mystery game in which **application state forms part of the gameplay itself**.
+
+The central technical challenge was making discoveries in one environment affect what the player could see or access elsewhere. This required coordinating authentication, database state, route protection, conditional rendering, client-side interaction, and persistent player progress across a multi-page Flask application.
+
+The project also gave me an opportunity to design the complete user experience around the application logic rather than treating the front end and backend as separate exercises.
+
+---
+
+## Screenshots
+
+| Dashboard | Fakebook |
+| --- | --- |
+| ![Dashboard](static/images/screenshot1.png) | ![Fakebook](static/images/screenshot2.png) |
+
+| Hint System | Endgame |
+| --- | --- |
+| ![Hint System](static/images/screenshot3.png) | ![Endgame](static/images/screenshot4.png) |
+
+---
+
+## Core Features
+
+### Authentication and Player Accounts
+
+The application provides account registration, login, logout, and profile management.
+
+- Passwords are hashed with **Werkzeug** before storage.
+- Authentication state is maintained with **Flask-Session**.
+- Protected routes use a `login_required` decorator.
+- Players can update their username and password.
+- Registration includes checks intended to limit repeated registrations from the same browser/device or IP address.
+- Failed login attempts are tracked within the session.
+
+### Persistent Clue Progression
+
+Player discoveries are stored in SQLite.
+
+Submitted clues are validated against the clue database. Individual clues can specify prerequisite clues, creating a dependency structure in which later parts of the investigation become available only after the player has found the necessary evidence.
+
+The dashboard displays the player's discovered clues and overall progress through the game's **22 clues**.
+
+### Gated Investigation Environments
+
+Access to parts of the game world depends on player progress.
+
+For example, the fictional social platforms require players to discover the relevant friend's identity and credentials before they can log in. Other locations, such as the tattoo parlor and final party, remain inaccessible until specific clues have been discovered.
+
+Progression therefore depends on application state rather than simple page navigation.
+
+### Fictional Social Platforms
+
+The project contains three custom social-media-inspired environments:
+
+- **Fakebook**
+- **Quacker**
+- **Instaquam**
+
+These interfaces reproduce recognizable social-media interaction patterns while embedding evidence required to solve the mystery.
+
+Each platform has an additional in-game authentication challenge. Players must first discover the appropriate friend's name, username, and password before access is granted.
+
+### Contextual Hint System
+
+Players can request guidance when they become stuck.
+
+The application examines the player's current progress, determines the next relevant clue or platform, and returns an appropriate hint.
+
+Using a hint adds a **10-minute penalty** to the player's accumulated time, creating a trade-off between assistance and leaderboard performance.
+
+### Gameplay Timing
+
+The application tracks gameplay duration across sessions.
+
+Elapsed time is accumulated and persisted so that players can leave and return without losing their recorded play time. The resulting completion time is used by the ranking system.
+
+### Scoreboard and Ranking
+
+After completing the mystery, a player's completion time can be submitted to the scoreboard.
+
+Players are ranked according to completion time, with faster completions receiving better positions. The scoreboard highlights the current player's entry, and completed accounts are prevented from recording multiple scores.
+
+A separate legacy view allows returning players to see their ranking after completion.
+
+### Interactive Front End
+
+The project combines server-rendered Jinja templates with custom JavaScript interactions, including:
+
+- image and video lightboxes
+- dynamic clue visibility
+- contextual character conversations
+- progress visualization
+- asynchronous gameplay-time updates
+- multimedia content
+- keyboard navigation
+- visibility-aware video playback
+- Canvas-based endgame effects
+
+---
+
+## Application Architecture
+
+At a high level, the application follows this progression:
+
+```text
+Registration / Login
+        |
+        v
+Story Introduction
+        |
+        v
+Investigation Dashboard
+        |
+        v
+Explore Platforms and Locations
+        |
+        v
+Discover Evidence
+        |
+        v
+Submit and Validate Clues
+        |
+        v
+Persist Player Progress
+        |
+        v
+Unlock New Content / Locations
+        |
+        v
+Final Investigation and Puzzle
+        |
+        v
+Completion Time + Ranking
+```
+
+### Backend
+
+Flask handles:
+
+- routing
+- registration and authentication
+- session management
+- clue validation
+- prerequisite checking
+- location access control
+- hint logic
+- gameplay timing
+- scoring and ranking
+- server-side template rendering
+
+### Database
+
+SQLite stores application data including:
+
+- users
+- clue definitions
+- player progress
+- fictional friend/platform credentials
+- gameplay time
+- scoreboard results
+
+The project uses both the **CS50 SQL library** and direct `sqlite3` connections.
+
+### Front End
+
+The user interface combines:
+
+- HTML5
+- CSS3
+- Bootstrap
+- Jinja2
+- JavaScript
+
+Individual investigation environments use dedicated styling to create visually distinct locations and fictional platforms while sharing the same underlying Flask application state.
+
+---
+
+## Technology Stack
+
+| Technology | Role |
+| --- | --- |
+| **Python** | Backend application and game logic |
+| **Flask** | Web framework and routing |
+| **Jinja2** | Server-side HTML templating |
+| **SQLite** | Persistent game and player data |
+| **CS50 SQL Library** | Simplified SQL database operations |
+| **HTML5** | Page structure and multimedia |
+| **CSS3** | Custom interfaces and responsive presentation |
+| **JavaScript** | Client-side game interactions |
+| **Bootstrap** | Shared responsive UI components |
+| **Flask-Session** | Server-side session management |
+| **Werkzeug** | Password hashing and verification |
+| **Bleach** | Input sanitization |
+| **python-dotenv** | Environment-variable loading |
+| **Git LFS** | Management of large media assets |
+
+---
+
+## Game Flow
+
+A typical investigation follows this pattern:
+
+1. **Register and log in.**
+2. **Read the story introduction** to understand the mystery.
+3. **Explore the initial environments** and identify the first clues.
+4. **Submit discovered clues** through the dashboard.
+5. **Unlock additional platforms and locations** as prerequisites are satisfied.
+6. **Reconstruct in-game credentials** to access fictional social-media accounts.
+7. **Connect evidence** across posts, photographs, conversations, locations, and articles.
+8. **Use hints when necessary**, accepting the associated time penalty.
+9. **Complete the final investigation and hidden-message puzzle.**
+10. **Submit the final result** and receive a completion-time ranking.
+
+---
+
+## Selected Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Investigation dashboard |
+| `/register` | Player registration |
+| `/login` | Player authentication |
+| `/logout` | Save elapsed time and end the session |
+| `/profile` | Update player credentials |
+| `/about` | Story introduction |
+| `/clue_input` | Validate and record submitted clues |
+| `/get_hint` | Retrieve a progress-dependent hint |
+| `/update_time` | Persist gameplay time from the client |
+| `/fakebook` | Fakebook investigation |
+| `/quacker` | Quacker investigation |
+| `/instaquam` | Instaquam investigation |
+| `/gallery` | Smartphone-style gallery |
+| `/newspaper` | Newspaper investigation |
+| `/hotel` | Hotel investigation |
+| `/bar` | Pub investigation |
+| `/beach` | Beach investigation |
+| `/tattoo` | Tattoo-parlor investigation |
+| `/party` | Final party sequence |
+| `/endgame` | Completion and score submission |
+| `/scoreboard` | Completion-time leaderboard |
+| `/legacy` | Returning-player ranking page |
+
+---
+
+## Project Structure
+
+```text
+project/
+├── static/
+│   ├── css/                 # Interface-specific stylesheets
+│   ├── images/              # Game artwork, media, icons, and screenshots
+│   └── script.js            # Shared client-side interactions
+│
+├── templates/
+│   ├── about.html
+│   ├── apology.html
+│   ├── bar.html
+│   ├── beach.html
+│   ├── endgame.html
+│   ├── fakebook.html
+│   ├── fakebook_login.html
+│   ├── gallery.html
+│   ├── hotel.html
+│   ├── index.html
+│   ├── instaquam.html
+│   ├── instaquam_login.html
+│   ├── layout.html
+│   ├── legacy.html
+│   ├── login.html
+│   ├── newspaper.html
+│   ├── party.html
+│   ├── profile.html
+│   ├── quacker.html
+│   ├── quacker_login.html
+│   ├── register.html
+│   ├── scoreboard.html
+│   └── tattoo.html
+│
+├── app.py                   # Flask application and game logic
+├── helpers.py               # Shared helpers and authentication decorator
+├── game.db                  # SQLite game database
+├── requirements.txt         # Python dependencies
+├── .gitattributes           # Git LFS configuration
+├── LICENSE
+└── README.md
+```
+
+---
+
+## Installation and Setup
 
 ### Prerequisites
 
-- **Python 3.x**
-- **SQLite3**
-- **Flask**
+- Python 3.x
+- SQLite
+- Git
 
-### Installation Instructions
+### 1. Clone the repository
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd project
-   ```
-
-2. **Set up a virtual environment** (optional but recommended):
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**:
-   ```bash
-   pip install python-dotenv
-   pip install bleach
-   pip install -r requirements.txt
-   ```
-
-4. **Create `.env` file** and add your environment variables:
-   ```bash
-   API_KEY=<your_api_key>
-   SECRET_KEY=<your_secret_key>
-   ```
-
-5. **Initialize the SQLite Database**:
-   Ensure `game.db` is properly set up and populated. If needed, run the setup script included in the repository.
-
-6. **Run the application**:
-   ```bash
-   flask run
-   ```
-
-7. **Access the game**:
-   Open a browser and navigate to `http://127.0.0.1:5000/`.
-
----
-
-## 🎮 Usage Instructions
-
-1. **Register/Login**: Create a new account or log in with your credentials.
-2. **Start the game**: Begin exploring the fictional world and receive your first clue.
-3. **Solve Clues**: Use the available platforms (Fakebook, Quacker, etc.) to track down the missing mascot.
-4. **Progress**: Uncover more clues as you solve puzzles, ultimately leading to the rubber duck’s location.
-
----
-
-## 🧭 Game Flow Example
-
-- **Home**: Players start on the homepage after logging in.
-
-- **Initial Clue Gathering**: Players must discover 3 to 4 initial clues in other locations or platforms to unlock access to Fakebook. This adds an exciting challenge as they piece together the beginnings of their investigation.
-
-- **Fakebook**: Once the required initial clues are collected, players can proceed to the Fakebook platform, where the first significant clue related to the missing mascot awaits.
-
-- **Multiple Platforms**: Players interact with clues scattered across Fakebook, Quacker, Instaquam, and more, building a web of information to track down the missing mascot.
-
-- **Clue Validation**: Once a clue is entered correctly, the next clue is unlocked, guiding players deeper into the mystery.
-
----
-
-## 🌐 API and Routes
-
-| Route           | Description                                    |
-|-----------------|------------------------------------------------|
-| `/`             | Homepage (requires login)                      |
-| `/register`     | Register a new user                            |
-| `/login`        | User login                                     |
-| `/logout`       | Log out of the game                            |
-| `/profile`      | View and manage your profile                   |
-| `/about`        | Learn more about the game                      |
-| `/clue_input`   | Submit a clue for validation                   |
-| `/fakebook`     | Explore clues from Fakebook platform           |
-| `/quacker`      | Explore clues from Quacker platform            |
-| `/instaquam`    | Explore clues from Instaquam platform
-| `/endgame`      | Display final results once the mystery is solved|
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Whether it's reporting a bug, suggesting a feature, or creating a pull request, I value all kinds of contributions.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
-## 🏆 Acknowledgments
-
-- **CS50 Library**: For simplifying database interactions.
-- **Flask Team**: For creating a powerful yet simple web framework.
-- **Open Source**: Shoutout to the open-source libraries that made this project possible.
-- **AI Assistance**: Special thanks to AI-driven tools that enhanced the development process by aiding with code generation, documentation, and brainstorming. AI helped streamline workflows, improve efficiency, and ensure the best possible version of this project came to life.
-
-
----
-
-
-## 🛠️Improvements for Quacktastic Conundrum Project💡
-
-This document outlines potential improvements for the **Quacktastic Conundrum** game to enhance security and streamline code efficiency. These suggestions address current limitations and possible solutions for future development.
-
-## Suggested Improvements
-
-### 1) 🔒Database Encryption
-
-To increase the security of sensitive game data, encrypting the SQLite database would be beneficial. Currently, encryption is not implemented due to the following challenges:
-
-- **Lack of Expertise**: Implementing encryption requires knowledge of encryption libraries and techniques.
-- **CS50 Platform Restrictions**: SQLCipher, a popular choice for encrypting SQLite databases, cannot be installed or used on the CS50 platform, limiting available encryption options.
-
-💡**Potential Solutions**💡:
-- Explore lightweight encryption methods compatible with SQLite, if CS50 platform support is extended.
-- Consider transitioning to a more secure environment post-CS50, where SQLCipher or similar tools can be implemented.
-
-### 2) ⚙️Streamlining Templates for Social Media Platforms
-
-In the current game structure, **Fakebook**, **Quacker**, and **Instaquam** use individual templates for their login pages. This approach, while functional, increases the amount of repetitive code and can be optimized for maintainability.
-
-💡**Improvement Idea**💡:
-- Implement a single, reusable login template for all three social media platforms. Using a shared template would reduce code duplication and make future updates easier.
-- Utilize parameters to customize the template for each platform, allowing for distinctive styling or branding while keeping the codebase more concise.
-
-**Example Implementation**:
-A single HTML template could be designed with placeholders for platform-specific details. This template could then be rendered dynamically based on the platform being accessed, minimizing redundancy and simplifying the codebase.
-
----
-
-By addressing these improvements, the **Quacktastic Conundrum** project can advance in both security and code efficiency, providing a more robust and maintainable user experience.
-
-
-## 📁 File Arrangement
-
-The **Quacktastic Conundrum** project features a well-structured file arrangement designed for easy navigation and efficient management. Click below to expand and view the project structure:
-
-<details>
-<summary>📂 Click to Expand File Structure</summary>
-
-```plaintext
-project/
-├── static/                  # Contains static files such as CSS, JavaScript, and images
-│   ├── css/                     # Stylesheets
-│   │   ├── bar.css                 # Stylesheet for the bar platform
-│   │   ├── fakebook.css            # Stylesheet for the fakebook platform
-│   │   ├── dashboard.css           # Main stylesheet for the application
-│   │   └── ...
-│   │
-│   ├── images/                  # Image assets used in the game# JavaScript files
-│   │   ├── bar/                    # Folder with pictures for the bar platform
-│   │   ├── beach/                  # Folder with pictures for the beach platform
-│   │   ├── .../                    # Other folders for different platforms
-│   │   ├── final1.png                 # Endgame's final picture
-│   │   ├── screenshot1.png            # Example README.md screenshot 1
-│   │   ├── screenshot2.png            # Example README.md screenshot 2
-│   │   ├── screenshot3.png            # Example README.md screenshot 3
-│   │   └── screenshot4.png            # Example README.md screenshot 4
-│   │
-│   └── script.js                # Main JavaScript file for interactive
-│
-├── templates/               # Jinja2 templates for rendering HTML
-│   ├── about.html               # Game story
-│   ├── apology.html             # Apology template
-│   ├── bar.html                 # Bar platform template
-│   ├── beach.html               # Beach platform template
-│   ├── endgame.html             # Endgame platform template
-│   ├── fakebook_login.html      # Fakebook login platform template
-│   ├── fakebook.html            # Fakebook platform template
-│   ├── gallery.html             # Smartphone gallery platform template
-│   ├── hotel.html               # Hotel platform template
-│   ├── index.html               # Dashboard platform template
-│   ├── instaquam_login.html     # Instaquam login platform template
-│   ├── layout.html              # Base layout template
-│   ├── login.html               # Login page template
-│   ├── newspaper.html           # Newspaper page template
-│   ├── party.html               # Party page template
-│   ├── profile.html             # User profile page template
-│   ├── quacker_login.html       # Quacker platform template
-│   ├── quacker.html             # Quacker platform template
-│   ├── register.html            # Registration page template
-│   └── tattoo.html              # Tattoo parlor page template
-│
-├── app.py                   # Main application file
-├── helpers.py               # Apology function/ Bleach
-├── requirements.txt         # List of Python dependencies
-├── .env                     # Environment variables file
-├── game.db                  # Game database
-└── README.md                # Project documentation
-
+```bash
+git clone <repository-url>
+cd <repository-directory>
 ```
-</details>
 
-## 📅 Future Enhancements
+### 2. Create a virtual environment
 
-- 🚀 **AI Integration**: Explore AI-driven features that could enhance gameplay by personalizing clues based on user behavior.
-- 🌍 **Mobile Compatibility**: Develop a mobile-friendly version of the game to broaden accessibility.
-- 🎨 **Graphics and UI**: Invest in improving the user interface and graphics to make the game more visually appealing and engaging.
-- 🌐 **Multiplayer Mode**: Consider adding a multiplayer option to enhance the social aspect of the game.
+```bash
+python -m venv .venv
+```
+
+Activate the environment.
+
+**macOS / Linux**
+
+```bash
+source .venv/bin/activate
+```
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+> **Repository note:** If using the original CS50 submission version of `requirements.txt`, ensure it contains package names only. Entries written as `pip install python-dotenv` or `pip install bleach` should be changed to `python-dotenv` and `bleach`.
+
+### 4. Configure environment variables
+
+Create a `.env` file in the project root:
+
+```text
+SECRET_KEY=<your-secret-key>
+API_KEY=<your-api-key-if-required>
+```
+
+Do not commit `.env` or production secrets to source control.
+
+### 5. Prepare the database
+
+The application expects a populated `game.db` SQLite database containing the game data and player-related tables.
+
+### 6. Run the application
+
+```bash
+flask --app app run
+```
+
+Open the local address displayed by Flask in a browser.
+
+> **Development note:** The current application configuration marks the session cookie as `Secure`. Browser behavior during plain-HTTP local development may therefore depend on the environment. HTTPS should be used for a production deployment.
 
 ---
 
-## 🙏 Feedback and Support
+## Security Considerations
 
-I welcome your feedback on this project! If you encounter any issues or have suggestions for improvements, please reach out via the project's GitHub issues page.
+The project implements several security-oriented measures appropriate to its educational scope:
+
+- password hashing rather than plaintext password storage
+- server-side sessions
+- `HttpOnly`, `Secure`, and `SameSite=Lax` session-cookie settings
+- authenticated-route protection
+- input sanitization
+- username uniqueness checks
+- basic failed-login attempt handling
+
+The registration system also experiments with browser fingerprinting and IP-based duplicate-registration checks. These mechanisms were designed to control game-account creation rather than serve as production-grade identity or anti-abuse systems.
+
+### Security Limitation
+
+The current Bleach allowlist includes powerful HTML elements and event-related attributes. The sanitization configuration should therefore **not be considered production-grade XSS protection for arbitrary untrusted public input** without additional hardening.
+
+---
+
+## Design Decisions and Technical Debt
+
+This project was developed as a CS50 final project and prioritizes delivering a complete interactive experience. Reviewing the completed application also identified several areas that could be improved in a production-oriented revision.
+
+### Database Access
+
+The application currently uses both the CS50 `SQL` abstraction and direct `sqlite3` connections.
+
+A future version would standardize database operations behind a single data-access approach, improving consistency, maintainability, and testability.
+
+### Reusable Platform Components
+
+Fakebook, Quacker, and Instaquam have similar authentication flows and separate login templates.
+
+These could be refactored into reusable backend logic and a shared parameterized template while preserving platform-specific styling.
+
+### Application Structure
+
+As the application grew, much of the backend logic remained in `app.py`.
+
+A larger production version could separate responsibilities into Flask blueprints or modules for:
+
+- authentication
+- player progress
+- investigation environments
+- scoring
+- database access
+
+### Security Hardening
+
+A production deployment would benefit from:
+
+- CSRF protection for state-changing forms
+- stronger server-side login rate limiting
+- a stricter HTML sanitization policy
+- hardened secret management
+- explicit database constraints and migrations
+- review of browser-fingerprinting and IP-retention practices
+
+### Automated Testing
+
+A future version could add automated tests for:
+
+- registration and authentication
+- clue prerequisites
+- clue submission
+- gated-route access
+- hint penalties
+- gameplay-time persistence
+- ranking logic
+- duplicate score prevention
+
+---
+
+## Future Development
+
+Potential extensions include:
+
+- modularizing the Flask application
+- improving mobile responsiveness and accessibility
+- adding automated unit and integration tests
+- expanding puzzle mechanics
+- adding additional investigation scenarios using the same progression model
+- deployment-oriented security hardening
+- introducing cooperative or multiplayer investigation
+- experimenting with more dynamic hint generation
+
+---
+
+## What I Learned
+
+Quacktastic Conundrum brought together concepts from across CS50 into one larger application. Building it required moving beyond isolated programming exercises and considering how **authentication, persistent data, application state, front-end interaction, and user experience** work together.
+
+The most important engineering challenge was managing **progression across interconnected environments**. A clue discovered in one location could determine whether another route, account, or piece of content should become available. Implementing this required coordinating database state, Flask routing, Jinja rendering, sessions, and JavaScript behavior.
+
+The project also demonstrated how quickly complexity grows in a stateful application. Completing it highlighted the importance of reducing duplicated code, separating responsibilities, designing database interactions consistently, testing state-dependent behavior, and distinguishing educational security measures from production security architecture.
+
+Most importantly, the project taught me to think about software not simply as a collection of individual features, but as an interconnected system in which backend logic, persistent state, interface design, and user behavior influence one another.
+
+---
+
+## Acknowledgments
+
+This project was created as my **Harvard CS50 final project**.
+
+It draws inspiration from:
+
+- **CS50** and the investigative structure of *Fiftyville*
+- *The Hangover* as inspiration for the fragmented-memory mystery premise
+- Flask and its open-source ecosystem
+- programming documentation and community resources used during development
+- AI tools used as development aids for brainstorming, debugging, code assistance, and documentation
+
+The application's story, game structure, clue progression, interfaces, and overall implementation were developed as part of the project.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for details.
