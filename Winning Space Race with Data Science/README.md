@@ -30,6 +30,20 @@ In the final model comparison, **KNN achieved 83.3% test accuracy**.
 
 ---
 
+
+## ⭐ Key Highlights
+
+- Built an **end-to-end data science workflow** from external data acquisition through predictive modeling.
+- Collected Falcon 9 launch data using both the **SpaceX REST API** and **Wikipedia web scraping**.
+- Used **Python and SQL** for data preparation, exploratory analysis, and targeted analytical queries.
+- Created interactive geospatial analysis with **Folium** and an exploratory dashboard with **Plotly Dash**.
+- Compared **Logistic Regression, SVM, Decision Tree, and KNN** classifiers.
+- Tuned model hyperparameters systematically using **GridSearchCV**.
+- Best documented held-out result: **KNN — 83.3% test accuracy**.
+- Demonstrated a workflow spanning **data acquisition, wrangling, EDA, visualization, application development, and machine learning**.
+
+---
+
 ## 🎯 Project Objectives
 
 The project was designed to investigate Falcon 9 landing performance from several complementary perspectives:
@@ -411,6 +425,20 @@ As with launch site and payload, the relationship should be interpreted as an **
 
 ---
 
+
+# 🧩 Challenges & How I Addressed Them
+
+| Challenge | How I Addressed It | What It Taught Me |
+| --- | --- | --- |
+| **Working with different external data sources** | Collected structured data through the SpaceX API and supplementary tabular data through web scraping, then transformed both into analysis-ready formats | Real data science often begins with heterogeneous data acquisition rather than a clean dataset |
+| **Preparing categorical launch data for modeling** | Cleaned mission variables, constructed the binary landing target, applied one-hot encoding, and standardized features where required | Model performance depends on a reproducible preprocessing pipeline |
+| **Understanding a multivariable landing problem** | Examined payload, orbit, launch site, flight history, and other mission characteristics together rather than relying on a single-variable explanation | Exploratory patterns need to be interpreted in the context of interacting features |
+| **Comparing different classifier families fairly** | Evaluated Logistic Regression, SVM, Decision Tree, and KNN and used GridSearchCV for systematic hyperparameter tuning | Model selection should be comparative and evidence-based |
+| **Interpreting results from a relatively small historical dataset** | Treated the 83.3% KNN result as a capstone evaluation result rather than claiming production-ready predictive performance | Evaluation metrics need to be interpreted in light of dataset size, sampling, and deployment context |
+| **Communicating the analysis beyond notebooks** | Added Folium maps and a Plotly Dash application so launch patterns could be explored interactively | Data science includes communicating results through usable analytical interfaces |
+
+---
+
 # 🧠 What This Project Demonstrates
 
 Although the final stage involves machine learning, the project covers substantially more than predictive modeling.
@@ -460,6 +488,27 @@ It demonstrates experience with:
 - confusion-matrix analysis
 
 The project therefore represents an **end-to-end applied data science workflow**, from external data acquisition through interactive analytics and predictive modeling.
+
+---
+
+
+# 🧠 What I Learned
+
+This project was valuable because it connected individual data science techniques into a single workflow.
+
+The most important lessons were:
+
+- external data often requires substantial collection and preparation before modeling begins;
+- APIs and web scraping require different extraction and cleaning strategies;
+- SQL and Python can complement each other within the same analytical workflow;
+- interactive maps and dashboards can make analytical findings easier to explore than static notebooks alone;
+- categorical preprocessing and feature preparation are essential parts of machine-learning pipelines;
+- comparing several model families is more informative than assuming one algorithm will perform best;
+- cross-validation and hyperparameter tuning help make model selection more systematic;
+- a test-set accuracy such as **83.3%** must be interpreted in the context of dataset size and historical coverage;
+- observed relationships between launch characteristics and landing outcomes should not be presented as causal effects.
+
+If I rebuilt the project today, I would place even greater emphasis on **temporal validation, model stability, class balance, explainability, and reproducible preprocessing**.
 
 ---
 
@@ -546,6 +595,25 @@ The repository contains the notebooks and application files used across the diff
 ```
 
 Together, these components document the progression from raw launch data to the final predictive analysis.
+
+---
+
+
+# 💬 Interview Quick Reference
+
+| Question | Quick Answer |
+| --- | --- |
+| **What was the project?** | An end-to-end IBM capstone investigating whether Falcon 9 first-stage landing success could be predicted from historical launch characteristics |
+| **What made it end-to-end?** | API + web scraping → wrangling → SQL/EDA → Folium → Plotly Dash → feature engineering → ML |
+| **What data sources did you use?** | SpaceX REST API and supplementary Wikipedia launch data |
+| **Which models did you compare?** | Logistic Regression, SVM, Decision Tree, and KNN |
+| **How did you tune them?** | GridSearchCV with cross-validation |
+| **Best documented result?** | KNN with **83.3% held-out test accuracy** |
+| **Main analytical challenge?** | Converting heterogeneous launch data into a consistent feature set while interpreting interacting mission variables |
+| **How did you communicate results?** | Static EDA, SQL analysis, Folium geospatial maps, and a Plotly Dash dashboard |
+| **Important limitation?** | The historical capstone dataset is relatively small and launch technology/operations evolve over time |
+| **What would you improve today?** | More recent data, temporal validation, stronger stability/class-balance analysis, explainability, and ensemble models |
+| **Main lesson?** | A useful data science project spans acquisition, preparation, analysis, communication, modeling, and critical evaluation—not just model training |
 
 ---
 
