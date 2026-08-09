@@ -12,6 +12,19 @@ Rather than presenting the mystery as a linear sequence of pages, the applicatio
 
 ---
 
+
+## Project Highlights
+
+- Built a full-stack **Flask + SQLite** mystery game in which persistent application state drives the investigation.
+- Designed a **22-clue dependency system** that unlocks routes, fictional accounts, and locations as players progress.
+- Implemented registration, password hashing, server-side sessions, protected routes, and profile management.
+- Created three custom social-media-inspired environments with secondary in-game authentication.
+- Persisted gameplay time across sessions and connected hints to a **10-minute time penalty** and completion-time leaderboard.
+- Combined Flask, Jinja2, SQL, JavaScript, Bootstrap, multimedia, and custom interfaces in one integrated application.
+- Retrospectively reviewed the project for **security limitations, duplicated logic, testing gaps, and architectural technical debt**.
+
+---
+
 ## Technical Highlights
 
 - Full-stack **Flask** application with **SQLite** persistence
@@ -430,6 +443,20 @@ The current Bleach allowlist includes powerful HTML elements and event-related a
 
 ---
 
+
+## Challenges & How I Addressed Them
+
+| Challenge | How I Addressed It | What It Taught Me |
+| --- | --- | --- |
+| **Managing progression across interconnected environments** | Stored clue discoveries and prerequisites in SQLite and checked player state before unlocking routes, accounts, and content | Application state can be part of the product experience, not just backend bookkeeping |
+| **Keeping player progress across sessions** | Persisted discoveries and accumulated gameplay time rather than relying only on temporary browser state | Stateful applications require deliberate persistence and session design |
+| **Connecting clues across different interfaces** | Used shared backend state so evidence discovered in one environment could affect another | Backend logic, database design, and UI behavior need to be designed as one system |
+| **Providing help without removing the challenge** | Built contextual hints based on player progress and attached a 10-minute scoring penalty | Product rules can balance usability and game mechanics |
+| **Growing complexity as the application expanded** | Completed the working application, then identified duplicated platform logic, mixed database access, and opportunities for modularization | Delivering a system and critically evaluating its technical debt are both part of software engineering |
+| **Applying security concepts within an educational project** | Used password hashing, server-side sessions, route protection, and sanitization while documenting where production hardening is still required | Security controls need to be evaluated according to their actual threat model and deployment context |
+
+---
+
 ## Design Decisions and Technical Debt
 
 This project was developed as a CS50 final project and prioritizes delivering a complete interactive experience. Reviewing the completed application also identified several areas that could be improved in a production-oriented revision.
@@ -508,6 +535,24 @@ The most important engineering challenge was managing **progression across inter
 The project also demonstrated how quickly complexity grows in a stateful application. Completing it highlighted the importance of reducing duplicated code, separating responsibilities, designing database interactions consistently, testing state-dependent behavior, and distinguishing educational security measures from production security architecture.
 
 Most importantly, the project taught me to think about software not simply as a collection of individual features, but as an interconnected system in which backend logic, persistent state, interface design, and user behavior influence one another.
+
+---
+
+
+## Interview Quick Reference
+
+| Question | Quick Answer |
+| --- | --- |
+| **What was the project?** | A full-stack browser-based mystery game built as my Harvard CS50 final project |
+| **What was the core technical idea?** | Persistent player state drives clue dependencies, route access, fictional-account access, hints, timing, and progression |
+| **Main stack?** | Python, Flask, SQLite, Jinja2, JavaScript, HTML/CSS, Bootstrap |
+| **What was the biggest challenge?** | Coordinating progression across many interconnected pages and environments without losing player state |
+| **How did you solve it?** | Stored discoveries and prerequisites in the database and used server-side state checks to control access and rendering |
+| **Interesting feature?** | Context-sensitive hints add a 10-minute penalty, connecting assistance directly to leaderboard performance |
+| **Security work?** | Password hashing, server-side sessions, protected routes, sanitization, and cookie settings, with production limitations documented |
+| **Main technical debt?** | Large `app.py`, duplicated platform authentication flows, mixed SQL access approaches, and limited automated testing |
+| **What would you improve today?** | Modular Flask blueprints, unified data access, automated tests, CSRF/rate limiting, stricter sanitization, and stronger secret management |
+| **Main lesson?** | Stateful software must be designed as an interconnected system across backend logic, persistence, interface behavior, and user experience |
 
 ---
 
