@@ -1,75 +1,385 @@
-# Bellabeat Smart Device Usage Analysis: Data-Driven Marketing Strategies for the Leaf Product
+# 🌿 Bellabeat Smart Device Usage Analysis
 
-[![RStudio Cloud](https://img.shields.io/badge/RStudio-12A573?style=for-the-badge&logo=rstudio&logoColor=white)](https://posit.cloud/)  [![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://www.r-project.org/)  [![tidyverse](https://img.shields.io/badge/Tidyverse-91D9FF?style=for-the-badge&logo=tidyverse&logoColor=black)](https://www.tidyverse.org/)
+**Business Analytics · R · Exploratory Data Analysis · Marketing Strategy**
 
-This data-driven case study leverages publicly available Fitbit data to provide actionable marketing recommendations for Bellabeat and their Leaf wellness tracker.  By analyzing user trends in activity, sleep, and calorie expenditure, we aim to inform product positioning, feature promotion, and target audience identification.
+> **Project Context:** Google Data Analytics Professional Certificate Capstone — Bellabeat Case Study
 
-## Table of Contents
+Analyzed publicly available **Fitbit smart-device data** to identify activity, sleep, and calorie-use patterns that could inform marketing and product-positioning recommendations for Bellabeat’s **Leaf** wellness tracker.
 
-1. [Project Overview](#1-project-overview)
-2. [Skills](#2-skills)
-3. [Business Context](#3-business-context)
-4. [Data & Methodology](#4-data-methodology)
-5. [Key Findings & Strategic Recommendations](#5-key-findings-recommendations)
-6. [Next Steps & Impact](#6-next-steps-impact)
-7. [Conclusion](#7-conclusion)
-8. [Repository Contents](#8-repository-contents)
+Using **R, Tidyverse, lubridate, and ggplot2**, I cleaned and joined multiple activity and sleep datasets, explored behavioral relationships, and translated the results into business recommendations focused on sedentary behavior, personalization, sleep insights, and user engagement.
 
-## 1. Project Overview
+---
 
-The wellness technology market is booming, and Bellabeat is positioned to capitalize on this growth with its beautifully designed, health-focused products. This project provides data-driven insights into user behavior related to activity, sleep, and calorie expenditure, which are crucial for developing effective marketing strategies for the Leaf wellness tracker.
+## ⭐ Key Highlights
 
-## 2. Skills
+- Worked with Fitbit datasets covering **30 users**, including daily, hourly, minute-level, sleep, heart-rate, and weight records.
+- Built a reproducible analysis workflow in **R / R Markdown** using `tidyverse`, `dplyr`, `lubridate`, and `ggplot2`.
+- Combined daily activity, calorie, intensity, step, and sleep data using user IDs and standardized date fields.
+- Found that **sedentary time accounted for 73.2%** of the analyzed daily activity distribution, while lightly active time accounted for **22.3%**.
+- Observed a **0.41 correlation between daily steps and calories burned** in the analyzed merged data.
+- Found no strong linear relationship between **sleep duration and total active minutes**, and only a weak relationship between **daily steps and sleep duration**.
+- Translated analytical findings into marketing and product recommendations for activity reminders, personalized insights, sleep support, gamification, and targeted messaging.
 
-* **Programming:** R (with tidyverse, lubridate, ggplot2, readr, and R Markdown)
-* **Data Analysis:** Data cleaning, transformation, exploratory data analysis (EDA), statistical analysis, data visualization
-* **Business Acumen:** Translating data insights into actionable business recommendations, strategic thinking, marketing strategy development, market research interpretation
-* **Communication:**  Clearly communicating technical findings to both technical and non-technical audiences (demonstrated through the R Markdown report and this README).
-* **Tools:** RStudio (Posit Cloud), Version Control (Git - *add if applicable*), Project Management (e.g. Trello - *add if applicable*)
+---
 
-## 3. Business Context
+## 🎯 Problem & Objectives
 
-Bellabeat aims to empower women through beautifully designed health-focused products. The Leaf tracker is a key product in their portfolio, and understanding user behavior related to activity, sleep, and calorie expenditure is critical for maximizing its market potential. This project addresses the need for data-driven marketing strategies to effectively reach the target audience and promote the Leaf's unique features.
+Bellabeat is a wellness technology company whose products combine health tracking with consumer-focused design.
 
-## 4. Data & Methodology
+The business task was to use smart-device behavior data to answer three questions:
 
-**Data Source:** Publicly available Fitbit Fitness Tracker Data from Kaggle.
+1. **What trends appear in smart-device usage?**
+2. **How might those trends apply to Bellabeat customers?**
+3. **How could those insights influence Bellabeat’s marketing strategy?**
 
-**Data Characteristics:** Minute-level data on activity, heart rate, and sleep from 30 Fitbit users, including daily and hourly summaries.
+The analysis focused on activity, sedentary time, sleep, calorie expenditure, and daily behavioral patterns, with the goal of converting descriptive data into practical recommendations for the **Leaf** product.
 
-**Data Limitations:** The small sample size (30 users) and potential biases in self-reported data limit the generalizability of the findings.  The data originates from Fitbit users, not Bellabeat customers, requiring an assumption of similar usage patterns. These limitations are acknowledged and considered in the analysis and recommendations.
+Because the source data comes from Fitbit users rather than Bellabeat customers, the recommendations are treated as **directional hypotheses to validate**, not definitive claims about Bellabeat’s user base.
 
-**Methodology:**
+---
 
-1. **Data Preparation:** Data was loaded, inspected, cleaned, transformed, and merged using R and the `tidyverse` package.  Date/time variables were formatted using `lubridate`.
-2. **Exploratory Data Analysis (EDA):**  EDA was performed to uncover trends and patterns in the data.  This included descriptive statistics, data visualization using `ggplot2`, and correlation analysis.
-3. **Strategic Recommendations:**  Based on the EDA, actionable marketing recommendations were developed for Bellabeat's Leaf product.
+## 🔄 Analytical Workflow
 
-## 5. Key Findings & Strategic Recommendations
+```text
+Fitbit CSV Files
+       ↓
+Data Inspection
+       ↓
+Date / Time Standardization
+       ↓
+Cleaning & Column Reconciliation
+       ↓
+Dataset Joins
+       ↓
+Exploratory Data Analysis
+       ↓
+Correlation & Behavioral Analysis
+       ↓
+Visualization
+       ↓
+Business Interpretation
+       ↓
+Marketing & Product Recommendations
+```
 
-*(This section should be populated with your actual findings and recommendations.  Quantify your findings whenever possible.  Here are some examples - **replace these with your own!**)*
+---
 
-* **Sedentary Behavior:**  75% of users spend more than 8 hours per day in sedentary activities.  **Recommendation:** Position the Leaf as a tool to combat sedentary behavior, emphasizing features like movement reminders and activity tracking.
-* **Sleep & Activity Correlation:**  A weak positive correlation (r = 0.2) was found between sleep duration and total active minutes. **Recommendation:**  While promoting the importance of both sleep and activity, avoid implying a strong causal link. Focus on personalized insights and recommendations for optimizing both.
-* **Weekend Activity Spike:**  Users take, on average, 20% more steps on weekends compared to weekdays.  **Recommendation:** Develop weekend-specific challenges and promotional offers to capitalize on this trend.
+## 📊 Data
 
-## 6. Next Steps & Impact
+The project uses the publicly available **Fitbit Fitness Tracker Data** dataset.
 
-* **A/B Testing:**  Implement A/B testing on marketing campaigns and app features to measure their effectiveness and optimize user engagement.
-* **User Feedback Integration:**  Collect and analyze user feedback to inform product development and marketing strategies.
-* **Predictive Modeling:**  Explore the use of machine learning to predict user behavior and personalize recommendations.  *(Mention this only if you have relevant experience/interest.)*
-* **Impact Measurement:** Track key metrics (e.g., website traffic, app downloads, sales) to assess the impact of the implemented recommendations.
+The source files include multiple levels of granularity:
 
-## 7. Conclusion
+| Data Area | Example Scale |
+| --- | ---: |
+| Daily activity | **940 rows** |
+| Daily sleep | **413 rows** |
+| Hourly activity datasets | **22,099 rows** each |
+| Minute-level activity datasets | **1,325,580 rows** each |
+| Heart-rate measurements | **2,483,658 rows** |
+| Minute-level sleep | **188,521 rows** |
+| Weight logs | **67 rows** |
 
-This data-driven analysis provides valuable insights into user behavior and informs strategic recommendations for Bellabeat's Leaf product. By focusing on the identified trends and implementing the recommended actions, Bellabeat can effectively target its marketing efforts, enhance user engagement, and drive growth in the competitive wellness technology market.
+The analysis loaded data covering:
 
-## 8. Repository Contents
+- daily activity
+- calories
+- intensity
+- steps
+- sleep
+- heart rate
+- hourly activity
+- minute-level activity
+- METs
+- weight logs
 
-* `README.md`: This file.
-* `Bellabeat Data Analysis.R`: R script file containing the data analysis code.
-* `Bellabeat Data Analysis.Rmd`: R Markdown file containing the data analysis code, narrative, and visualizations.
-* `Bellabeat-Data-Analysis.html`: HTML output generated from the R Markdown file.
-* `Bellabeat-Data-Analysis.pdf`: PDF version of the R Markdown report.
-* `[Data Files - if applicable]`:  Any data files used in the analysis.
+The final behavioral analysis primarily used merged daily activity and sleep information.
 
+### Important Data Limitations
+
+The dataset contains only **30 Fitbit users**, and not every metric is available for every participant.
+
+Additional limitations include:
+
+- Fitbit users are not necessarily representative of Bellabeat customers;
+- the sample is too small for broad population-level generalization;
+- weight data is particularly sparse;
+- some measurements may be user-entered;
+- the dataset represents a limited observation period;
+- observed relationships are correlational rather than causal.
+
+---
+
+## 🔧 Data Preparation & Methodology
+
+### Date and Time Standardization
+
+The source files used several different date/time columns and formats.
+
+I standardized daily dates with `as.Date()` and parsed higher-frequency timestamps with `lubridate::mdy_hms()`.
+
+This was necessary before combining activity and sleep records reliably.
+
+### Resolving Column Conflicts
+
+Several daily datasets contained overlapping fields such as activity minutes, distance, and calories.
+
+Before joining the data, I renamed intensity-related variables to prevent ambiguous column collisions and explicitly selected or removed duplicate fields after the joins.
+
+### Joining Daily Activity & Sleep Data
+
+Daily activity, calories, intensity, and steps were joined using:
+
+```text
+User ID + Activity Date
+```
+
+Sleep data was then joined to the daily activity dataset using:
+
+```text
+User ID + Sleep Date
+```
+
+During this process, the merged dataset no longer retained the original `ActivityDate` name. I added logic to identify the available date field and normalize it before deriving weekday information.
+
+### Exploratory Analysis
+
+The analysis used:
+
+- descriptive statistics
+- histograms
+- boxplots
+- scatter plots
+- linear trend lines
+- correlation analysis
+- stacked activity distributions
+- weekday comparisons
+
+The goal was not to build a predictive model, but to understand user behavior and translate patterns into business recommendations.
+
+---
+
+## 🔍 Key Findings
+
+### 1. Sedentary Behavior Dominated the Day
+
+In the analyzed activity distribution:
+
+- **Sedentary:** 73.2%
+- **Lightly active:** 22.3%
+- Moderate and very active time represented only small proportions.
+
+This suggests that reducing prolonged sedentary behavior may be a more useful engagement opportunity than focusing only on high-intensity exercise.
+
+### 2. Steps & Calories Were Positively Related
+
+Daily steps and calories burned showed a positive relationship.
+
+**Observed correlation:** `0.41`
+
+Higher step counts generally corresponded with higher calorie expenditure, although substantial variability remained at similar step levels.
+
+This indicates that calorie expenditure is influenced by more than step count alone, including activity intensity and individual differences.
+
+### 3. Sleep Patterns Varied Widely
+
+Sleep durations ranged from **under one hour to more than 13 hours** in the available records, with a substantial portion falling between approximately **5 and 10 hours**.
+
+The wide variation supports the idea that sleep-related guidance should be personalized rather than based on a single generic pattern.
+
+### 4. Sleep & Activity Did Not Show a Strong Linear Relationship
+
+The analysis found **no strong linear relationship** between sleep duration and total daily active minutes.
+
+Likewise, daily steps showed only a weak or possibly negligible relationship with sleep duration.
+
+This means Bellabeat should avoid presenting increased physical activity as a direct or guaranteed solution for longer sleep.
+
+### 5. More Steps Were Generally Associated with Less Sedentary Time
+
+The analysis showed a **moderate negative relationship** between daily steps and sedentary minutes.
+
+However, there was considerable variation: even some relatively active users still accumulated substantial sedentary time.
+
+This supports tracking both **movement and inactivity**, rather than treating step count as a complete measure of daily behavior.
+
+### 6. Activity Varied Across the Week
+
+Visual analysis suggested potential differences in activity levels across weekdays and weekends.
+
+The report appropriately notes that **statistical testing would be needed** before treating these visual differences as confirmed effects.
+
+---
+
+## 💼 Business Recommendations
+
+The analysis led to several recommendations for Bellabeat’s Leaf product and marketing strategy.
+
+### Reduce Sedentary Behavior
+
+Position the Leaf as a tool that supports consistent movement throughout the day through:
+
+- inactivity reminders;
+- personalized movement prompts;
+- progress tracking;
+- challenges designed to break up long sedentary periods.
+
+### Emphasize Holistic Wellness
+
+Rather than marketing the Leaf only around step counts, emphasize a broader combination of:
+
+- activity;
+- sedentary time;
+- sleep;
+- calorie expenditure;
+- wellness patterns.
+
+### Personalize User Guidance
+
+High variability across users suggests that generalized recommendations may be less effective than personalized insights.
+
+Potential personalization includes:
+
+- individual activity goals;
+- tailored reminders;
+- sleep recommendations;
+- behavior-specific wellness prompts.
+
+### Avoid Overstating the Activity–Sleep Relationship
+
+Because the analysis did not show a strong relationship between steps and sleep duration, marketing should avoid implying that more steps will automatically improve sleep.
+
+Sleep-related messaging should instead emphasize holistic sleep support, sleep hygiene, stress management, and personalized tracking.
+
+### Use Gamification & Segmented Engagement
+
+Potential engagement strategies include:
+
+- activity challenges;
+- social features;
+- day-specific campaigns;
+- personalized goals;
+- differentiated messaging for users with different activity and sleep patterns.
+
+These recommendations should be validated through **Bellabeat-specific user research and experimentation** before broad implementation.
+
+---
+
+## 🧩 Challenges & How I Addressed Them
+
+| Challenge | How I Addressed It | What It Taught Me |
+| --- | --- | --- |
+| **Multiple datasets with different time fields** | Standardized dates and timestamps before joining records | Data integration depends on consistent keys and temporal formats |
+| **Overlapping columns across daily datasets** | Renamed conflicting variables and explicitly selected the required fields | Join logic needs to be controlled rather than left to default suffixes |
+| **Date field changed after joining sleep and activity data** | Added defensive logic to identify and normalize the available date column before weekday analysis | Data pipelines should validate schemas after transformations |
+| **Small, non-Bellabeat sample** | Treated findings as directional and documented limitations | Business recommendations should reflect the strength of the evidence |
+| **Correlation could be mistaken for causation** | Framed relationships as associations and avoided claiming direct behavioral effects | Analytical communication is as important as calculation |
+| **Turning descriptive analysis into business value** | Connected findings to specific product, messaging, and engagement ideas | Data analysis becomes useful when insights are translated into testable decisions |
+
+---
+
+## 🛠️ Technical Stack
+
+| Area | Technologies & Methods |
+| --- | --- |
+| **Programming** | R |
+| **Data Manipulation** | Tidyverse, dplyr, tidyr, readr |
+| **Date / Time Processing** | lubridate |
+| **Visualization** | ggplot2 |
+| **Analysis** | EDA, descriptive statistics, correlation analysis |
+| **Data Engineering** | CSV ingestion, schema inspection, joins, reshaping, date normalization |
+| **Reporting** | R Markdown |
+| **Environment** | RStudio / Posit environment |
+
+---
+
+## ⚠️ Limitations & Critical Evaluation
+
+This analysis has several limitations that affect how strongly the results can be generalized.
+
+- **Small sample:** only 30 Fitbit users were included.
+- **Different target population:** Fitbit users are not Bellabeat users.
+- **Sparse measurements:** weight data contains very few records compared with activity data.
+- **Different data availability:** sleep and other metrics are available for fewer user-days than daily activity.
+- **Short observation window:** the dataset captures only a limited period of behavior.
+- **No causal design:** correlations between activity, sleep, sedentary time, and calories do not establish causation.
+- **Weekday/weekend findings are exploratory:** visual differences were not confirmed with formal significance testing.
+
+For a real business decision, I would treat this project as **hypothesis generation** and validate the findings with Bellabeat-specific data.
+
+---
+
+## 🔄 Future Improvements
+
+If I revisited this project today, I would:
+
+- use Bellabeat first-party customer data where available;
+- increase sample size and observation duration;
+- quantify missingness and participant coverage more explicitly;
+- separate analyses based on which users have complete activity and sleep data;
+- use statistical tests for weekday/weekend differences;
+- segment users by behavior rather than relying only on global averages;
+- add confidence intervals and effect-size reporting;
+- examine time-of-day behavior using the hourly datasets;
+- investigate whether heart-rate and intensity data improve behavioral segmentation;
+- build an interactive dashboard for marketing stakeholders;
+- validate recommendations through **A/B testing** and user research.
+
+---
+
+## 🧠 What I Learned
+
+This project strengthened my understanding of the connection between **data analysis and business decision-making**.
+
+The most important lessons were:
+
+- real datasets often require substantial cleaning and schema reconciliation before analysis;
+- joins need to be validated carefully when several files contain overlapping measures;
+- a statistically visible relationship does not automatically imply a causal relationship;
+- small samples require cautious interpretation;
+- analytical findings should be converted into **specific, testable business actions**;
+- good recommendations should include a plan for validation, not just a narrative based on historical data.
+
+The project also reinforced the value of communicating uncertainty clearly. Rather than treating Fitbit behavior as proof of how Bellabeat customers behave, the analysis is more appropriately used to identify **hypotheses for future customer research and experimentation**.
+
+---
+
+## 💬 Interview Quick Reference
+
+| Question | Quick Answer |
+| --- | --- |
+| **What was the project?** | An R-based business analytics case study using Fitbit data to inform Bellabeat Leaf marketing and product strategy |
+| **What was the business goal?** | Identify smart-device usage trends and translate them into actionable marketing recommendations |
+| **Main tools?** | R, Tidyverse, dplyr, lubridate, ggplot2, R Markdown |
+| **What data did you use?** | Public Fitbit data from 30 users covering activity, steps, calories, sleep, heart rate, and other wellness metrics |
+| **Main finding?** | Sedentary time represented **73.2%** of the analyzed daily activity distribution |
+| **Key correlation?** | Steps and calories showed an observed correlation of **0.41** |
+| **Sleep finding?** | No strong linear relationship between sleep duration and total active minutes; steps also showed little relationship with sleep duration |
+| **Biggest technical challenge?** | Combining multiple datasets with different date fields and overlapping columns |
+| **How did you solve it?** | Standardized dates, renamed conflicting variables, controlled joins, and validated the resulting schema |
+| **Biggest analytical limitation?** | Small Fitbit sample that is not directly representative of Bellabeat customers |
+| **What business recommendations did you make?** | Movement reminders, personalized activity/sleep insights, holistic wellness positioning, gamification, and segmented messaging |
+| **What would you improve today?** | Bellabeat first-party data, larger sample, statistical testing, behavioral segmentation, dashboarding, and A/B validation |
+| **Main lesson?** | Strong business analytics requires both technical analysis and disciplined translation of evidence into testable decisions |
+
+---
+
+## 🎓 Project Context
+
+This project was completed as the **capstone case study for the Google Data Analytics Professional Certificate**.
+
+The Bellabeat case study follows a structured analytics process from defining the business task through data preparation, processing, analysis, communication, and action-oriented recommendations.
+
+The project is retained in my portfolio because it demonstrates:
+
+**R · Data Cleaning · Exploratory Data Analysis · Data Visualization · Business Analytics · Marketing Strategy · Data Communication**
+
+---
+
+## 👤 Author
+
+**Gregory Charles**
+
+Data Science · Machine Learning · Generative AI · Applied Software Development
+
+[← Back to Main Projects Portfolio](../README.md)
