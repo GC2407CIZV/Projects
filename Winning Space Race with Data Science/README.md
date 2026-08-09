@@ -1,35 +1,14 @@
 # 🚀 Winning the Space Race with Data Science
 
-## Falcon 9 First-Stage Landing Success Prediction
+**Data Science · Machine Learning · SQL · Interactive Analytics**
 
-**Author:** Gregory Charles  
-**Completed:** December 2024  
-**Program:** IBM Data Science Professional Certificate  
-**Project Type:** Data Science Capstone
+> **Project Context:** IBM Data Science Professional Certificate Capstone
 
----
+An end-to-end data science project investigating whether **Falcon 9 first-stage landing success** can be predicted from historical launch characteristics.
 
-## 📌 Project Overview
-
-SpaceX's Falcon 9 launch system introduced a major change to commercial spaceflight through the recovery and reuse of first-stage boosters.
-
-Because first-stage recovery can influence the economics of a launch, understanding the conditions associated with successful landings provides an interesting real-world data science problem.
-
-This capstone project applies an **end-to-end data science workflow** to historical Falcon 9 launch data. It combines data collection, web scraping, data wrangling, SQL analysis, exploratory data analysis, geospatial visualization, interactive dashboard development, and machine learning to investigate a central question:
-
-> **Can Falcon 9 first-stage landing success be predicted from historical launch characteristics?**
-
-Four classification algorithms were trained, tuned, and evaluated:
-
-- Logistic Regression
-- Support Vector Machine (SVM)
-- Decision Tree
-- K-Nearest Neighbors (KNN)
-
-In the final model comparison, **KNN achieved 83.3% test accuracy**.
+The project combines **REST API data collection, web scraping, data wrangling, SQL, exploratory data analysis, Folium geospatial visualization, Plotly Dash, and machine learning**. Four classification algorithms were compared, with **KNN achieving the strongest documented test accuracy of 83.3%**.
 
 ---
-
 
 ## ⭐ Key Highlights
 
@@ -44,7 +23,7 @@ In the final model comparison, **KNN achieved 83.3% test accuracy**.
 
 ---
 
-## 🎯 Project Objectives
+## 🎯 Problem & Objectives
 
 The project was designed to investigate Falcon 9 landing performance from several complementary perspectives:
 
@@ -61,7 +40,7 @@ Rather than focusing only on model training, the project demonstrates the broade
 
 ---
 
-## 🔄 End-to-End Workflow
+## 🔄 Analytical Workflow
 
 ```text
 SpaceX REST API ───────┐
@@ -97,7 +76,7 @@ Wikipedia Scraping ────┘
 
 ---
 
-## 🛠️ Technologies & Tools
+## 🛠️ Technical Stack
 
 ### Programming & Data Analysis
 
@@ -135,7 +114,7 @@ Wikipedia Scraping ────┘
 
 ---
 
-# 🔍 Methodology
+## 🔍 Methodology
 
 ## 1. Data Collection
 
@@ -293,7 +272,7 @@ The dashboard transforms the analysis from a collection of static charts into an
 
 ---
 
-# 🤖 Machine Learning
+## 🤖 Machine Learning
 
 ## Feature Preparation
 
@@ -357,7 +336,7 @@ This provided a more systematic basis for comparing model performance.
 
 ---
 
-# 📊 Results
+## 📊 Results & Key Findings
 
 ## Model Performance
 
@@ -426,7 +405,7 @@ As with launch site and payload, the relationship should be interpreted as an **
 ---
 
 
-# 🧩 Challenges & How I Addressed Them
+## 🧩 Challenges & How I Addressed Them
 
 | Challenge | How I Addressed It | What It Taught Me |
 | --- | --- | --- |
@@ -439,7 +418,7 @@ As with launch site and payload, the relationship should be interpreted as an **
 
 ---
 
-# 🧠 What This Project Demonstrates
+## 🧠 What This Project Demonstrates
 
 Although the final stage involves machine learning, the project covers substantially more than predictive modeling.
 
@@ -492,7 +471,7 @@ The project therefore represents an **end-to-end applied data science workflow**
 ---
 
 
-# 🧠 What I Learned
+## 🧠 What I Learned
 
 This project was valuable because it connected individual data science techniques into a single workflow.
 
@@ -512,7 +491,7 @@ If I rebuilt the project today, I would place even greater emphasis on **tempora
 
 ---
 
-# ⚠️ Limitations
+## ⚠️ Limitations
 
 Several limitations should be considered when interpreting the results.
 
@@ -538,7 +517,7 @@ The reported accuracy reflects performance on the project's test split. A more r
 
 ---
 
-# 🔭 Potential Extensions
+## 🔄 Future Improvements
 
 Several extensions could build on the existing work.
 
@@ -577,7 +556,7 @@ These approaches would be a more natural extension of the existing tabular class
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 The repository contains the notebooks and application files used across the different stages of the IBM capstone project.
 
@@ -599,7 +578,7 @@ Together, these components document the progression from raw launch data to the 
 ---
 
 
-# 💬 Interview Quick Reference
+## 💬 Interview Quick Reference
 
 | Question | Quick Answer |
 | --- | --- |
@@ -617,7 +596,7 @@ Together, these components document the progression from raw launch data to the 
 
 ---
 
-# 🎓 Project Context
+## 🎓 Project Context
 
 This project was completed as the capstone project for the **IBM Data Science Professional Certificate**.
 
