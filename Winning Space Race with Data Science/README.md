@@ -1,121 +1,578 @@
-# 🚀 Falcon 9 First-Stage Landing Success Prediction
+# 🚀 Winning the Space Race with Data Science
+
+## Falcon 9 First-Stage Landing Success Prediction
 
 **Author:** Gregory Charles  
-**Date:** December 19, 2024  
-**Course:** IBM Data Science Professional Certificate  
+**Completed:** December 2024  
+**Program:** IBM Data Science Professional Certificate  
+**Project Type:** Data Science Capstone
 
 ---
 
-## ✨ Executive Summary
+## 📌 Project Overview
 
-SpaceX has revolutionized space exploration with its Falcon 9 reusable rockets, which significantly reduce launch costs. The ability to predict the success of Falcon 9 first-stage landings is crucial for enhancing the efficiency of these rockets. This project explores **machine learning** techniques to forecast landing outcomes, helping SpaceX optimize its launches.
+SpaceX's Falcon 9 launch system introduced a major change to commercial spaceflight through the recovery and reuse of first-stage boosters.
 
-### Key Highlights:
-- **Data Collection**: Merged API data from SpaceX and web scraping for comprehensive launch details.
-- **Data Analysis**: Applied advanced EDA to uncover patterns in success/failure outcomes.
-- **Machine Learning**: Implemented multiple models (KNN, Logistic Regression, SVM, Decision Tree) to predict landing success.
-- **Visualization**: Developed interactive maps and dashboards for deeper insight into landing trends.
+Because first-stage recovery can influence the economics of a launch, understanding the conditions associated with successful landings provides an interesting real-world data science problem.
 
-**Top Finding:** The **K-Nearest Neighbors (KNN)** model achieved an impressive **83.3% accuracy**, making it the best performer in predicting landing success.
+This capstone project applies an **end-to-end data science workflow** to historical Falcon 9 launch data. It combines data collection, web scraping, data wrangling, SQL analysis, exploratory data analysis, geospatial visualization, interactive dashboard development, and machine learning to investigate a central question:
 
----
+> **Can Falcon 9 first-stage landing success be predicted from historical launch characteristics?**
 
-## 📖 Table of Contents
+Four classification algorithms were trained, tuned, and evaluated:
 
-1. [Executive Summary](#✨-executive-summary)
-2. [Introduction](#-introduction)
-3. [Methodology](#-methodology)
-   - [Data Collection](#data-collection)
-   - [Data Wrangling](#data-wrangling)
-   - [Exploratory Data Analysis](#exploratory-data-analysis)
-   - [Interactive Visualization](#interactive-visualization)
-   - [Machine Learning](#machine-learning)
-4. [Results](#results)
-5. [Conclusion](#conclusion)
-6. [Appendix](#appendix)
+- Logistic Regression
+- Support Vector Machine (SVM)
+- Decision Tree
+- K-Nearest Neighbors (KNN)
+
+In the final model comparison, **KNN achieved 83.3% test accuracy**.
 
 ---
 
-## 🧑‍🚀 Introduction
+## 🎯 Project Objectives
 
-### The SpaceX Advantage:
-SpaceX has disrupted the space industry with its **reusable Falcon 9 rockets**, significantly reducing the cost of sending payloads to space. A key part of this strategy is the **successful landing of Falcon 9's first stage**, which allows SpaceX to reuse boosters, cutting down on operational expenses. In this project, we predict whether Falcon 9 first-stage landings will succeed based on various launch factors.
+The project was designed to investigate Falcon 9 landing performance from several complementary perspectives:
 
-### Problem Statement:
-How can we predict Falcon 9's first-stage landing success to improve cost-efficiency and help SpaceX stay ahead of its competitors?
+1. Collect historical Falcon 9 launch data from multiple sources.
+2. Clean and transform the collected data into an analysis-ready dataset.
+3. Explore relationships between launch characteristics and landing outcomes.
+4. Query launch data using SQL to answer targeted analytical questions.
+5. Visualize launch sites and outcomes geographically.
+6. Build an interactive dashboard for exploring launch performance.
+7. Train and tune multiple classification algorithms.
+8. Compare their ability to predict first-stage landing success.
+
+Rather than focusing only on model training, the project demonstrates the broader workflow required to move from **raw external data to analysis, visualization, and predictive modeling**.
 
 ---
 
-## 🔧 Methodology
+## 🔄 End-to-End Workflow
+
+```text
+SpaceX REST API ───────┐
+                       ├──► Data Collection
+Wikipedia Scraping ────┘
+                              │
+                              ▼
+                       Data Wrangling
+                              │
+                ┌─────────────┴─────────────┐
+                ▼                           ▼
+          SQL Analysis                     EDA
+                │                           │
+                └─────────────┬─────────────┘
+                              ▼
+                   Interactive Analysis
+                    ┌─────────┴─────────┐
+                    ▼                   ▼
+                Folium Maps        Plotly Dash
+                    └─────────┬─────────┘
+                              ▼
+                      Feature Engineering
+                              │
+                              ▼
+                     Model Development
+                              │
+                              ▼
+                       GridSearchCV
+                              │
+                              ▼
+                     Model Evaluation
+```
+
+---
+
+## 🛠️ Technologies & Tools
+
+### Programming & Data Analysis
+
+- Python
+- Pandas
+- NumPy
+- SQL
 
 ### Data Collection
-To build a reliable prediction model, we collected and combined data from:
-- **SpaceX API**: Provides launch details, including payload weight, landing status, and more.
-- **Wikipedia Scraping**: Used **BeautifulSoup** to gather supplementary launch data from Wikipedia.
-- **Data Processing**: Cleaned and structured the data for further analysis.
 
-### Data Wrangling
-- **One-Hot Encoding**: Converted categorical data (e.g., launch site, orbit type) into numerical values.
-- **Handling Missing Values**: Cleaned incomplete or irrelevant rows for consistency and accuracy.
+- REST APIs
+- Requests
+- BeautifulSoup
+- Web scraping
 
-### Exploratory Data Analysis (EDA)
-- **Visual Exploration**: Created plots to reveal key relationships between features like payload weight, launch site, and orbit type with landing success.
-- **SQL Insights**: Executed SQL queries to gather key metrics, like average payload mass and landing success rates by site.
+### Visualization
 
-### Interactive Visualization
-- **Folium Maps**: Developed interactive maps that visualize launch sites and their associated landing successes.
-- **Plotly Dashboards**: Designed an interactive dashboard to explore landing success by payload, launch site, and orbit type.
+- Matplotlib
+- Seaborn
+- Plotly
+- Folium
+
+### Dashboard Development
+
+- Plotly Dash
 
 ### Machine Learning
-- **Model Selection**: Tried four classification models: **Logistic Regression**, **SVM**, **Decision Tree**, and **KNN**.
-- **Hyperparameter Tuning**: Used **Grid Search** to find optimal parameters for each model.
-- **Evaluation**: Compared models based on their **accuracy**, **confusion matrices**, and overall performance.
+
+- Scikit-learn
+- Logistic Regression
+- Support Vector Machine
+- Decision Tree
+- K-Nearest Neighbors
+- GridSearchCV
 
 ---
 
-## 📊 Results
+# 🔍 Methodology
 
-### Key Findings:
-- **Launch Site Success Rates**: **KSC LC-39A** emerged as the top performer in terms of landing success, while **VAFB-SLC** struggled with heavier payloads.
-- **Payload Weight**: Heavier payloads generally had a higher probability of landing success, indicating a complex relationship between payload and landing outcomes.
-- **Orbit Type**: Launches to **LEO** and **GEO** orbits had the highest success rates, while **GTO** orbits exhibited mixed results.
+## 1. Data Collection
 
-### Best-Performing Model
-The **K-Nearest Neighbors (KNN)** model outperformed others with an **accuracy of 83.3%**, making it the best choice for predicting landing success. 
+Historical Falcon 9 launch information was collected through two complementary approaches.
 
----
+### SpaceX REST API
 
-## 🏁 Conclusion
+The SpaceX API was used to retrieve structured launch information programmatically.
 
-### Key Insights:
-- **Flight Volume Correlation**: Launch sites with more flight history (e.g., KSC LC-39A) showed higher landing success rates.
-- **Time-Based Improvement**: Falcon 9’s landing success rates have improved consistently over the years, reflecting advancements in technology and learning.
-- **Payload Impact**: Lighter payloads tend to correlate with success, but the payload itself is not the sole determinant of landing outcomes.
-- **Launch Site Performance**: KSC LC-39A stands out as the most successful site, which can be attributed to its operational maturity and location factors.
+The collected data included launch-related variables such as:
 
-### Actionable Takeaways:
-- SpaceX can focus on optimizing its landing strategies for specific payload categories and launch sites.
-- Understanding the relationship between orbit types and landing success can guide future mission planning.
+- flight information,
+- payload characteristics,
+- launch sites,
+- orbit information,
+- booster-related attributes,
+- and landing outcomes.
 
----
+API responses were processed and converted into a structured dataset suitable for analysis.
 
-## 📂 Appendix
+### Web Scraping
 
-- **GitHub Repository**: [View the code and notebooks on GitHub](https://github.com/your-repository).
-- **Data Sources**: SpaceX API, Wikipedia.
-- **Libraries Used**: Pandas, Matplotlib, Seaborn, Scikit-learn, Plotly, Folium, BeautifulSoup.
+A second dataset was constructed by scraping Falcon 9 launch records from Wikipedia using **BeautifulSoup**.
 
----
+This stage demonstrated how information from an HTML source can be:
 
-## 💡 Future Work
-- **Real-time Prediction**: Integrating live data to make real-time landing success predictions.
-- **Advanced Models**: Exploring deep learning techniques like neural networks for even more accurate predictions.
-- **Broader Dataset**: Expanding the dataset to include other private space companies and comparing their landing success.
+1. retrieved,
+2. parsed,
+3. extracted from tables,
+4. cleaned,
+5. and transformed into structured data.
+
+Using both approaches provided experience working with **structured API data and semi-structured web data**.
 
 ---
 
-### Special Thanks:
-- **IBM Coursera** for providing the tools and learning environment for this analysis.
-- **SpaceX** for their trailblazing work in space exploration.
+## 2. Data Wrangling
+
+The raw launch data required preprocessing before analysis and modeling.
+
+The wrangling process included:
+
+- inspecting missing values,
+- selecting relevant Falcon 9 records,
+- cleaning inconsistent fields,
+- transforming landing outcomes,
+- preparing categorical variables,
+- and constructing the target variable used for classification.
+
+Landing outcomes were converted into a binary representation indicating whether the first-stage landing was successful.
+
+Categorical features required for machine learning were subsequently transformed using **one-hot encoding**.
+
+This stage converted raw launch records into a consistent analytical dataset.
 
 ---
+
+## 3. Exploratory Data Analysis
+
+Exploratory Data Analysis (EDA) was used to investigate how different mission characteristics related to first-stage landing success.
+
+Variables examined included:
+
+- flight number,
+- payload mass,
+- launch site,
+- orbit,
+- and launch year.
+
+Visual analysis was used to identify patterns that would be difficult to observe from raw tables alone.
+
+Particular attention was given to the relationship between:
+
+```text
+Launch Characteristics
+        │
+        ├── Flight Number
+        ├── Payload Mass
+        ├── Launch Site
+        ├── Orbit
+        └── Launch Year
+        │
+        ▼
+Landing Success / Failure
+```
+
+The analysis indicated that landing outcomes were associated with several interacting mission characteristics rather than a single explanatory variable.
+
+---
+
+## 4. SQL Analysis
+
+SQL was used as a complementary analytical tool for querying the launch dataset.
+
+Queries were designed to extract targeted information such as:
+
+- launch-site activity,
+- payload statistics,
+- mission characteristics,
+- landing outcomes,
+- and other aggregated launch metrics.
+
+This stage demonstrates the use of **SQL alongside Python-based analysis** within the same data science workflow.
+
+---
+
+## 5. Geospatial Analysis with Folium
+
+Launch-site performance was explored geographically using **Folium**.
+
+Interactive maps were created to visualize:
+
+- Falcon 9 launch-site locations,
+- successful and unsuccessful launches,
+- surrounding infrastructure,
+- and geographic relationships around launch facilities.
+
+Markers and map-based visualizations made it possible to investigate launch performance from a spatial perspective rather than relying solely on tables and charts.
+
+This part of the project demonstrates the use of **geospatial visualization for exploratory data analysis**.
+
+---
+
+## 6. Interactive Dashboard with Plotly Dash
+
+An interactive dashboard was developed using **Plotly Dash** to allow users to explore Falcon 9 launch data dynamically.
+
+The dashboard includes functionality for:
+
+### Launch-Site Selection
+
+Users can examine:
+
+- all launch sites together,
+- or an individual launch site.
+
+### Landing Success Visualization
+
+A dynamic pie chart displays the relationship between successful and unsuccessful launches based on the selected site.
+
+### Payload Filtering
+
+A payload-range control allows users to restrict the analysis to missions within selected payload ranges.
+
+### Payload vs. Landing Outcome
+
+An interactive scatter plot explores the relationship between:
+
+- payload mass,
+- booster version,
+- launch site,
+- and landing outcome.
+
+The dashboard transforms the analysis from a collection of static charts into an **interactive exploratory tool**.
+
+---
+
+# 🤖 Machine Learning
+
+## Feature Preparation
+
+Before training the models, categorical launch characteristics were converted into numerical features using one-hot encoding.
+
+The feature set included information derived from variables such as:
+
+- orbit,
+- launch site,
+- landing pad,
+- booster-related characteristics,
+- and other mission attributes.
+
+The resulting feature matrix was standardized where required before model training and evaluation.
+
+---
+
+## Models Evaluated
+
+Four supervised classification algorithms were compared.
+
+| Model | Purpose |
+|---|---|
+| **Logistic Regression** | Establish a linear classification baseline |
+| **Support Vector Machine** | Model more complex decision boundaries |
+| **Decision Tree** | Capture nonlinear feature interactions |
+| **K-Nearest Neighbors** | Classify launches based on similar historical observations |
+
+Rather than assuming one algorithm would perform best, the project compared several different modeling approaches.
+
+---
+
+## Hyperparameter Optimization
+
+Model parameters were tuned using **GridSearchCV**.
+
+This allowed combinations of hyperparameters to be evaluated systematically using cross-validation rather than manually selecting a single configuration.
+
+The workflow followed the general pattern:
+
+```text
+Training Data
+     │
+     ▼
+Candidate Model
+     │
+     ▼
+Parameter Grid
+     │
+     ▼
+GridSearchCV
+     │
+     ▼
+Best Parameters
+     │
+     ▼
+Test Evaluation
+```
+
+This provided a more systematic basis for comparing model performance.
+
+---
+
+# 📊 Results
+
+## Model Performance
+
+The classification models were evaluated on held-out test data after hyperparameter tuning.
+
+The strongest documented test result in the completed analysis was:
+
+> **K-Nearest Neighbors (KNN): 83.3% test accuracy**
+
+The result shows that historical launch characteristics contained useful predictive information about Falcon 9 first-stage landing outcomes.
+
+Because the dataset used in the capstone is relatively small, the result should be interpreted as a demonstration of the predictive workflow rather than evidence of a production-ready landing prediction system.
+
+---
+
+## Analytical Findings
+
+The exploratory analysis revealed several notable patterns.
+
+### 📈 Landing Success Improved Over Time
+
+Later Falcon 9 launches generally demonstrated higher landing success than earlier missions.
+
+This is consistent with an evolving launch system in which operational experience and reusable-launch capabilities developed over successive flights.
+
+---
+
+### 🛰️ Launch Site and Mission Characteristics Matter
+
+Landing success was not distributed uniformly across launch sites.
+
+Sites differed in:
+
+- number of launches,
+- mission characteristics,
+- payload ranges,
+- and observed landing outcomes.
+
+However, these differences should not automatically be interpreted as evidence that the launch site itself causes better landing performance, because launch site is associated with other mission variables.
+
+---
+
+### ⚖️ Payload Has a Nonlinear Relationship with Success
+
+Payload mass showed a relationship with landing outcomes, but the exploratory analysis did not support treating payload weight as a simple independent predictor of success.
+
+Payload interacts with other factors such as:
+
+- orbit,
+- launch site,
+- mission profile,
+- and booster configuration.
+
+This makes landing prediction a **multivariable classification problem** rather than a simple payload-based rule.
+
+---
+
+### 🌍 Orbit Is Associated with Landing Outcomes
+
+Landing success also varied across orbit categories.
+
+Different orbital missions involve different mission profiles and constraints, which means orbit type provides useful information when examining historical landing outcomes.
+
+As with launch site and payload, the relationship should be interpreted as an **observed association within the dataset**, rather than proof that orbit type alone determines landing success.
+
+---
+
+# 🧠 What This Project Demonstrates
+
+Although the final stage involves machine learning, the project covers substantially more than predictive modeling.
+
+It demonstrates experience with:
+
+### Data Acquisition
+- REST API integration
+- HTTP requests
+- web scraping
+- HTML parsing
+
+### Data Engineering & Preparation
+- data cleaning
+- missing-value handling
+- feature preparation
+- categorical encoding
+
+### Data Analysis
+- Pandas
+- SQL
+- exploratory data analysis
+- statistical summaries
+
+### Data Visualization
+- Matplotlib
+- Seaborn
+- Plotly
+
+### Geospatial Analysis
+- Folium
+- interactive map markers
+- spatial exploration
+
+### Application Development
+- Plotly Dash
+- interactive filters
+- callbacks
+- dynamic visualizations
+
+### Machine Learning
+- classification
+- feature preprocessing
+- cross-validation
+- hyperparameter optimization
+- model comparison
+- confusion-matrix analysis
+
+The project therefore represents an **end-to-end applied data science workflow**, from external data acquisition through interactive analytics and predictive modeling.
+
+---
+
+# ⚠️ Limitations
+
+Several limitations should be considered when interpreting the results.
+
+### Dataset Size
+
+The historical Falcon 9 dataset used for the capstone is relatively small compared with datasets typically used to develop production machine-learning systems.
+
+### Historical Data
+
+The model learns from historical launch conditions. Falcon 9 operations, hardware, procedures, and recovery performance have continued to evolve.
+
+### Feature Availability
+
+The model is restricted to the variables available in the project dataset. Real landing outcomes may depend on additional operational, environmental, engineering, and mission-specific factors that are not represented.
+
+### Correlation vs. Causation
+
+Patterns discovered through EDA identify associations within the dataset. They do not establish that variables such as payload mass, orbit, or launch site directly cause landing success or failure.
+
+### Model Evaluation
+
+The reported accuracy reflects performance on the project's test split. A more robust production evaluation would require substantially more data, repeated validation, and careful investigation of class balance and model stability.
+
+---
+
+# 🔭 Potential Extensions
+
+Several extensions could build on the existing work.
+
+### Expand the Dataset
+
+Incorporate additional and more recent launch records to determine whether patterns identified in the original dataset remain stable over time.
+
+### Temporal Validation
+
+Train models on earlier launches and evaluate them on later launches to better simulate prediction of future missions.
+
+### Additional Features
+
+Where reliable data is available, investigate variables such as:
+
+- weather conditions,
+- booster reuse history,
+- mission-specific characteristics,
+- landing method,
+- and additional vehicle configuration data.
+
+### Feature Importance & Explainability
+
+Apply model interpretation techniques to investigate which variables contribute most strongly to predictions.
+
+### Additional Ensemble Models
+
+Compare the existing classifiers with algorithms designed for structured tabular data, such as:
+
+- Random Forest,
+- Gradient Boosting,
+- XGBoost,
+- or CatBoost.
+
+These approaches would be a more natural extension of the existing tabular classification problem than introducing deep learning solely for additional model complexity.
+
+---
+
+# 📁 Project Structure
+
+The repository contains the notebooks and application files used across the different stages of the IBM capstone project.
+
+```text
+.
+├── data collection / API notebooks
+├── web scraping notebooks
+├── data wrangling notebooks
+├── exploratory data analysis
+├── SQL analysis
+├── Folium geospatial analysis
+├── Plotly Dash application
+├── machine learning classification
+└── final presentation
+```
+
+Together, these components document the progression from raw launch data to the final predictive analysis.
+
+---
+
+# 🎓 Project Context
+
+This project was completed as the capstone project for the **IBM Data Science Professional Certificate**.
+
+The course provided the project framework and learning objectives, while the implementation demonstrates practical application of the tools and techniques covered throughout the program, including:
+
+**Python · APIs · Web Scraping · SQL · Data Wrangling · EDA · Data Visualization · Folium · Plotly Dash · Scikit-learn · Machine Learning**
+
+The project is retained in this portfolio as evidence of the development of an end-to-end data science workflow and as a foundation for later machine learning and AI projects.
+
+---
+
+## 🙏 Acknowledgements
+
+- **IBM / Coursera** — for the Data Science Professional Certificate curriculum and capstone framework.
+- **SpaceX** — for publicly accessible launch data used in the analysis.
+- **Wikipedia contributors** — for supplementary historical launch information used during the web-scraping component.
+
+---
+
+## 👤 Author
+
+**Gregory Charles**
+
+Data Science · Machine Learning · Applied AI · Generative AI
+
+For additional projects, see my main GitHub portfolio.
