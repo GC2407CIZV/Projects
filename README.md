@@ -104,7 +104,7 @@ This index provides a quick way to identify projects by technical area, applicat
 | **Recommendation Systems** | [**Amazon Product Recommendation Engine**](https://github.com/GC2407CIZV/Projects/tree/main/Amazon%20Product%20Recommendation%20Engine) | Collaborative filtering and matrix factorization | SVD, Surprise, Python | 7.8M ratings; RMSE 0.8808 |
 | **Applied NLP / Web** | [**AI-Based Emotion Detection App**](https://github.com/GC2407CIZV/Projects/tree/main/AI-Based%20Emotion%20Detection%20Web%20Application) | AI-service integration in a tested Flask application | Flask, Watson NLP, Python, unittest | Modular NLP web application |
 | **Predictive ML / Sales** | [**ExtraaLearn Lead Conversion Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Lead%20Conversion%20Prediction%20ML) | Classification, lead scoring and business-oriented ML | XGBoost, AdaBoost, Scikit-learn | ROC AUC 0.931 |
-| **Predictive ML / Space** | [**Falcon 9 Landing Success Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | Data acquisition, classification, visualization and model comparison | Python, KNN, APIs, BeautifulSoup, Folium, Plotly | 83.3% documented accuracy |
+| **End-to-End Data Science / Space** | [**Winning the Space Race with Data Science — Falcon 9 Landing Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Winning%20Space%20Race%20with%20Data%20Science) | API + web-scraped data acquisition, wrangling, SQL/EDA, geospatial analysis, interactive dashboarding and classification | Python, REST APIs, BeautifulSoup, SQL, Folium, Plotly Dash, Scikit-learn | IBM Data Science capstone; KNN 83.3% test accuracy |
 | **Predictive ML / Transportation** | [**Shinkansen Passenger Experience Analysis**](https://github.com/GC2407CIZV/Projects/tree/main/Shinkansen%20Bullet%20Train%20Passenger%20Experience%20Analysis) | Advanced classification, feature engineering and model optimization | CatBoost, Optuna, Hyperopt, XGBoost | 0.9597 Accuracy; 0.9943 ROC AUC |
 | **HR Analytics / ML** | [**Salifort Motors Turnover Prediction**](https://github.com/GC2407CIZV/Projects/tree/main/Salifort%20Motors%20Employee%20Turnover%20Analysis) | Employee-turnover modeling and business recommendations | XGBoost, Random Forest, Python | Identified major turnover drivers |
 | **Unsupervised ML / Marketing** | [**Customer Personality Segmentation**](https://github.com/GC2407CIZV/Projects/tree/main/Customer%20Personality%20Segmentation) | Customer clustering, PCA and segment interpretation | K-Means, PCA, Scikit-learn | 3 actionable customer segments |
@@ -145,6 +145,7 @@ This index provides a quick way to identify projects by technical area, applicat
 My technical portfolio is supported by structured training in data science, machine learning, deep learning, and generative AI.
 
 - **MIT IDSS — Data Science & Machine Learning**
+- **IBM — Data Science Professional Certificate**
 - **IBM — Generative AI Engineering Professional Certificate**
 - **DeepLearning.AI — Deep Learning Specialization**
 - **Harvard CS50 — Introduction to Computer Science**
