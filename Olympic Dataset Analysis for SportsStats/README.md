@@ -24,58 +24,6 @@ The project covers the analytical workflow from **data cleaning and missing-valu
 
 ## 🎯 Problem & Objectives
 
-SportsStats is a fictional sports analytics client seeking insights from
-historical Olympic data.
-
-The project explores questions such as:
-
--   How has gender representation changed throughout Olympic history?
--   At what ages are Olympic medals most frequently won?
--   Which sports show the largest historical differences in male and
-    female participation?
--   How have athlete age, height, and weight changed over time?
--   Which countries have historically performed strongly in particular
-    sports?
--   How do physical characteristics differ across sports?
--   Can selected athlete and competition attributes be used in
-    predictive models?
-
-The overall workflow was:
-
-```text
-Raw Olympic Data
-       │
-       ▼
-Data Inspection & Cleaning
-       │
-       ▼
-Missing-Value Treatment
-       │
-       ▼
-Dataset Integration
-       │
-       ▼
-Feature Engineering & Aggregation
-       │
-       ▼
-Exploratory Data Analysis
-       │
-       ▼
-Statistical & Visual Analysis
-       │
-       ▼
-Predictive Experiments
-       │
-       ▼
-Critical Evaluation
-```
-
----
-
-
-
-## 🎯 Problem & Objectives
-
 The original project was framed around helping SportsStats derive useful
 insights from historical Olympic data.
 
@@ -126,19 +74,19 @@ Critical Evaluation
 
 The project uses two primary files:
 
--   `athlete_events.csv`
--   `noc_regions.csv`
+- `athlete_events.csv`
+- `noc_regions.csv`
 
-  Attribute                                             Value
-  ----------------------- -----------------------------------
-  Participation records                           **271,116**
-  Variables                                            **15**
-  Temporal coverage                               ~120 years
-  Medal outcome             Gold / Silver / Bronze / No Medal
-  Athlete ID                                        Available
-  Age                                       Partially missing
-  Height                                    Partially missing
-  Weight                                    Partially missing
+| Attribute | Value |
+| --- | ---: |
+| Participation records | **271,116** |
+| Variables | **15** |
+| Temporal coverage | ~120 years |
+| Medal outcome | Gold / Silver / Bronze / No Medal |
+| Athlete ID | Available |
+| Age | Partially missing |
+| Height | Partially missing |
+| Weight | Partially missing |
 
 Important variables include `ID`, `Name`, `Sex`, `Age`, `Height`,
 `Weight`, `Team`, `NOC`, `Games`, `Year`, `Season`, `City`, `Sport`,
@@ -153,9 +101,9 @@ records.
 
 The project conceptualizes the data around three main entities:
 
--   **Athlete:** ID, Name, Age, Sex, Height, Weight
--   **Event:** Event, Sport, Year, Season, City, Medal
--   **Team:** Team, NOC, Region
+- **Athlete:** ID, Name, Age, Sex, Height, Weight
+- **Event:** Event, Sport, Year, Season, City, Medal
+- **Team:** Team, NOC, Region
 
 Athletes can participate in multiple events, while team and NOC
 information connect participation records to geographic regions.
@@ -174,11 +122,11 @@ distributions.
 
 The raw dataset contained substantial missing demographic information:
 
-  Variable     Missing Values
-  ---------- ----------------
-  Age               **9,474**
-  Height           **60,171**
-  Weight           **62,875**
+| Variable | Missing Values |
+| --- | ---: |
+| Age | **9,474** |
+| Height | **60,171** |
+| Weight | **62,875** |
 
 Rather than deleting all incomplete records, different strategies were
 used according to the meaning of each variable.
@@ -232,16 +180,16 @@ This produced approximately **180,685 athlete-year records**.
 One of the clearest historical patterns is the long-term increase in
 female Olympic participation.
 
-  Period     Female Participation
-  -------- ----------------------
-  1890s                      ~0%
-  1920s                      ~6%
-  1940s                     ~11%
-  1960s                     ~14%
-  1980s                     ~24%
-  1990s                     ~32%
-  2000s                     ~40%
-  2010s                     ~44%
+| Period | Female Participation |
+| --- | ---: |
+| 1890s | ~0% |
+| 1920s | ~6% |
+| 1940s | ~11% |
+| 1960s | ~14% |
+| 1980s | ~24% |
+| 1990s | ~32% |
+| 2000s | ~40% |
+| 2010s | ~44% |
 
 Summer and Winter Olympic participation were also examined separately.
 
@@ -259,11 +207,11 @@ evidence that age alone determines medal probability.
 
 ## Athlete Demographics
 
-  Metric                   Female              Male
-  ------------- ----------------- -----------------
-  Mean age        **24.41 years**   **26.28 years**
-  Mean height       **169.02 cm**     **179.45 cm**
-  Mean weight        **61.45 kg**      **76.90 kg**
+| Metric | Female | Male |
+| --- | ---: | ---: |
+| Mean age | **24.41 years** | **26.28 years** |
+| Mean height | **169.02 cm** | **179.45 cm** |
+| Mean weight | **61.45 kg** | **76.90 kg** |
 
 The project also tracked average age, height, and weight across Olympic
 history. These are descriptive trends; the dataset alone cannot
@@ -454,19 +402,19 @@ Correlations](images/medal_count_correlations.png)
 
 ## ⚠️ Limitations & Critical Evaluation
 
--   **Historical dataset bias:** Early Olympic participation was smaller
+- **Historical dataset bias:** Early Olympic participation was smaller
     and less globally representative than modern participation.
--   **Missing measurements:** Imputation preserves more records but
+- **Missing measurements:** Imputation preserves more records but
     introduces estimated demographic values.
--   **Changing Olympic program:** Sports and events changed throughout
+- **Changing Olympic program:** Sports and events changed throughout
     Olympic history, affecting aggregate trends.
--   **Team medal representation:** Athlete-event records require careful
+- **Team medal representation:** Athlete-event records require careful
     aggregation for country-level medal analysis.
--   **BMI limitations:** BMI is a limited body-composition measure for
+- **BMI limitations:** BMI is a limited body-composition measure for
     elite athletes.
--   **Correlation vs. causation:** Observed relationships do not
+- **Correlation vs. causation:** Observed relationships do not
     establish causal effects.
--   **Predictive target leakage:** The original Random Forest experiment
+- **Predictive target leakage:** The original Random Forest experiment
     cannot be treated as a valid estimate of generalization performance.
 
 ---
@@ -476,20 +424,20 @@ Correlations](images/medal_count_correlations.png)
 If I revisited this project today, I would focus on methodological rigor
 rather than simply adding more complex models:
 
--   rebuild medal prediction using leakage-safe pre-event features;
--   use cross-validation and appropriate baseline models;
--   apply time-aware train/test splitting where appropriate;
--   investigate class imbalance;
--   evaluate precision, recall, F1, ROC-AUC, and confusion matrices;
--   develop sport-specific models;
--   introduce statistical significance testing;
--   improve team-medal normalization;
--   incorporate population or economic variables for country
+- rebuild medal prediction using leakage-safe pre-event features;
+- use cross-validation and appropriate baseline models;
+- apply time-aware train/test splitting where appropriate;
+- investigate class imbalance;
+- evaluate precision, recall, F1, ROC-AUC, and confusion matrices;
+- develop sport-specific models;
+- introduce statistical significance testing;
+- improve team-medal normalization;
+- incorporate population or economic variables for country
     comparisons;
--   use feature-importance or SHAP analysis;
--   extend the dataset beyond 2016;
--   build an interactive analytical dashboard;
--   implement a more explicit relational/SQL analytical pipeline.
+- use feature-importance or SHAP analysis;
+- extend the dataset beyond 2016;
+- build an interactive analytical dashboard;
+- implement a more explicit relational/SQL analytical pipeline.
 
 ---
 
@@ -505,15 +453,15 @@ meaning, and the appropriate unit of analysis.
 The project highlighted several principles that became increasingly
 important in my later work:
 
--   preprocessing decisions can materially change analytical
+- preprocessing decisions can materially change analytical
     conclusions;
--   different variables require different missing-data strategies;
--   the structure of the dataset must match the question being asked;
--   visual patterns require careful interpretation;
--   association should not be confused with causation;
--   impressive model metrics must be checked for leakage and
+- different variables require different missing-data strategies;
+- the structure of the dataset must match the question being asked;
+- visual patterns require careful interpretation;
+- association should not be confused with causation;
+- impressive model metrics must be checked for leakage and
     experimental validity;
--   model complexity is less important than sound analytical design.
+- model complexity is less important than sound analytical design.
 
 The retrospective discovery of target leakage in the original
 classification experiment is particularly important: **critical
