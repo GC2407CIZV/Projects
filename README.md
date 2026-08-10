@@ -331,7 +331,7 @@ Activity recommendations use a **Bayesian approach** combining contextual suitab
 
 > The complete source code, proprietary educational datasets, recommendation implementation, and original educational asset corpus are intentionally not publicly distributed because Lumina is being evaluated for potential future commercialization.
 
-[View Lumina Project Showcase](./Lumina)
+[View Lumina Project Showcase](./Lumina%20(EDSS))
 
 ---
 
