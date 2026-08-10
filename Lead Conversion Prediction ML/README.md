@@ -1,134 +1,139 @@
-# ExtraaLearn Lead Conversion Prediction ML
+# 🎯 ExtraaLearn Lead Conversion Prediction
 
-## 🚀 Project Summary
+**Machine Learning · Classification · Ensemble Learning · Lead Scoring · Business Analytics**
 
-This project delivered an end-to-end **Machine Learning (ML)** solution to build a robust **Lead Scoring System** for the educational institution, ExtraaLearn. The primary objective was to prioritize leads with the highest probability of conversion, enabling the sales team to shift from a high-volume, low-efficiency strategy to a **targeted, data-driven approach**.
+> **Project Context:** MIT IDSS — *Data Science and Machine Learning: Making Data-Driven Decisions*
 
-The resulting predictive models (Tuned XGBoost and Tuned AdaBoost) provide a generalized and highly effective system for identifying high-potential prospects, directly impacting operational efficiency and revenue growth.
+## 🚀 Project Overview
 
----
+ExtraaLearn is an EdTech organization seeking to improve how prospective learners are prioritized by its sales team.
 
-## 💡 Project Context & Objective
+Rather than treating every lead equally, this project frames lead prioritization as a **supervised machine learning classification problem**: using demographic, behavioral, and engagement data to estimate which leads are most likely to convert into paying customers.
 
-### Context
+The project covers the complete data science workflow—from exploratory analysis and preprocessing to model development, hyperparameter tuning, evaluation, and interpretation.
 
-The online EdTech market is experiencing rapid growth (projected to be worth **$286.62bn by 2023**). With many new companies entering the space, identifying and efficiently prioritizing high-value leads is crucial for competitive advantage. ExtraaLearn, an initial stage startup, faces the challenge of a large volume of leads with limited resources, necessitating a smart, predictive solution.
+Multiple classification and ensemble-learning approaches were compared. The strongest tuned models achieved:
 
-### Objective
+- **ROC AUC: 0.931** — Tuned XGBoost
+- **F1-score: 0.784** — Tuned AdaBoost
+- **Recall: 0.774** — Tuned AdaBoost
+- **Accuracy: 0.867** — Tuned AdaBoost
 
-1.  **Analyze and build an ML model** to help identify which leads are more likely to convert to paid customers.
-2.  **Find the factors driving** the lead conversion process.
-3.  **Create a profile** of the leads which are likely to convert to efficiently allocate sales resources.
-
----
-
-## ✨ Key Findings and Business Impact
-
-The implementation of the chosen model is projected to yield significant, measurable business gains:
-
-| Business Metric | Model Projection (Estimated Lift) |
-| :--- | :--- |
-| **Sales Team Efficiency** | **20-30%** reduction in time spent on low-potential leads. |
-| **Overall Conversion Rate** | **5-10%** increase within the next quarter due to optimized prioritization. |
-| **Workflow** | Establishes a **data-driven lead management workflow** for continuous optimization. |
-
-### Top Performing Models
-
-The **Tuned XGBoost Classifier** and **Tuned AdaBoost Classifier** emerged as the top performers, demonstrating strong generalization and high predictive power on unseen data.
-
-| Model | Metric | Value (Test Set) | Business Justification |
-| :--- | :--- | :--- | :--- |
-| **Tuned XGBoost** | **ROC AUC** | **0.931** | Highest overall **discriminatory power** (ability to separate classes). |
-| **Tuned AdaBoost** | **F1-Score (Converted)** | **0.784** | Superior ability in **correctly identifying actual converted leads** (minimizing false negatives). |
-
-### Model Performance Comparison (Test Set)
-
-| Model | Accuracy | Precision | Recall | **F1-score** | **ROC AUC** | Training Time (s) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Tuned XGBoost** | 0.865 | 0.801 | 0.756 | 0.778 | **0.931** | 0.45 |
-| **Tuned Random Forest** | 0.858 | 0.800 | 0.725 | 0.761 | 0.928 | 1.75 |
-| **Tuned AdaBoost** | 0.867 | 0.796 | **0.774** | **0.784** | 0.927 | 2.98 |
-| **Pruned Decision Tree** | 0.861 | 0.807 | 0.728 | 0.766 | 0.919 | 0.03 |
-
-### Actionable Insights (Profile of Likely Converters)
-
-Feature importance analysis consistently highlighted the characteristics of high-potential leads:
-
-* **High Engagement:** Leads who spend significant **`time_spent_on_website`** and initially interacted through the **`Website`**.
-* **High Intent:** Leads with **'High'** or **'Medium'** profile completion status.
-* **Valuable Source:** Leads acquired through **`Referral`** channels.
-* **Professional Status:** Leads with **'Professional'** occupation.
+Beyond predictive performance, the analysis identified characteristics associated with higher conversion probability, providing a foundation for a **data-driven lead-scoring strategy**.
 
 ---
 
-## 🔬 Data Science Pipeline & Expertise
+## 🎯 Business Problem
 
-This project demonstrates expertise in statistical analysis, feature engineering, and advanced machine learning modeling—key skills for a data science career.
+ExtraaLearn receives leads from multiple channels, but not every prospective learner has the same probability of becoming a paying customer.
 
-### Specialized Techniques & Expertise
+When sales resources are limited, contacting every lead with equal priority can result in significant effort being spent on prospects with relatively low conversion potential.
 
-| Category | Technique Used | Rationale / Skill Demonstrated |
-| :--- | :--- | :--- |
-| **Modeling** | **XGBoost & AdaBoost** | Expertise in **Gradient Boosting** and **Ensemble Learning** to maximize predictive power. |
-| **Optimization** | **Hyperparameter Tuning** | Systematically optimized models to achieve peak performance and prevent **overfitting**. |
-| **Feature Engineering** | **`np.log1p` & Scaling** | Handled data **skewness** and **outliers**; applied **Min-Max Scaling** for model readiness. |
-| **Evaluation** | **ROC AUC, F1-Score** | Used advanced metrics to address **class imbalance** and ensure high business value. |
+The central question therefore becomes:
 
-### Data Preprocessing & Feature Engineering
+> **Can historical lead and engagement data be used to identify which prospects are most likely to convert?**
 
-1.  **Cleaning:** Removed irrelevant columns (`ID`) and duplicate entries.
-2.  **Transformation:** Applied **Log Transformation** to numerical features to mitigate skewness.
-3.  **Scaling:** Applied **Min-Max Scaling** to normalize all numerical features.
-4.  **Encoding:** Used **One-Hot Encoding** for all categorical variables.
-5.  **Feature Augmentation:** Engineered custom behavioral features (e.g., **`interaction_score`**) to provide richer context to the models.
+A successful predictive model could help the organization:
+
+1. identify high-potential leads;
+2. understand the factors associated with conversion;
+3. create profiles of leads with higher conversion probability; and
+4. support more targeted allocation of sales resources.
 
 ---
 
-## 📚 Data Dictionary
+## 🧠 Machine Learning Problem
 
-The data contains the different attributes of leads and their interaction details with ExtraaLearn:
+The project is formulated as a **binary classification task**.
 
-| Feature Name | Description | Values |
-| :--- | :--- | :--- |
-| **ID** | ID of the lead | N/A |
-| **age** | Age of the lead | Numeric |
-| **current_occupation** | Current occupation of the lead. | 'Professional', 'Unemployed', 'Student' |
-| **first_interaction** | How the lead first interacted with ExtraaLearn. | 'Website', 'Mobile App' |
-| **profile_completed** | Percentage of profile filled by the lead. | Low (0-50%), Medium (50-75%), High (75-100%) |
-| **website_visits** | Number of times a lead has visited the website. | Numeric |
-| **time_spent_on_website** | Total time spent on the website. | Numeric |
-| **page_views_per_visit** | Avg. number of pages on the website viewed during visits. | Numeric |
-| **last_activity** | Last interaction between the lead and ExtraaLearn. | Email, Phone, or Website Activity details |
-| **print_media_type1/2** | Flag indicating if the lead saw the ad in Newspaper/Magazine. | Binary Flag |
-| **digital_media** | Flag indicating if the lead saw the ad on digital platforms. | Binary Flag |
-| **educational_channels** | Flag indicating if the lead heard about ExtraaLearn in education channels (forums, etc.). | Binary Flag |
-| **referral** | Flag indicating if the lead heard about ExtraaLearn through reference. | Binary Flag |
-| **status** | **Target Variable:** Flag indicating whether the lead was converted to a paid customer. | Binary Flag (0 or 1) |
+**Target variable:** `status`
 
----
+| Value | Meaning |
+| :---: | --- |
+| `0` | Lead did not convert |
+| `1` | Lead converted into a paid customer |
 
-## 💻 Technologies Used
+The objective is not simply to maximize overall accuracy.
 
-* **Python**
-* **Pandas & NumPy**
-* **Scikit-learn**
-* **XGBoost**
-* **Matplotlib & Seaborn**
+For lead scoring, the model must also effectively distinguish between converted and non-converted leads while correctly identifying a useful proportion of actual converters.
+
+For this reason, model evaluation considers several complementary metrics:
+
+- **Accuracy** — overall proportion of correct predictions
+- **Precision** — proportion of predicted converters that actually converted
+- **Recall** — proportion of actual converters successfully identified
+- **F1-score** — balance between precision and recall
+- **ROC AUC** — ability of the model to discriminate between the two classes across classification thresholds
 
 ---
 
-## ⚙️ Installation and Setup
+## 📊 Dataset
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/YourUsername/ExtraaLearn-Lead-Conversion-Prediction-ML.git](https://github.com/YourUsername/ExtraaLearn-Lead-Conversion-Prediction-ML.git)
-    cd ExtraaLearn-Lead-Conversion-Prediction-ML
-    ```
+The dataset contains demographic information about prospective learners together with information describing how they interacted with ExtraaLearn.
 
-2.  **Install the required packages:**
-    ```bash
-    pip install pandas numpy scikit-learn xgboost matplotlib seaborn
-    ```
+### Data Dictionary
 
-3.  **Run the analysis:**
-    Execute the primary notebook file (e.g., `ExtraaLearn_Lead_Conversion_Prediction_Project.ipynb`) using Jupyter Notebook.
+| Feature | Description |
+| --- | --- |
+| `ID` | Unique identifier for each lead |
+| `age` | Age of the lead |
+| `current_occupation` | Current occupation: Professional, Unemployed, or Student |
+| `first_interaction` | Whether the first interaction occurred through the Website or Mobile App |
+| `profile_completed` | Percentage of the user's profile that has been completed |
+| `website_visits` | Number of visits to the website |
+| `time_spent_on_website` | Total time spent on the website |
+| `page_views_per_visit` | Average number of pages viewed during each visit |
+| `last_activity` | Most recent interaction between the lead and ExtraaLearn |
+| `print_media_type1` | Whether the lead encountered the organization through one type of print media |
+| `print_media_type2` | Whether the lead encountered the organization through another type of print media |
+| `digital_media` | Whether the lead encountered advertising through digital media |
+| `educational_channels` | Whether the lead heard about ExtraaLearn through educational channels |
+| `referral` | Whether the lead was acquired through a referral |
+| `status` | **Target variable:** whether the lead converted into a paid customer |
+
+The dataset therefore combines several types of potential predictive signals:
+
+- demographic characteristics;
+- acquisition channels;
+- website engagement;
+- profile completion;
+- recent activity; and
+- referral information.
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+Exploratory analysis was used to investigate the distribution of the available variables and examine how different lead characteristics relate to conversion.
+
+Particular attention was given to:
+
+- numerical feature distributions;
+- skewness and potential outliers;
+- categorical feature distributions;
+- relationships between engagement variables and conversion;
+- acquisition channels;
+- profile completion;
+- occupation; and
+- behavioral differences between converted and non-converted leads.
+
+The purpose of the EDA was not only to prepare the dataset for modeling, but also to understand the **business characteristics associated with successful conversion**.
+
+---
+
+## 🛠️ Data Preprocessing
+
+The data was prepared for machine learning through a structured preprocessing workflow.
+
+### Data Cleaning
+
+The lead identifier (`ID`) was removed because it does not provide meaningful predictive information.
+
+Duplicate observations were also examined and removed where appropriate.
+
+### Numerical Transformation
+
+Numerical variables exhibiting skewness were transformed using:
+
+```python
+np.log1p()
