@@ -691,17 +691,13 @@ A representative project structure is:
 AI-Career-Coach-Pro/
 │
 ├── career_coach_app.py
-├── career_coach_app_final.py
-├── career_coach_app_enhanced.py
 │
 ├── resume_polisher.py
 ├── cover_letter.py
 ├── career_advisor.py
 │
 ├── requirements.txt
-├── README.md
-│
-└── [supporting project files]
+└── README.md
 ```
 
 The repository contains multiple versions that document the application's development from individual course exercises into the larger integrated implementation.
