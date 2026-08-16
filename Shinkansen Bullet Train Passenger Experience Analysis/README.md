@@ -1,151 +1,234 @@
 # 🚄 Shinkansen Passenger Experience Prediction
 
-**Machine Learning · Classification · CatBoost · XGBoost · LightGBM · Feature Engineering · Hyperparameter Optimization**
+**Machine Learning · Binary Classification · Model Benchmarking ·
+LightGBM · XGBoost · CatBoost · Ensemble Learning · Feature Engineering
+· Hyperparameter Optimization**
 
-> **Project Context:** MIT IDSS — *Data Science and Machine Learning: Making Data-Driven Decisions*  
-> **Hackathon Result:** **7th place out of 36 participants**  
-> **Official Competition Score:** **0.9572777**  
-> **Post-Hackathon Best Internal Accuracy:** **0.9601**  
-> **Post-Hackathon ROC AUC:** **0.9944**
+> **Project Context:** MIT IDSS --- *Data Science and Machine Learning:
+> Making Data-Driven Decisions*\
+> **Hackathon Result:** **7th place out of 36 participants**\
+> **Official Competition Score:** **0.9572777**\
+> **Post-Hackathon Final Ensemble Test Accuracy:** **0.96101**\
+> **Post-Hackathon Final Ensemble Test ROC AUC:** **0.994405**
 
-An end-to-end machine learning project for predicting **Shinkansen passenger satisfaction** from passenger characteristics, journey information, delays, and service-feedback data.
+An end-to-end machine-learning study for predicting **Shinkansen
+passenger satisfaction** from passenger characteristics, journey
+information, operational factors, and detailed service-feedback data.
 
-The project originated as an **MIT IDSS machine learning hackathon submission** and was subsequently expanded after the competition through additional feature engineering, model experimentation, and extensive CatBoost hyperparameter optimization.
+The project developed in two distinct stages:
 
----
+1.  an **MIT IDSS machine-learning hackathon**, preserved in
+    `shinkansen_hackaton.ipynb`; and
+2.  a substantially expanded **post-hackathon comparative
+    machine-learning study**, implemented in
+    `Shinkansen_Passenger_Experience_15_ML_Study.ipynb`.
+
+The post-hackathon study goes beyond the original competition solution
+by validating the data sources and merge, comparing **15 models across 8
+model families**, testing feature representations, tuning shortlisted
+models, evaluating ensemble strategies, and performing final
+reserved-test evaluation and error analysis.
+
+------------------------------------------------------------------------
 
 ## ⭐ Key Highlights
 
-- Placed **7th out of 36 participants** in the MIT IDSS hackathon.
-- Achieved an official external competition score of **0.9572777**.
-- Combined passenger travel information with detailed service-feedback data.
-- Performed exploratory analysis, missing-value treatment, outlier handling, encoding, scaling, and feature engineering.
-- Compared **Decision Tree, Random Forest, XGBoost, LightGBM, and CatBoost**.
-- Identified boosting models—particularly **CatBoost and XGBoost**—as the strongest approaches.
-- Experimented with multiple CatBoost optimization strategies:
-  - GridSearchCV
-  - RandomizedSearchCV
-  - Hyperopt
-  - Optuna
-  - Manual Random Search
-  - Manual Grid Search
-  - Manual Iterative Search
-  - Manual Sequential Search
-- Continued developing the project after the hackathon.
-- Reached approximately **96.01% internal holdout accuracy** and **0.9944 ROC AUC** with the later enhanced CatBoost model.
-- Used feature importance to investigate the service and passenger characteristics most associated with overall satisfaction.
-- Kept **competition performance** and **internal model evaluation** explicitly separate.
+-   Placed **7th out of 36 participants** in the MIT IDSS hackathon.
+-   Achieved an official external competition score of **0.9572777**.
+-   Preserved the original hackathon notebook separately from the later
+    independent study.
+-   Combined passenger travel information with detailed service-feedback
+    data using passenger `ID`.
+-   Validated source structure, target definition, and the merged
+    modeling dataset before model development.
+-   Compared **15 classification models across 8 model families**.
+-   Used **ROC AUC as the primary model-selection metric**, while also
+    tracking Accuracy, Precision, Recall, and F1-score.
+-   Identified **CatBoost** as the strongest untuned baseline with
+    **0.993861 validation ROC AUC**.
+-   Tuned the strongest candidate models using model-specific search
+    strategies.
+-   Achieved **0.994196 validation ROC AUC** with tuned LightGBM, the
+    strongest individual validation candidate.
+-   Tested engineered-feature representations rather than assuming that
+    additional features would improve performance.
+-   Found that the full engineered representation **did not outperform
+    the simpler original-variable representation** in the controlled
+    LightGBM ablation.
+-   Tested target encoding and rejected it because the gain was
+    negligible: approximately **+0.000059 validation ROC AUC**.
+-   Compared multiple ensemble strategies.
+-   Selected a simple probability-average ensemble of **LightGBM +
+    XGBoost + CatBoost** as the final predictor.
+-   Achieved **0.96101 accuracy** and **0.994405 ROC AUC** on the
+    reserved internal test subset.
+-   Final positive-class metrics: **0.97041 precision**, **0.95788
+    recall**, and **0.96410 F1-score**.
+-   Correctly classified **13,605 of 14,157** reserved-test
+    observations.
+-   Final confusion-matrix errors: **326 false negatives** and **226
+    false positives**.
+-   Performed feature-importance analysis and structured error analysis.
+-   Explicitly documented negative results, leakage considerations,
+    computational trade-offs, and limitations.
+-   Kept the **official external hackathon result** separate from the
+    **post-hackathon internal evaluation**.
 
----
+------------------------------------------------------------------------
 
 ## 🎯 Business Problem
 
-Passenger-experience surveys contain valuable information about operational performance and service quality, but individual survey responses do not directly reveal which combinations of factors are most useful for predicting overall satisfaction.
+Passenger-experience surveys contain information about service quality,
+operational performance, travel context, and passenger characteristics.
+Looking at individual survey variables in isolation does not reveal
+which combinations of factors are most useful for predicting overall
+passenger satisfaction.
 
-The central problem was:
+The central modeling question was:
 
-> **Can machine learning predict whether a passenger will report a positive overall experience based on travel characteristics, operational factors, and individual service ratings?**
+> **Can machine learning predict whether a passenger will report a
+> positive overall experience using passenger characteristics, journey
+> information, operational factors, and service ratings?**
 
-A reliable model could support analysis of:
+The project also asks:
 
-- passenger satisfaction patterns;
-- service-quality priorities;
-- operational pain points;
-- differences among passenger groups;
-- areas requiring further investigation.
+-   Which model families perform best on this structured classification
+    problem?
+-   Do engineered features materially improve predictive performance?
+-   Can alternative categorical encodings improve the strongest model?
+-   Can an ensemble improve on the best individual models?
+-   Which variables are most strongly associated with the model's
+    predictions?
+-   What types of errors remain after selecting a high-performing model?
 
-The target variable was:
+The target variable is:
 
-```text
+``` text
 Overall_Experience
 ```
 
-with the problem formulated as binary classification:
+The task is formulated as binary classification:
 
-```text
-Passenger + Journey + Service Data
-                  ↓
-         Machine Learning Model
-                  ↓
-       Overall_Experience
-             0 or 1
+``` text
+Passenger Characteristics
+          +
+Journey Information
+          +
+Operational Factors
+          +
+Service Feedback
+          ↓
+   Classification Model
+          ↓
+ Overall_Experience
+        0 or 1
 ```
 
----
+A model of this type could support deeper analysis of
+passenger-experience patterns, service priorities, operational pain
+points, and groups or journeys that may warrant further investigation.
 
-## 🏆 Hackathon Result
+------------------------------------------------------------------------
 
-The project originated in a machine learning hackathon associated with:
+## 🏆 Stage 1 --- MIT IDSS Hackathon
 
-**MIT IDSS — Data Science and Machine Learning: Making Data-Driven Decisions**
+The project originated in a machine-learning hackathon associated with:
 
-My submitted prediction file achieved an external competition score of:
+**MIT Institute for Data, Systems, and Society (IDSS)**\
+**Data Science and Machine Learning: Making Data-Driven Decisions**
 
-**0.9572777**
+The original competition-stage work is preserved in:
 
-and placed:
-
-**7th out of 36 participants**
-
-The preserved competition-stage work is associated with the `S6.ipynb` iteration and its corresponding prediction submission.
-
-### Why the Competition Score Matters
-
-The **0.9572777** score is different from the model's internal validation metrics.
-
-It represents performance on the competition's external evaluation data rather than on my own train/test split.
-
-```text
-Internal Validation
-        ↓
-Model development and comparison
-
-External Competition Score
-        ↓
-Performance on unseen hackathon evaluation data
+``` text
+shinkansen_hackaton.ipynb
 ```
 
-For that reason, **0.9572777 is the primary externally evaluated hackathon result** reported for this project.
+The submitted prediction file achieved an official external competition
+score of:
 
----
+``` text
+0.9572777
+```
 
-## 🔄 Post-Hackathon Development
+with a final placement of:
 
-I continued working on the project after the hackathon rather than treating the competition submission as the final version.
+``` text
+7th out of 36 participants
+```
 
-The later `Final.ipynb` iteration expanded the modeling and optimization workflow and investigated whether further improvements could be obtained.
+### Why the Hackathon Score Is Reported Separately
 
-This included:
+The competition score came from an **external evaluation procedure**. It
+is therefore different from the validation and reserved-test metrics
+generated inside the later post-hackathon study.
 
-- additional CatBoost optimization;
-- broader and refined parameter searches;
-- Hyperopt experimentation;
-- Optuna experimentation;
-- comparison among optimization strategies;
-- further model evaluation.
+``` text
+Hackathon Notebook
+        ↓
+Competition Submission
+        ↓
+External Evaluation
+        ↓
+Score: 0.9572777
+Rank: 7 / 36
+```
 
-The strongest documented post-hackathon configuration achieved approximately:
+The post-hackathon notebook uses its own internal data split and
+model-selection procedure.
 
-| Metric | Internal Holdout Result |
-| --- | ---: |
-| **Accuracy** | **0.9601** |
-| **ROC AUC** | **0.9944** |
+For that reason:
 
-The strongest later configuration used **CatBoost with refined Optuna optimization**.
+> **The external score of 0.9572777 must not be directly compared with
+> the later 0.96101 internal test accuracy as though they were
+> measurements from the same evaluation framework.**
 
-### Important Evaluation Distinction
+------------------------------------------------------------------------
 
-The following numbers should **not** be interpreted as a direct before-and-after leaderboard comparison:
+## 🔄 Stage 2 --- Expanded Post-Hackathon ML Study
 
-| Stage | Result | Evaluation |
-| --- | ---: | --- |
-| **Hackathon Submission** | **0.9572777** | External competition evaluation |
-| **Post-Hackathon Model** | **0.9601 accuracy** | Internal holdout evaluation |
-| **Post-Hackathon Model** | **0.9944 ROC AUC** | Internal holdout evaluation |
+After the competition, I rebuilt and extended the project as a broader
+machine-learning study rather than simply continuing to tune the
+original competition model.
 
-The later results demonstrate continued model development, but they were obtained under a different evaluation framework.
+The expanded work is implemented in:
 
----
+``` text
+Shinkansen_Passenger_Experience_15_ML_Study.ipynb
+```
+
+The post-hackathon study expands the project across the full modeling
+lifecycle:
+
+``` text
+Source Validation
+      ↓
+Data Integration
+      ↓
+Exploratory Analysis
+      ↓
+Preprocessing Decisions
+      ↓
+Feature Experiments
+      ↓
+15-Model Benchmark
+      ↓
+Candidate Shortlisting
+      ↓
+Model-Specific Tuning
+      ↓
+Representation / Encoding Tests
+      ↓
+Ensemble Comparison
+      ↓
+Final Reserved-Test Evaluation
+      ↓
+Feature Interpretation + Error Analysis
+```
+
+This changed the project from a competition-focused modeling exercise
+into a more systematic comparative ML study.
+
+------------------------------------------------------------------------
 
 ## 🗂️ Dataset
 
@@ -155,482 +238,983 @@ The project combines two complementary sources of passenger information.
 
 Travel-related variables include:
 
-- `Gender`
-- `Customer_Type`
-- `Age`
-- `Type_Travel`
-- `Travel_Class`
-- `Travel_Distance`
-- `Departure_Delay_in_Mins`
-- `Arrival_Delay_in_Mins`
+-   `Gender`
+-   `Customer_Type`
+-   `Age`
+-   `Type_Travel`
+-   `Travel_Class`
+-   `Travel_Distance`
+-   `Departure_Delay_in_Mins`
+-   `Arrival_Delay_in_Mins`
 
 ### Survey Data
 
 Passenger service evaluations include variables such as:
 
-- Seat Comfort
-- Departure / Arrival Convenience
-- Catering
-- Platform Location
-- Onboard Wi-Fi Service
-- Onboard Entertainment
-- Online Support
-- Ease of Online Booking
-- Onboard Service
-- Leg Room Service
-- Baggage Handling
-- Check-in Service
-- Cleanliness
-- Online Boarding
+-   Seat Comfort
+-   Departure / Arrival Convenience
+-   Catering
+-   Platform Location
+-   Onboard Wi-Fi Service
+-   Onboard Entertainment
+-   Online Support
+-   Ease of Online Booking
+-   Onboard Service
+-   Leg Room Service
+-   Baggage Handling
+-   Check-in Service
+-   Cleanliness
+-   Online Boarding
 
-The target variable is:
+### Target
 
-```text
+``` text
 Overall_Experience
 ```
 
-The travel and survey datasets were combined using the passenger `ID`.
+The travel and survey sources are combined using passenger `ID`.
 
----
+The post-hackathon notebook validates the data sources and merge before
+proceeding with modeling so that model results are not interpreted
+without first checking the structure of the underlying analytical
+dataset.
+
+------------------------------------------------------------------------
 
 ## 🔍 Exploratory Data Analysis
 
-The exploratory stage examined:
+The exploratory stage examines:
 
-- target distribution;
-- missing values;
-- numerical and categorical distributions;
-- passenger demographics;
-- travel behavior;
-- delay patterns;
-- service ratings;
-- outliers;
-- relationships with overall passenger experience.
+-   dataset structure;
+-   target distribution;
+-   missingness;
+-   numerical distributions;
+-   categorical distributions;
+-   passenger demographics;
+-   journey characteristics;
+-   delay behavior;
+-   service ratings;
+-   outliers;
+-   relationships between candidate predictors and `Overall_Experience`.
+
+The analysis treats EDA as part of model development rather than as a
+purely descriptive step.
+
+### Passenger and Journey Context
+
+Variables such as:
+
+-   customer type;
+-   type of travel;
+-   travel class;
+-   age;
+-   travel distance;
+
+provide contextual information that can interact with service
+evaluations and operational conditions.
 
 ### Delays
 
-Departure and arrival delays were strongly right-skewed and closely related, suggesting that delay information could benefit from additional transformation and aggregation.
-
-### Travel Distance
-
-Travel distance was also right-skewed and contained extreme observations.
-
-### Passenger Characteristics
-
-Variables such as customer type, travel purpose, travel class, and age showed useful relationships with passenger experience.
+Departure and arrival delays are highly skewed and related to one
+another. This motivates both preprocessing investigation and derived
+delay features.
 
 ### Service Ratings
 
-Several service variables were strongly associated with `Overall_Experience`, particularly those related to the onboard and digital passenger experience.
+Multiple service variables contain strong predictive signal. The project
+therefore evaluates satisfaction as a combination of passenger context,
+journey conditions, operational performance, and service quality rather
+than assuming that punctuality alone determines overall experience.
 
-This suggested that overall satisfaction depended on a combination of:
+------------------------------------------------------------------------
 
-```text
-Passenger Characteristics
-          +
-Travel Context
-          +
-Operational Performance
-          +
-Service Quality
-          ↓
-Overall Passenger Experience
-```
+## 🧹 Data Preparation & Leakage Awareness
 
----
+The post-hackathon study distinguishes between:
 
-## 🧹 Data Preprocessing
+1.  **data understanding and representation experiments**; and
+2.  **supervised model selection and final evaluation**.
 
-The project required preprocessing because the source data contained numerical and categorical information as well as missing and extreme values.
+A dedicated train / validation / reserved-test design is used for
+supervised model comparison.
 
 ### Missing Values
 
-Different project iterations explored appropriate treatment of missing data.
+The project evaluates the missingness present in the source data and
+uses model-appropriate handling rather than assuming one universal
+strategy is optimal for every algorithm.
 
-The competition-stage workflow retained missing values where supported by tree-based boosting algorithms such as CatBoost and XGBoost.
+### Extreme Values
 
-The expanded analysis also experimented with explicit imputation strategies depending on feature characteristics:
+Long-tailed numerical variables---particularly travel distance and delay
+variables---are examined for extreme observations.
 
-- mean imputation for suitable numerical variables;
-- median imputation for skewed numerical variables;
-- mode / most-frequent-category imputation for categorical variables.
+Percentile-based capping is used in the expanded representation
+experiments to reduce the influence of unusually large values without
+automatically deleting complete passenger records.
 
-This experimentation helped assess how preprocessing decisions interact with modern tree-based models.
+### Important Methodological Limitation
 
-### Outlier Treatment
+Some data-derived transformations used during exploratory/representation
+work, including percentile-based capping and portions of unsupervised
+feature construction, occur before the final supervised split.
 
-Several continuous variables contained long-tailed distributions, particularly:
+The reserved test **labels** are not used for supervised model
+selection, but a stricter production workflow would fit every
+data-derived transformation using training data only and then apply the
+learned transformation to validation and test data.
 
-```text
-Departure_Delay_in_Mins
-Arrival_Delay_in_Mins
-Travel_Distance
-```
+This is retained as an explicit limitation rather than hidden.
 
-The expanded workflow experimented with percentile-based capping to reduce the influence of unusually extreme observations without automatically discarding complete passenger records.
+------------------------------------------------------------------------
 
----
+## 🧠 Feature Engineering & Representation Experiments
 
-## 🧠 Feature Engineering
+The project investigates whether alternative representations of the raw
+data improve generalization.
 
-Feature engineering was used to expose potentially useful relationships not represented directly by the original variables.
+Examples of engineered information include:
 
 ### Total Delay
 
-Departure and arrival delays were combined:
-
-```text
+``` text
 Total_Delay =
     Departure_Delay_in_Mins
   + Arrival_Delay_in_Mins
 ```
 
-### Age Groups
+### Grouped Variables
 
-Passenger age was transformed into age bands to capture potentially non-linear relationships between age and satisfaction.
+Alternative categorical representations are explored for variables such
+as:
 
-### Travel-Distance Groups
+-   age;
+-   travel distance;
+-   departure delay;
+-   arrival delay.
 
-Travel distance was grouped into interpretable journey-length categories.
+### Derived / Interaction Features
 
-### Delay Groups
+The expanded study also investigates derived and interaction-style
+information intended to expose relationships not represented directly by
+individual raw variables.
 
-Delay variables were transformed into categorical ranges such as:
+### Controlled Feature-Representation Ablation
 
-```text
-No Delay
-Short Delay
-Medium Delay
-Long Delay
+A key result is that **more feature engineering did not automatically
+produce a better model**.
+
+The full engineered representation was compared with the simpler
+original-variable representation under a controlled LightGBM experiment.
+
+The engineered representation **did not outperform** the simpler
+representation.
+
+That negative result was retained because it changes the modeling
+decision:
+
+> **Additional complexity should be justified by measured generalization
+> improvement, not by the number of engineered features.**
+
+This is one of the most important lessons from the post-hackathon study.
+
+------------------------------------------------------------------------
+
+## 🔤 Target-Encoding Experiment
+
+The study also tests target encoding as an alternative way to represent
+categorical information.
+
+The experiment produced only an approximately:
+
+``` text
++0.000059
 ```
 
-### Interaction & Derived Features
+increase in validation ROC AUC.
 
-Later experimentation also explored derived and interaction-style features designed to represent relationships among passenger characteristics, travel conditions, and service evaluations.
+That improvement was considered too small to justify adopting the more
+complex representation.
 
----
+The experiment therefore demonstrates a deliberate model-development
+decision:
 
-## 🤖 Model Development
+> **A technically measurable gain is not necessarily a practically
+> meaningful gain.**
 
-Multiple classification algorithms were compared.
+The simpler representation was retained for the final modeling path.
 
-| Model | Role |
-| --- | --- |
-| **Decision Tree** | Interpretable tree-based baseline |
-| **Random Forest** | Bagged ensemble model |
-| **XGBoost** | Gradient-boosting model |
-| **LightGBM** | Efficient gradient-boosting model |
-| **CatBoost** | High-performance boosting model for structured data |
+------------------------------------------------------------------------
 
-The boosting approaches substantially outperformed the simpler baseline models.
+## 🤖 Model Benchmark --- 15 Models Across 8 Families
 
-CatBoost emerged as the primary model for deeper optimization.
+The post-hackathon study broadens the model comparison substantially
+beyond the original competition work.
 
----
+### Linear / Probabilistic Models
 
-## ⚙️ CatBoost Hyperparameter Optimization
+1.  Logistic Regression
+2.  SGD Classifier
+3.  Gaussian Naive Bayes
 
-One of the most extensive parts of the project was the comparison of multiple optimization strategies.
+### Distance-Based Models
 
-### Automated Methods
+4.  K-Nearest Neighbors
 
-- **GridSearchCV**
-- **RandomizedSearchCV**
-- **Hyperopt**
-- **Optuna**
+### Tree Models
 
-### Custom Search Methods
+5.  Decision Tree
 
-- **Manual Random Search**
-- **Manual Grid Search**
-- **Manual Iterative Search**
-- **Manual Sequential Search**
+### Bagging / Randomized Tree Ensembles
 
-Parameters investigated included:
+6.  Bagging Classifier
+7.  Random Forest
+8.  Extra Trees
 
-```text
-iterations
-depth
-learning_rate
-l2_leaf_reg
+### Boosting Models
+
+9.  AdaBoost
+10. Gradient Boosting
+11. HistGradientBoosting
+12. XGBoost
+13. LightGBM
+14. CatBoost
+
+### Kernel Models
+
+15. RBF Support Vector Machine
+
+This broader benchmark provides evidence for model selection rather than
+beginning with the assumption that one particular boosting library must
+be best.
+
+------------------------------------------------------------------------
+
+## 📏 Evaluation Strategy
+
+The project uses multiple classification metrics:
+
+-   Accuracy
+-   Precision
+-   Recall
+-   F1-score
+-   ROC AUC
+
+### Primary Selection Metric
+
+**ROC AUC** is used as the primary metric for model selection because it
+evaluates ranking/discrimination performance across classification
+thresholds.
+
+Accuracy, precision, recall, and F1-score remain important complementary
+measures.
+
+### Data Roles
+
+The supervised modeling workflow separates data into:
+
+``` text
+Training Data
+     ↓
+Fit candidate models
+
+Validation Data
+     ↓
+Compare models
+Tune candidates
+Test feature/encoding decisions
+Compare ensembles
+
+Reserved Test Data
+     ↓
+Final evaluation after model selection
 ```
 
-This allowed comparison not only of model configurations, but also of different approaches to the optimization process itself.
+This is stronger than repeatedly choosing models based on the final test
+result.
 
----
+------------------------------------------------------------------------
 
-## 📊 Model Evaluation
+## 🥇 Baseline Model Comparison
 
-Classification performance was evaluated using multiple metrics:
+Among the untuned baseline models, **CatBoost** produced the strongest
+validation ROC AUC:
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- ROC AUC
-
-This was important because accuracy alone does not describe every aspect of classification quality.
-
-### Competition Performance
-
-```text
-External Hackathon Score: 0.9572777
-Final Placement:          7 / 36
+``` text
+CatBoost Validation ROC AUC: 0.993861
 ```
 
-### Enhanced Post-Hackathon Model
+This confirmed that modern gradient-boosting models were especially well
+suited to the structured passenger-experience data.
 
-The strongest documented later model achieved approximately:
+However, the project did not stop at the strongest baseline.
 
-```text
-Internal Accuracy:  0.9601
-Internal ROC AUC:   0.9944
+Several high-performing candidates were shortlisted for model-specific
+tuning and further comparison.
+
+------------------------------------------------------------------------
+
+## ⚙️ Model-Specific Hyperparameter Optimization
+
+Rather than applying the same search strategy blindly to every
+algorithm, the expanded study focuses tuning effort on the strongest
+candidate models.
+
+Shortlisted models include:
+
+-   CatBoost
+-   XGBoost
+-   LightGBM
+-   HistGradientBoosting
+-   Random Forest
+
+The tuning experiments investigate model-specific hyperparameters and
+compare the tuned candidates on validation ROC AUC and supporting
+classification metrics.
+
+### Important Result: Tuning Helped Selectively
+
+Hyperparameter optimization did **not** improve every strong baseline
+automatically.
+
+For example, the first CatBoost tuning round slightly underperformed the
+already-strong untuned CatBoost baseline.
+
+This is an important practical result:
+
+> **Hyperparameter tuning is an experiment, not a guarantee of
+> improvement.**
+
+The strongest individual validation candidate after tuning was:
+
+``` text
+Tuned LightGBM
+Validation ROC AUC: 0.994196
 ```
 
-The ROC AUC indicates very strong ranking ability within the project's internal evaluation framework.
+This also changed the earlier project narrative: the strongest
+individual post-hackathon candidate was no longer simply "the most
+heavily tuned CatBoost."
 
----
+------------------------------------------------------------------------
 
-## 🔬 What the Optimization Experiments Showed
+## 🧩 Ensemble Modeling
 
-An important lesson from the project was that increasingly sophisticated hyperparameter optimization did **not** necessarily produce dramatic improvements.
+Because LightGBM, XGBoost, and CatBoost were all strong but not
+identical models, the study evaluates whether combining their
+probability estimates can improve generalization.
 
-Several CatBoost configurations converged on very similar performance.
+Multiple ensemble strategies are compared.
 
-This suggested that once CatBoost reached a strong region of its parameter space:
+The final selected model is a simple probability-average ensemble of:
 
-> **Data preparation, feature representation, and model family mattered at least as much as increasingly exhaustive hyperparameter search.**
+``` text
+LightGBM
+   +
+XGBoost
+   +
+CatBoost
+```
 
-This demonstrates the importance of considering the **cost-benefit trade-off of model optimization**, rather than simply reporting the largest metric obtained.
+Conceptually:
 
----
+``` text
+P(final) =
+    [P(LightGBM) + P(XGBoost) + P(CatBoost)]
+    / 3
+```
 
-## 🔎 Feature Importance
+The simple average was selected because it provided the strongest final
+validation case among the ensemble approaches tested without adding
+unnecessary ensemble complexity.
 
-Feature-importance analysis was used to understand which variables contributed most strongly to the model's predictions.
+------------------------------------------------------------------------
 
-Important groups included variables associated with:
+## 🏁 Final Reserved-Test Performance
 
-- seat comfort;
-- onboard entertainment;
-- online services;
-- customer type;
-- travel purpose;
-- travel class;
-- check-in experience;
-- travel distance;
-- passenger characteristics.
+After model and ensemble selection, the final LightGBM + XGBoost +
+CatBoost probability-average ensemble was evaluated on the reserved
+internal test subset.
 
-### Business Interpretation
+### Final Metrics
 
-The analysis suggested that passenger satisfaction was not determined solely by punctuality.
+  Metric                               Reserved-Test Result
+  ---------------------------------- ----------------------
+  **Accuracy**                                  **0.96101**
+  **ROC AUC**                                  **0.994405**
+  **Precision --- positive class**              **0.97041**
+  **Recall --- positive class**                 **0.95788**
+  **F1-score --- positive class**               **0.96410**
 
-Service-quality variables—particularly those associated with the onboard experience—provided substantial predictive information.
+### Classification Counts
 
-```text
-Operational Reliability
-        +
-Physical Comfort
-        +
-Onboard Services
-        +
-Digital Experience
-        +
-Customer Support
-        +
+``` text
+Reserved-test observations: 14,157
+Correct predictions:         13,605
+Incorrect predictions:          552
+False negatives:                326
+False positives:                226
+```
+
+The final result therefore combines:
+
+-   high overall classification accuracy;
+-   very strong ranking/discrimination performance;
+-   strong precision and recall;
+-   explicit accounting for the remaining error types.
+
+------------------------------------------------------------------------
+
+## 📊 Hackathon vs. Post-Hackathon Results
+
+The two stages should be interpreted separately.
+
+  ------------------------------------------------------------------------
+  Stage                                       Result Evaluation Context
+  --------------------- ---------------------------- ---------------------
+  **MIT IDSS                              **7 / 36** Competition placement
+  Hackathon**                                        
+
+  **MIT IDSS                           **0.9572777** External competition
+  Hackathon**                                        score
+
+  **Post-Hackathon              **0.993861 ROC AUC** Best untuned
+  Baseline**                                         validation model ---
+                                                     CatBoost
+
+  **Post-Hackathon              **0.994196 ROC AUC** Best individual
+  Tuned Individual                                   validation candidate
+  Model**                                            --- tuned LightGBM
+
+  **Post-Hackathon              **0.96101 accuracy** Reserved internal
+  Final Ensemble**                                   test
+
+  **Post-Hackathon              **0.994405 ROC AUC** Reserved internal
+  Final Ensemble**                                   test
+  ------------------------------------------------------------------------
+
+> **The 0.9572777 external competition score and 0.96101 internal test
+> accuracy are not directly comparable metrics from the same evaluation
+> procedure.**
+
+The correct interpretation is that the project has both:
+
+1.  an **externally evaluated hackathon result**, and
+2.  a later **independent internal ML study** with a stronger
+    experimental design and broader model comparison.
+
+------------------------------------------------------------------------
+
+## 🔎 Feature Importance & Interpretation
+
+Feature-importance analysis is used to investigate which variables
+contribute strongly to predictions made by the high-performing
+tree/boosting models.
+
+Important predictive groups include service and passenger-context
+variables associated with areas such as:
+
+-   seat comfort;
+-   onboard entertainment;
+-   online/digital services;
+-   customer type;
+-   travel purpose;
+-   travel class;
+-   check-in experience;
+-   journey characteristics.
+
+The analysis indicates that passenger experience contains substantial
+predictive information beyond operational delay alone.
+
+A useful conceptual summary is:
+
+``` text
 Passenger Context
-        ↓
-Overall Experience
+       +
+Journey Conditions
+       +
+Operational Reliability
+       +
+Physical Comfort
+       +
+Onboard Services
+       +
+Digital Experience
+       ↓
+Overall Passenger Experience
 ```
 
-However, feature importance represents **predictive association, not causation**.
+### Predictive Importance Is Not Causation
 
-A feature being important to the model does not prove that changing that feature alone will cause an equivalent improvement in satisfaction.
+Feature importance identifies variables that are useful to a predictive
+model.
 
----
+It does **not** prove that changing one feature will directly cause an
+equivalent improvement in passenger satisfaction.
+
+Any causal service-improvement claim would require a different study
+design.
+
+------------------------------------------------------------------------
+
+## 🔬 Error Analysis
+
+The final reserved-test evaluation does not stop at a single headline
+metric.
+
+The final ensemble produced:
+
+``` text
+False negatives: 326
+False positives: 226
+```
+
+This matters because different error types may carry different
+operational consequences.
+
+For example:
+
+-   a **false negative** could represent a passenger whose positive
+    experience was not recognized by the model;
+-   a **false positive** could represent a passenger predicted to have a
+    positive experience despite reporting a negative one.
+
+A production decision-support system would need to determine whether
+these errors have different business costs and, if so, whether the
+classification threshold should be adjusted accordingly.
+
+------------------------------------------------------------------------
 
 ## 💼 Potential Business Applications
 
-A model of this type could support several analytical applications.
+This is a portfolio/educational ML study rather than a deployed railway
+system, so the following are **potential applications**, not measured
+production outcomes.
 
 ### Passenger Experience Analysis
 
-Identify combinations of characteristics associated with positive and negative passenger experiences.
+Identify combinations of passenger, journey, operational, and service
+characteristics associated with positive or negative experience.
 
 ### Service Prioritization
 
-Use model interpretation to identify service dimensions that deserve deeper investigation.
+Use predictive interpretation to identify service dimensions that
+warrant deeper investigation.
 
-### Customer Segmentation
+### Passenger-Group Analysis
 
-Analyze whether different passenger groups respond differently to service conditions.
+Examine whether predictive patterns differ across customer types, travel
+purposes, classes, or demographic groups.
 
 ### Proactive Experience Management
 
-With appropriate real-time data and production validation, similar models could potentially help identify journeys or passenger groups at higher risk of dissatisfaction.
+With appropriate real-time data and production validation, similar
+models could potentially help identify journeys or passenger groups at
+elevated risk of dissatisfaction.
 
 ### Operational Decision Support
 
-Combine predictions with business rules and service metrics to support more targeted investigation and resource allocation.
+Combine model probabilities with operational metrics and business rules
+to prioritize investigation or intervention.
 
----
+### Experiment Design
 
-## 🧩 Challenges & How I Addressed Them
+Use predictive findings to generate hypotheses that can later be tested
+through controlled service experiments rather than treating feature
+importance as causal evidence.
 
-| Challenge | How I Addressed It | What It Demonstrated |
-| --- | --- | --- |
-| **Separate travel and survey datasets** | Joined records using passenger ID | Data integration |
-| **Mixed data types** | Used appropriate numerical and categorical preprocessing | Data preparation |
-| **Missing information** | Explored native boosting support and explicit imputation approaches | Model-aware preprocessing |
-| **Highly skewed delays** | Investigated outlier treatment and derived delay features | Robust feature engineering |
-| **Complex non-linear relationships** | Compared tree ensembles and gradient-boosting models | Model selection |
-| **Choosing the strongest model family** | Benchmarked Decision Tree, Random Forest, XGBoost, LightGBM, and CatBoost | Experimental comparison |
-| **CatBoost optimization** | Compared automated and custom search strategies | Hyperparameter tuning |
-| **Multiple performance objectives** | Evaluated Accuracy, Precision, Recall, F1, and ROC AUC | Multi-metric evaluation |
-| **Competition vs. local results** | Kept external leaderboard performance separate from internal validation | Evaluation discipline |
-| **Interpreting a high-performing model** | Analyzed feature importance while avoiding causal claims | Responsible model interpretation |
-| **Competition time constraints** | Continued investigating and improving the project after the hackathon | Iterative problem solving |
+------------------------------------------------------------------------
 
----
+## 🧩 Challenges & What They Demonstrated
+
+  ------------------------------------------------------------------------
+  Challenge               Approach                 What It Demonstrated
+  ----------------------- ------------------------ -----------------------
+  Separate travel and     Validated and joined     Data integration
+  survey sources          records using passenger  
+                          `ID`                     
+
+  Mixed numerical and     Used model-appropriate   Data preparation
+  categorical data        preprocessing and        
+                          representation           
+
+  Missing information     Investigated missingness Model-aware
+                          and model-specific       preprocessing
+                          handling                 
+
+  Extreme delay/distance  Evaluated                Robustness analysis
+  values                  percentile-based capping 
+
+  Many plausible          Benchmarked 15 models    Broad model comparison
+  algorithms              across 8 families        
+
+  Computationally heavier Evaluated feasibility    Computational judgment
+  algorithms              rather than excluding    
+                          them automatically       
+
+  Feature-engineering     Performed controlled     Evidence-based feature
+  uncertainty             representation ablation  decisions
+
+  Alternative categorical Tested target encoding   Encoding
+  representation          and measured its         experimentation
+                          incremental value        
+
+  Strong baseline models  Tuned only shortlisted   Efficient optimization
+                          candidates               
+
+  Tuning did not always   Retained negative tuning Experimental discipline
+  improve results         outcomes                 
+
+  Several similarly       Compared ensemble        Ensemble learning
+  strong boosting models  strategies               
+
+  Need for unbiased final Reserved a test subset   Evaluation discipline
+  reporting               for final evaluation     
+
+  Competition vs. later   Kept external and        Claim accuracy
+  study                   internal metrics         
+                          separate                 
+
+  High aggregate          Performed                Error awareness
+  performance             confusion-matrix/error   
+                          analysis                 
+
+  Interpreting model      Avoided causal claims    Responsible
+  importance                                       interpretation
+  ------------------------------------------------------------------------
+
+------------------------------------------------------------------------
 
 ## 🛠️ Technical Stack
 
-| Area | Technologies & Methods |
-| --- | --- |
-| **Programming** | Python |
-| **Data Manipulation** | Pandas, NumPy |
-| **Visualization** | Matplotlib, Seaborn |
-| **Machine Learning** | Scikit-learn |
-| **Models** | Decision Tree, Random Forest, XGBoost, LightGBM, CatBoost |
-| **Boosting Libraries** | XGBoost, LightGBM, CatBoost |
-| **Preprocessing** | Missing-value treatment, outlier handling, encoding, scaling |
-| **Feature Engineering** | Delay aggregation, grouping, derived and interaction features |
-| **Optimization** | GridSearchCV, RandomizedSearchCV, Hyperopt, Optuna, custom searches |
-| **Evaluation** | Accuracy, Precision, Recall, F1-score, ROC AUC |
-| **Interpretability** | Feature Importance |
-| **Environment** | Jupyter Notebook / Google Colab |
+  -----------------------------------------------------------------------
+  Area                                Technologies & Methods
+  ----------------------------------- -----------------------------------
+  **Programming**                     Python
 
----
+  **Environment**                     Jupyter Notebook, Google Colab
+
+  **Data Manipulation**               Pandas, NumPy
+
+  **Visualization**                   Matplotlib, Seaborn
+
+  **Machine Learning**                Scikit-learn
+
+  **Linear / Probabilistic Models**   Logistic Regression, SGD
+                                      Classifier, Gaussian Naive Bayes
+
+  **Distance-Based Models**           K-Nearest Neighbors
+
+  **Tree / Bagging Models**           Decision Tree, Bagging Classifier,
+                                      Random Forest, Extra Trees
+
+  **Boosting Models**                 AdaBoost, Gradient Boosting,
+                                      HistGradientBoosting, XGBoost,
+                                      LightGBM, CatBoost
+
+  **Kernel Models**                   RBF SVM
+
+  **Preprocessing**                   Missing-value analysis/treatment,
+                                      categorical encoding, scaling,
+                                      percentile-based capping
+
+  **Feature Engineering**             Delay aggregation, grouped
+                                      variables, derived and
+                                      interaction-style features
+
+  **Encoding Experiment**             Target encoding
+
+  **Optimization**                    Model-specific hyperparameter
+                                      tuning / search
+
+  **Ensembling**                      Probability averaging and ensemble
+                                      comparison
+
+  **Evaluation**                      Accuracy, Precision, Recall,
+                                      F1-score, ROC AUC, confusion matrix
+
+  **Interpretability**                Feature importance
+
+  **Analysis**                        EDA, representation ablation, model
+                                      comparison, error analysis
+  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------
 
 ## ⚠️ Limitations & Critical Evaluation
 
-### Competition and Internal Metrics Are Not Directly Comparable
+### 1. External and Internal Results Are Not Directly Comparable
 
-The official hackathon score of **0.9572777** came from an external competition evaluation.
+The hackathon score of **0.9572777** came from an external competition
+evaluation.
 
-The later **0.9601 internal accuracy** was obtained using the project's own evaluation framework.
+The later **0.96101 accuracy / 0.994405 ROC AUC** came from the
+post-hackathon notebook's reserved internal test subset.
 
-Therefore:
+They represent different evaluation procedures.
 
-> **0.9601 should not be described as an improvement of the external leaderboard score from 0.9572777.**
+### 2. Internal Reserved Test Is Not External Production Validation
 
-It demonstrates stronger internal performance after further development, but the evaluation conditions differ.
+The post-hackathon test subset was held back from supervised model
+selection, but it still comes from the same underlying project dataset.
 
-### Predictive Association Is Not Causation
+A production model would require validation across different time
+periods, routes, operating conditions, and passenger populations.
 
-Feature importance identifies variables useful for prediction. It does not establish that changing those variables will directly cause passenger satisfaction to improve.
+### 3. Some Transformations Precede the Final Split
 
-### Validation
+Although test labels are reserved from supervised model selection, some
+data-derived transformations used during representation experiments are
+performed before the final split.
 
-The later headline metrics are based on an internal holdout evaluation.
+A stricter production pipeline would fit all learned transformations
+using training data only.
 
-A production model would require stronger validation across different time periods, routes, passenger populations, and operational conditions.
+### 4. Feature Importance Is Not Causal Evidence
 
-### Hyperparameter Search Has Diminishing Returns
+High feature importance means a variable contributes predictive
+information to the model. It does not prove that changing that service
+dimension will cause passenger satisfaction to change.
 
-Many optimized CatBoost configurations produced similar performance.
+### 5. Small Metric Gains Need Practical Justification
 
-A production workflow should consider whether small metric improvements justify additional computational cost and complexity.
+The target-encoding experiment improved validation ROC AUC by only
+approximately **0.000059**.
 
-### Model Explainability
+The experiment was therefore rejected rather than adopting additional
+complexity for a negligible gain.
 
-Feature importance provides useful global information but cannot fully explain individual passenger predictions.
+### 6. Feature Engineering Did Not Automatically Help
 
-More advanced interpretability methods could improve transparency.
+The complete engineered representation did not outperform the simpler
+original-variable representation in the controlled LightGBM comparison.
 
----
+This is an important negative result and a reminder that additional
+features must be validated empirically.
+
+### 7. Ensemble Improvement Is Incremental
+
+The final ensemble improves on already strong individual boosting
+models, but the improvement is small.
+
+In production, that gain would need to be weighed against additional
+inference, maintenance, and monitoring complexity.
+
+### 8. Threshold Selection Is Not Cost-Optimized
+
+The final classification uses a standard decision threshold.
+
+A deployed system should select thresholds based on the relative
+operational cost of false positives and false negatives.
+
+### 9. Model Explainability Can Be Extended
+
+Global feature importance provides useful information but does not fully
+explain individual predictions.
+
+Methods such as SHAP could provide richer global and local explanations.
+
+------------------------------------------------------------------------
 
 ## 🔄 Future Improvements
 
-If I extended the project today, I would:
+If I extended the project further, I would:
 
-- create a strict **training / validation / final holdout** architecture;
-- use stratified cross-validation consistently during model selection;
-- package preprocessing and modeling into reproducible pipelines;
-- perform systematic feature-engineering ablation studies;
-- compare native CatBoost handling of missing/categorical data against explicit preprocessing;
-- evaluate probability calibration;
-- optimize decision thresholds based on operational costs;
-- use **SHAP** for global and individual prediction explanations;
-- test model stability across passenger groups;
-- investigate appropriate fairness metrics;
-- validate performance across routes and time periods;
-- implement drift monitoring;
-- develop an API or analytical dashboard;
-- investigate whether model insights correspond to causal service improvements through controlled experiments.
+-   implement all preprocessing inside reproducible train-fitted
+    pipelines;
+-   preserve a fully untouched final holdout or external validation set;
+-   use repeated or nested stratified cross-validation where
+    computationally appropriate;
+-   compare probability calibration across the strongest models;
+-   optimize classification thresholds against explicit operational
+    costs;
+-   perform systematic subgroup-performance analysis;
+-   investigate fairness metrics appropriate to the available passenger
+    attributes;
+-   use **SHAP** for global and individual explanations;
+-   evaluate ensemble calibration as well as discrimination;
+-   test model stability across time periods, routes, and operational
+    conditions;
+-   perform drift monitoring;
+-   package the final model/ensemble behind an API;
+-   develop an analytical dashboard for model probabilities, errors, and
+    feature explanations;
+-   test whether predictive insights translate into causal service
+    improvements through controlled experiments.
 
----
+------------------------------------------------------------------------
 
 ## 🧠 What I Learned
 
-This project was particularly valuable because it developed in **two stages**.
+This project became substantially more valuable after the hackathon
+because the objective changed.
 
-The hackathon required building a competitive machine-learning solution under constrained conditions. That work resulted in an external score of **0.9572777** and a **7th-place finish among 36 participants**.
+During the competition, the practical question was:
 
-After the competition, I continued working on the problem.
+> **How can I build a strong submission under hackathon constraints?**
 
-That second stage shifted the objective from:
+The later study asked a broader question:
 
-> **"How can I produce the strongest competition submission within the available time?"**
+> **What happens when I treat the same problem as a structured
+> comparative machine-learning investigation rather than a leaderboard
+> exercise?**
 
-toward:
+Several lessons emerged.
 
-> **"What else can I learn about this model, the optimization process, and the underlying passenger-experience problem?"**
+### 1. Benchmark Broadly Before Committing to One Model
 
-Several lessons emerged:
+The expanded study compares 15 models rather than assuming that the
+strongest competition model must remain the best approach.
 
-- **Strong models still benefit from investigation.** CatBoost was already highly effective, but continued experimentation helped clarify how sensitive performance was to different hyperparameter configurations.
-- **More tuning does not guarantee meaningful improvement.** Several optimization methods converged on similar results, demonstrating diminishing returns once a strong model is near a performance plateau.
-- **Feature engineering matters.** Representing delays and passenger characteristics in alternative ways allowed the models to capture relationships beyond the raw variables.
-- **External evaluation is especially valuable.** The hackathon score provided an evaluation on data outside my own model-development process.
-- **Metrics need context.** A higher number is not automatically a better result if it comes from a different evaluation procedure.
-- **Machine learning does not end at the leaderboard.** The post-hackathon work reinforced that a competition result can be the beginning of deeper experimentation rather than the end of the project.
+CatBoost was the strongest untuned baseline, but tuned LightGBM became
+the strongest individual validation candidate.
 
----
+### 2. More Features Do Not Automatically Mean Better Features
+
+The engineered representation did not outperform the simpler
+representation in the controlled LightGBM experiment.
+
+This reinforced the importance of ablation testing.
+
+### 3. Tiny Improvements May Not Justify Complexity
+
+Target encoding produced a measurable but negligible validation
+improvement.
+
+Rejecting it was as important as testing it.
+
+### 4. Hyperparameter Tuning Is Not Guaranteed to Improve a Model
+
+Some tuning experiments did not improve the already-strong baseline.
+
+Optimization should therefore be evaluated rather than assumed to be
+beneficial.
+
+### 5. Strong Models Can Still Benefit From Diversity
+
+LightGBM, XGBoost, and CatBoost were individually strong.
+
+Combining their probabilities produced the final selected ensemble and
+slightly improved the overall result.
+
+### 6. A Headline Metric Is Not Enough
+
+The final study reports not only accuracy and ROC AUC but also
+precision, recall, F1-score, the number of correct predictions, false
+negatives, and false positives.
+
+### 7. Negative Results Are Useful Results
+
+Feature engineering that does not help, target encoding that adds
+negligible value, and tuning that fails to beat a baseline all provide
+information that improves the final modeling decision.
+
+### 8. Evaluation Context Must Be Preserved
+
+The externally evaluated hackathon score and the internally evaluated
+post-hackathon model answer different questions.
+
+Keeping them separate makes the project more credible, not less.
+
+------------------------------------------------------------------------
 
 ## 💬 Interview Quick Reference
 
-| Question | Quick Answer |
-| --- | --- |
-| **What was the project?** | Predicting Shinkansen passenger satisfaction using travel and service-feedback data |
-| **Project context?** | MIT IDSS — Data Science and Machine Learning: Making Data-Driven Decisions hackathon |
-| **Hackathon placement?** | **7th out of 36 participants** |
-| **Official competition score?** | **0.9572777** |
-| **What did you do after the hackathon?** | Continued developing the project with additional experimentation and CatBoost optimization |
-| **Best later internal accuracy?** | Approximately **0.9601** |
-| **Best later ROC AUC?** | Approximately **0.9944** |
-| **Can 0.9601 be directly compared with 0.9572777?** | No. The first is an internal holdout metric; the second is an external competition score |
-| **Models compared?** | Decision Tree, Random Forest, XGBoost, LightGBM, CatBoost |
-| **Strongest model family?** | CatBoost |
-| **Optimization methods?** | GridSearchCV, RandomizedSearchCV, Hyperopt, Optuna, plus several manual search strategies |
-| **Feature engineering?** | Total delay, age groups, travel-distance groups, delay groups, and additional derived features |
-| **Important predictors?** | Seat comfort, onboard entertainment, travel purpose, customer characteristics, and other service variables |
-| **Interesting optimization lesson?** | Different CatBoost tuning strategies converged on similar performance, demonstrating diminishing returns |
-| **Main modeling limitation?** | Strong predictive performance does not establish causal relationships |
-| **What would you improve today?** | Stronger validation, reproducible pipelines, SHAP, calibration, threshold optimization, ablation testing, and drift monitoring |
-| **What makes the project valuable?** | It combines an externally evaluated competition result with continued independent model development |
+  -----------------------------------------------------------------------
+  Question                            Quick Answer
+  ----------------------------------- -----------------------------------
+  **What was the project?**           Predicting Shinkansen passenger
+                                      satisfaction from passenger,
+                                      journey, operational, and
+                                      service-feedback data
 
----
+  **Project origin?**                 MIT IDSS machine-learning
+                                      hackathon, followed by a
+                                      substantially expanded independent
+                                      ML study
+
+  **Hackathon placement?**            **7th out of 36 participants**
+
+  **Official competition score?**     **0.9572777**
+
+  **Can that score be compared        No. The hackathon score is an
+  directly with the later 0.96101     external competition result;
+  accuracy?**                         0.96101 is an internal
+                                      reserved-test accuracy from the
+                                      later study
+
+  **How large was the later model     **15 models across 8 model
+  benchmark?**                        families**
+
+  **Primary model-selection metric?** **ROC AUC**
+
+  **Best untuned baseline?**          CatBoost --- **0.993861 validation
+                                      ROC AUC**
+
+  **Best tuned individual validation  LightGBM --- **0.994196 validation
+  candidate?**                        ROC AUC**
+
+  **Final model?**                    Probability-average ensemble of
+                                      **LightGBM + XGBoost + CatBoost**
+
+  **Final reserved-test accuracy?**   **0.96101**
+
+  **Final reserved-test ROC AUC?**    **0.994405**
+
+  **Positive-class precision?**       **0.97041**
+
+  **Positive-class recall?**          **0.95788**
+
+  **Positive-class F1?**              **0.96410**
+
+  **How many reserved-test            **13,605 / 14,157**
+  observations were correct?**        
+
+  **False negatives / false           **326 / 226**
+  positives?**                        
+
+  **Did feature engineering improve   Not as a complete representation;
+  the final model?**                  the controlled LightGBM ablation
+                                      favored the simpler representation
+
+  **Did target encoding help?**       Only negligibly: about **+0.000059
+                                      validation ROC AUC**, so it was
+                                      rejected
+
+  **Did tuning always help?**         No. Some tuned configurations
+                                      failed to beat strong baselines
+
+  **Why ensemble the boosting         They were individually strong but
+  models?**                           sufficiently different for
+                                      probability averaging to provide a
+                                      small additional gain
+
+  **Main methodological limitation?** Some data-derived transformations
+                                      precede the final split; a stricter
+                                      production pipeline would fit every
+                                      learned transformation on training
+                                      data only
+
+  **Main interpretation limitation?** Feature importance is predictive
+                                      association, not causation
+
+  **What makes the project            It combines an externally evaluated
+  valuable?**                         hackathon result with a broader
+                                      independent study demonstrating
+                                      benchmarking, tuning, ablation,
+                                      ensembling, final evaluation, and
+                                      critical methodological analysis
+  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------
 
 ## 📁 Repository Structure
 
-A clean repository structure would be:
-
-```text
+``` text
 .
 ├── README.md
-├── S6.ipynb
-├── Final.ipynb
+├── shinkansen_hackaton.ipynb
+├── Shinkansen_Passenger_Experience_15_ML_Study.ipynb
 ├── submissions/
 │   └── S6_0.9572777.csv
 └── data/
@@ -642,51 +1226,104 @@ A clean repository structure would be:
 
 ### Key Files
 
-**`S6.ipynb`**  
-Competition-stage notebook associated with the hackathon solution.
+**`shinkansen_hackaton.ipynb`**\
+Original competition-stage notebook associated with the MIT IDSS
+hackathon solution. It is retained as the historical reference for the
+competition work.
 
-**`S6_0.9572777.csv`**  
-Prediction submission associated with the **0.9572777 external competition score**.
+**`Shinkansen_Passenger_Experience_15_ML_Study.ipynb`**\
+Expanded post-hackathon comparative machine-learning study covering
+source validation, EDA, preprocessing decisions, representation
+experiments, 15-model benchmarking, model-specific tuning,
+target-encoding evaluation, ensemble selection, reserved-test
+evaluation, feature interpretation, and error analysis.
 
-**`Final.ipynb`**  
-Later post-hackathon development containing additional experimentation and optimization.
+**`S6_0.9572777.csv`**\
+Prediction submission associated with the official **0.9572777 external
+competition score**.
 
-> Dataset files should only be included publicly where permitted by the original course or challenge terms.
+> Dataset files should only be included publicly where permitted by the
+> original course or challenge terms.
 
----
+------------------------------------------------------------------------
+
+## ▶️ Running the Project
+
+The notebooks were developed in a Jupyter / Google Colab environment.
+
+Typical requirements include:
+
+``` text
+Python
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+lightgbm
+catboost
+```
+
+Open either notebook depending on the purpose:
+
+-   use `shinkansen_hackaton.ipynb` to review the historical
+    hackathon-stage work;
+-   use `Shinkansen_Passenger_Experience_15_ML_Study.ipynb` for the
+    expanded post-hackathon study.
+
+Dataset paths may need to be adjusted depending on the local or Colab
+directory structure.
+
+------------------------------------------------------------------------
 
 ## 🎓 Project Context
 
-This project was developed in connection with:
+This project originated in connection with:
 
-**MIT Institute for Data, Systems, and Society (IDSS)**  
+**MIT Institute for Data, Systems, and Society (IDSS)**\
 **Data Science and Machine Learning: Making Data-Driven Decisions**
 
-It demonstrates applied experience in:
+The original competition work was subsequently extended independently.
 
-**Python · Pandas · NumPy · Exploratory Data Analysis · Data Preprocessing · Feature Engineering · Classification · Ensemble Learning · Gradient Boosting · XGBoost · LightGBM · CatBoost · Hyperparameter Optimization · Hyperopt · Optuna · Model Evaluation · Feature Importance · Business Analytics**
+The project demonstrates applied experience in:
 
-The project is particularly useful in my portfolio because it demonstrates both:
+**Python · Pandas · NumPy · EDA · Data Integration · Data Preprocessing
+· Feature Engineering · Classification · Linear Models · Tree Models ·
+Bagging · Gradient Boosting · XGBoost · LightGBM · CatBoost · SVM · KNN
+· Hyperparameter Optimization · Model Benchmarking · Ablation Testing ·
+Target Encoding · Ensemble Learning · ROC AUC · Precision · Recall · F1
+· Confusion-Matrix Analysis · Feature Importance · Error Analysis ·
+Business Interpretation**
 
-1. **performance under competitive hackathon constraints**, and
-2. **continued independent experimentation after the competition**.
+Its portfolio value comes from demonstrating both:
 
----
+1.  **performance under externally evaluated hackathon constraints**,
+    and
+2.  **continued independent development into a broader comparative
+    machine-learning study**.
+
+------------------------------------------------------------------------
 
 ## 📄 Educational & Portfolio Use
 
 This repository is intended for **educational and portfolio purposes**.
 
-The project demonstrates machine-learning work developed in connection with the MIT IDSS learning program and subsequently expanded through additional experimentation.
+The hackathon-stage work was developed in connection with the MIT IDSS
+learning program. The expanded comparative ML study was developed
+independently afterward.
 
-Any original datasets, course materials, challenge materials, or other third-party content remain subject to their respective ownership and usage terms.
+Any original datasets, course materials, challenge materials, or other
+third-party content remain subject to their respective ownership and
+usage terms.
 
----
+------------------------------------------------------------------------
 
 ## 👤 Author
 
 **Gregory Charles**
 
-Data Science · Machine Learning · Generative AI · Data Visualization · Applied Software Development
+Data Science · Machine Learning · Generative AI · Data Visualization ·
+Applied Software Development
 
 [← Back to Main Projects Portfolio](../README.md)
